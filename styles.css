@@ -1,0 +1,139 @@
+.todo
+{
+    font-family: Calibri;
+}
+.right
+{
+    text-align: right;
+    font-weight: bold;
+}
+
+.titulo
+{
+    background-color: black;
+    color: white;
+    font-size: 32px;
+    font-weight: bold;
+}
+.titulo1
+{
+    color: rgba(35,73,215);
+    font-weight: bold;
+
+}
+.titulo2
+{
+    font-weight: bold;
+}
+.separador
+{
+    border: none;
+    height: 1px;
+    background-color: #333;
+}
+.textos
+{
+    text-align: justify;
+}
+.centro
+{
+    text-align: center;
+}
+
+div.gallery
+{
+  margin: 10px;
+  float: right;
+  width: 180px;
+}
+
+div.gallery:hover
+{
+  border: 3px solid grey;
+}
+
+div.gallery img
+{
+  width: 100%;
+  height: auto;
+}
+
+.desc
+{
+  padding: 5px;
+  text-align: right;
+  font-weight: bold;
+
+
+}
+div.gallery1 img
+{
+  width: 88px;
+  height: 113px;
+}
+div.gallery1
+{
+  margin: 10px;
+  float: left;
+  width: 180px;
+}
+
+div.gallery1:hover
+{
+  border: 3px solid grey;
+
+}
+
+
+.desc1
+{
+  padding: 5px;
+  text-align: left;
+  font-weight: bold;
+}
+.contenedor
+{
+  width: 100%;
+  float: left;
+  margin-right: 1rem;
+  height: 10rem;
+  background-color: grey;
+  border-radius: .25rem;
+}
+.sidebar
+{
+  width:20%;
+  float: right;
+  height: 10rem;
+  background-color: red;
+  border-radius: .25rem;
+}
+.contenedor-ppal
+{
+  width: 100%;
+  float: left;
+  margin-right: 1rem;
+  height: 5rem;
+  background-color: black;
+  border-radius: .25rem;
+  text-align: center;
+  color: white;
+}
+div.gallery2
+{
+  margin: 10px;
+  float: right;
+  width: 180px;
+  text-align: right;
+}
+
+div.gallery2:hover
+{
+  border: 3px solid grey;
+}
+
+div.gallery2 img
+{
+  width: 50%;
+  height: auto;
+}
