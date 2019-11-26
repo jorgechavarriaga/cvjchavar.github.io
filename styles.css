@@ -1,3 +1,7 @@
+body 
+{
+	margin: 15px;
+}
 .todo
 {
     font-family: Calibri;
@@ -6,6 +10,7 @@
 {
     text-align: right;
     font-weight: bold;
+	padding-right: 10px;
 }
 
 .titulo
@@ -14,6 +19,8 @@
     color: white;
     font-size: 32px;
     font-weight: bold;
+	padding-right: 15px;
+	text-align: right;
 }
 .titulo1
 {
