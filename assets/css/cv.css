@@ -374,6 +374,18 @@ p {
   color: #fb866a;
 }
 
+.allsides {
+  background: 
+  linear-gradient(#97AAC3 0 0) 
+  bottom /var(--d, 0) 1px 
+  no-repeat;
+transition:0.5s;
+}
+.allsides:hover {
+  --d: 100%;
+}
+
+
 @media (max-width: 767.98px) {
   .sidebar-wrapper {
     position: static;
