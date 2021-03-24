@@ -227,10 +227,10 @@
             var tr = table.insertRow(-1);                   // TABLE ROW.
             for (var i = 0; i < col.length; i++) {
                 var th = document.createElement("th");      // TABLE HEADER.
-                if (i == 3) {
+                if (col[i] == "todayCases") {
                     th.innerHTML = "TODAY CASES";
                     tr.appendChild(th);
-                } else if (i == 5) {
+                } else if (col[i] == "todayDeaths") {
                     th.innerHTML = "TODAY DEATHS";
                     tr.appendChild(th);
                 } else {
