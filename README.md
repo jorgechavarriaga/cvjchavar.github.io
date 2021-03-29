@@ -3,5 +3,6 @@ Testing Azure Functions #2 Failed
 Testing Azure Functions #3 Failed
 Testing Azure Functions #4 OK
 Testing Azure Functions #5 OK
-Testing Azure Functions #6
+Testing Azure Functions #6 OK
+Testing Azure Functions #7 
 
