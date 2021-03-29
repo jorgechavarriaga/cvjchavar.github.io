@@ -113,6 +113,7 @@
                     <th scope="col">Country</th>
                     <th scope="col">Confirmed Cases</th>
                     <th scope="col">Active Cases</th>
+                    <th scope="col">Today Cases</th>
                     <th scope="col">Deaths</th>
                     <th scope="col">Recovered</th>
                 </tr>
@@ -122,6 +123,7 @@
                     <td class="headerFormat title"></td>
                     <td class="headerFormat confirm"></td>
                     <td class="headerFormat active"></td>
+                    <td class="headerFormat todaycases"></td>
                     <td class="headerFormat death"></td>
                     <td class="headerFormat recover"></td>
                 </tr>
@@ -189,6 +191,7 @@
 
         var confirm = document.querySelector(".confirm");
         var active = document.querySelector(".active");
+        var todaycases = document.querySelector(".todaycases");
         var death = document.querySelector(".death");
         var recover = document.querySelector(".recover");
         var title = document.querySelector(".title")
@@ -196,6 +199,8 @@
         const res = await fetch('https://corona.lmao.ninja/v2/all')
         const data = await res.json();
         confirm.innerHTML = data.cases;
+        todaycases.innerHTML = data.todayCases;
+        console.log(data.todayCases)
         death.innerHTML = data.deaths;
         recover.innerHTML = data.recovered;
         active.innerHTML = data.active;
