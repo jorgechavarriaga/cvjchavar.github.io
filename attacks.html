@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CYBERTHREAT REAL-TIME MAP</title>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+
+    th {
+        color: white;
+        background-color: black;
+    }
+
+    th,
+    td,
+    p,
+    input {
+        padding-left: 20px;
+        padding-right: 20px;
+        font: 18px;
+    }
+
+    table,
+    th,
+    td {
+        margin: auto;
+        border: solid 2px #DDD;
+        padding: 5px 30px;
+        text-align: center;
+    }
+
+    th {
+        font-weight: bold;
+    }
+
+    .summary {
+        padding-top: 50px;
+        padding-left: 150px;
+        padding-right: 150px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    header {
+        width: 100%;
+        position: relative;
+        top: 0;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+        font-size: 30px;
+        padding-bottom: 20px;
+    }
+
+    .inputbox {
+        display: flex;
+        position: relative;
+        margin-top: 40px;
+    }
+
+    .input {
+        height: 35px;
+        width: 220px;
+        outline: none;
+        text-indent: 5px;
+    }
+
+    .button {
+        height: 35px;
+        width: 43px;
+        background-color: black;
+        text-align: center;
+        line-height: 35px;
+        color: #fff;
+        margin-bottom: 20px;
+    }
+
+    .headerFormat {
+        font-size: 28px;
+        margin-top: 55px;
+    }
+
+    .myFooter {
+        padding-right: 250px;
+        text-align: right;
+        margin: 50px
+    }
+</style>
+
+<body>
+
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th scope="col">Kapersky</th>
+                <th scope="col">Fortinet</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="headerFormat Kapersky">
+                    <iframe width="640" height="640" src="https://cybermap.kaspersky.com/" frameborder="0"></iframe>
+                </td>
+                <td class="headerFormat Fortinet">
+                    <iframe width="640" height="640" src="https://threatmap.fortiguard.com/" frameborder="0"></iframe>
+                </td>
+                
+            </tr>
+        </tbody>
+    </table>
+
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th scope="col">Bitdefender</th>
+                <th scope="col">CheckPoint</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+               
+                <td class="headerFormat Bitdefender">
+                    <iframe width="640" height="640" src="https://threatmap.bitdefender.com/" frameborder="0"></iframe>
+                </td>
+                <td class="headerFormat CheckPoint">
+                    <iframe width="640" height="640" src="https://threatmap.checkpoint.com/" frameborder="0"></iframe>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+    
+
+    <footer>
+        <div class="myFooter">
+            Developed by: ChavaZystem 2021<br>
+
+        </div>
+        
+    </footer>
+
+</body>
+
+</html>
