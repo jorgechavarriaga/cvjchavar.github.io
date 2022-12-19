@@ -32,6 +32,37 @@ p {
   line-height: 1.5;
 }
 
+
+a.my_animated_button{
+	background: #3d5561;
+	cursor: pointer;
+	border: none;
+	padding: 12px 28px;	
+	font-size: 14px;
+	font-weight: bold;
+	position: relative;
+	border-radius: 12px;
+}
+
+a.my_animated_button::before{
+  content: "";
+  position: absolute;
+  top:0;
+  left:0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    45deg, 
+    #ffffff, #4aba77, #3d5561, #2f4049 
+    
+    );
+  background-size: 800%;
+  border-radius: 10px;
+  filter: blur(8px);
+  animation: glowing 20s linear infinite
+}
+
 .details {
   text-align: justify;
   padding-right: 30px;
@@ -85,6 +116,11 @@ p {
   animation: animate-positive 5s;
 }
 
+@keyframes glowing{
+  0% {background-position: 0 0;}
+  50% {background-position: 400% 0;}
+  100% {background-position: 0 0;}
+}
 
 @-webkit-keyframes animate-positive{
   0% { width: 0%; }
