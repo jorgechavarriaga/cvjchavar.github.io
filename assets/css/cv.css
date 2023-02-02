@@ -108,6 +108,7 @@ a.my_animated_button::before{
   border-radius: 20px;
   overflow: visible;
   line-height: 25px;
+  font-size: 0.65rem;
 }
 
 .progress .progress-bar{
@@ -197,6 +198,32 @@ a.my_animated_button::before{
 
 .sidebar-wrapper .contact-list .email .svg-inline--fa {
   font-size: 14px;
+}
+
+.fa-phone {
+  color: rgba(255,255,255,0.6);
+}
+
+.fa-globe {
+  color: rgba(255,255,255,0.6);
+}
+.fa-linkedin-in {
+  color: rgba(255,255,255,0.6);
+}
+.fa-github {
+  color: rgba(255,255,255,0.6);
+}
+.fa-whatsapp {
+  color: rgba(255,255,255,0.6);
+}
+
+.whitecolor {
+  color: white;
+}
+
+
+.fa-envelope {
+  color: rgba(255, 255, 255, 0.6)
 }
 
 .sidebar-wrapper .container-block {
