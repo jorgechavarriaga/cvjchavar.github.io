@@ -8,7 +8,7 @@ testSupport([
 ]);
 
 const boton = document.createElement("button");
-boton.innerText = "Mostrar/ocultar control panel";
+boton.innerText = "Mostrar/Ocultar Control Panel";
 document.getElementById("boton").appendChild(boton);
 
 
@@ -43,10 +43,12 @@ function testSupport(supportedDevices) {
 const controls = window;
 const mpHolistic = window;
 const drawingUtils = window;
-const config = { locateFile: (file) => {
+const config = {
+    locateFile: (file) => {
         return `https://cdn.jsdelivr.net/npm/@mediapipe/holistic@` +
             `${mpHolistic.VERSION}/${file}`;
-    } };
+    }
+};
 // Our input frames will come from here.
 const videoElement = document.getElementsByClassName('input_video')[0];
 const canvasElement = document.getElementsByClassName('output_canvas')[0];
@@ -127,16 +129,16 @@ function onResults(results) {
         if (results.rightHandLandmarks) {
             canvasCtx.strokeStyle = 'white';
             connect(canvasCtx, [[
-                    results.poseLandmarks[mpHolistic.POSE_LANDMARKS.RIGHT_ELBOW],
-                    results.rightHandLandmarks[0]
-                ]]);
+                results.poseLandmarks[mpHolistic.POSE_LANDMARKS.RIGHT_ELBOW],
+                results.rightHandLandmarks[0]
+            ]]);
         }
         if (results.leftHandLandmarks) {
             canvasCtx.strokeStyle = 'white';
             connect(canvasCtx, [[
-                    results.poseLandmarks[mpHolistic.POSE_LANDMARKS.LEFT_ELBOW],
-                    results.leftHandLandmarks[0]
-                ]]);
+                results.poseLandmarks[mpHolistic.POSE_LANDMARKS.LEFT_ELBOW],
+                results.leftHandLandmarks[0]
+            ]]);
         }
     }
     // Pose...
@@ -165,12 +167,14 @@ function onResults(results) {
         }
     });
     // Face...
-    drawingUtils.drawConnectors(canvasCtx, results.faceLandmarks, mpHolistic.FACEMESH_TESSELATION, { color: '#C0C0C070', lineWidth: 2 });
+    drawingUtils.drawConnectors(canvasCtx, results.faceLandmarks, mpHolistic.FACEMESH_TESSELATION, {
+        color: '#FFFFFF', lineWidth: 1
+    });
     // drawingUtils.drawConnectors(canvasCtx, results.faceLandmarks, mpHolistic.FACEMESH_RIGHT_EYE, { color: 'rgb(0,217,231)' });
     // drawingUtils.drawConnectors(canvasCtx, results.faceLandmarks, mpHolistic.FACEMESH_RIGHT_EYEBROW, { color: 'rgb(0,217,231)' });
     // drawingUtils.drawConnectors(canvasCtx, results.faceLandmarks, mpHolistic.FACEMESH_LEFT_EYE, { color: 'rgb(255,138,0)' });
     // drawingUtils.drawConnectors(canvasCtx, results.faceLandmarks, mpHolistic.FACEMESH_LEFT_EYEBROW, { color: 'rgb(255,138,0)' });
-    // drawingUtils.drawConnectors(canvasCtx, results.faceLandmarks, mpHolistic.FACEMESH_FACE_OVAL, { color: '#E0E0E0', lineWidth: 5 });
+    drawingUtils.drawConnectors(canvasCtx, results.faceLandmarks, mpHolistic.FACEMESH_FACE_OVAL, { color: '#00FF00 ', lineWidth: 5 });
     // drawingUtils.drawConnectors(canvasCtx, results.faceLandmarks, mpHolistic.FACEMESH_LIPS, { color: '#E0E0E0', lineWidth: 5 });
     canvasCtx.restore();
 }
@@ -180,81 +184,81 @@ holistic.onResults(onResults);
 // options.
 new controls
     .ControlPanel(controlsElement, {
-    selfieMode: true,
-    modelComplexity: 1,
-    smoothLandmarks: true,
-    enableSegmentation: false,
-    smoothSegmentation: true,
-    minDetectionConfidence: 0.5,
-    minTrackingConfidence: 0.5,
-    effect: 'background',
-})
+        selfieMode: true,
+        modelComplexity: 1,
+        smoothLandmarks: true,
+        enableSegmentation: false,
+        smoothSegmentation: true,
+        minDetectionConfidence: 0.5,
+        minTrackingConfidence: 0.5,
+        effect: 'background',
+    })
     .add([
-    new controls.StaticText({ title: 'MediaPipe Holistic' }),
-    fpsControl,
-    new controls.Toggle({ title: 'Selfie Mode', field: 'selfieMode' }),
-    new controls.SourcePicker({
-        onSourceChanged: () => {
-            // Resets because the pose gives better results when reset between
-            // source changes.
-            holistic.reset();
-        },
-        onFrame: async (input, size) => {
-            const aspect = size.height / size.width;
-            let width, height;
-            if (window.innerWidth > window.innerHeight) {
-                height = window.innerHeight;
-                width = height / aspect;
-            }
-            else {
-                width = window.innerWidth;
-                height = width * aspect;
-            }
-            canvasElement.width = width;
-            canvasElement.height = height;
-            await holistic.send({ image: input });
-        },
-    }),
-    new controls.Slider({
-        title: 'Model Complexity',
-        field: 'modelComplexity',
-        discrete: ['Lite', 'Full', 'Heavy'],
-    }),
-    new controls.Toggle({ title: 'Smooth Landmarks', field: 'smoothLandmarks' }),
-    new controls.Toggle({ title: 'Enable Segmentation', field: 'enableSegmentation' }),
-    new controls.Toggle({ title: 'Smooth Segmentation', field: 'smoothSegmentation' }),
-    new controls.Slider({
-        title: 'Min Detection Confidence',
-        field: 'minDetectionConfidence',
-        range: [0, 1],
-        step: 0.01
-    }),
-    new controls.Slider({
-        title: 'Min Tracking Confidence',
-        field: 'minTrackingConfidence',
-        range: [0, 1],
-        step: 0.01
-    }),
-    new controls.Slider({
-        title: 'Effect',
-        field: 'effect',
-        discrete: { 'background': 'Background', 'mask': 'Foreground' },
-    }),
-])
+        new controls.StaticText({ title: 'MediaPipe Holistic' }),
+        fpsControl,
+        new controls.Toggle({ title: 'Selfie Mode', field: 'selfieMode' }),
+        new controls.SourcePicker({
+            onSourceChanged: () => {
+                // Resets because the pose gives better results when reset between
+                // source changes.
+                holistic.reset();
+            },
+            onFrame: async (input, size) => {
+                const aspect = size.height / size.width;
+                let width, height;
+                if (window.innerWidth > window.innerHeight) {
+                    height = window.innerHeight;
+                    width = height / aspect;
+                }
+                else {
+                    width = window.innerWidth;
+                    height = width * aspect;
+                }
+                canvasElement.width = width;
+                canvasElement.height = height;
+                await holistic.send({ image: input });
+            },
+        }),
+        new controls.Slider({
+            title: 'Model Complexity',
+            field: 'modelComplexity',
+            discrete: ['Lite', 'Full', 'Heavy'],
+        }),
+        new controls.Toggle({ title: 'Smooth Landmarks', field: 'smoothLandmarks' }),
+        new controls.Toggle({ title: 'Enable Segmentation', field: 'enableSegmentation' }),
+        new controls.Toggle({ title: 'Smooth Segmentation', field: 'smoothSegmentation' }),
+        new controls.Slider({
+            title: 'Min Detection Confidence',
+            field: 'minDetectionConfidence',
+            range: [0, 1],
+            step: 0.01
+        }),
+        new controls.Slider({
+            title: 'Min Tracking Confidence',
+            field: 'minTrackingConfidence',
+            range: [0, 1],
+            step: 0.01
+        }),
+        new controls.Slider({
+            title: 'Effect',
+            field: 'effect',
+            discrete: { 'background': 'Background', 'mask': 'Foreground' },
+        }),
+    ])
     .on(x => {
-    const options = x;
-    videoElement.classList.toggle('selfie', options.selfieMode);
-    activeEffect = x['effect'];
-    holistic.setOptions(options);
-});
+        const options = x;
+        videoElement.classList.toggle('selfie', options.selfieMode);
+        activeEffect = x['effect'];
+        holistic.setOptions(options);
+    });
 
 const controlPanel = document.querySelector(".control-panel");
 controlPanel.style.display = "none";
 
-boton.addEventListener("click", function() {
-  if (controlPanel.style.display === "none") {
-    controlPanel.style.display = "block";
-  } else {
-    controlPanel.style.display = "none";
-  }
+boton.addEventListener("click", function () {
+    if (controlPanel.style.display === "none") {
+        controlPanel.style.display = "block";
+    } else {
+        controlPanel.style.display = "none";
+    }
 });
