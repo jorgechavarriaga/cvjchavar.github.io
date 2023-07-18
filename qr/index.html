@@ -27,12 +27,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css"
         integrity="sha512-Cv93isQdFwaKBV+Z4X8kaVBYWHST58Xb/jVOcV9aRsGSArZsgAnFIhMpDoMDcFNoUtday1hdjn0nGp3+KZyyFw=="
         crossorigin="anonymous" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    		<!-- Stylesheets -->
-		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet">
-		<link href="css/bootstrap.min.css" rel="stylesheet">
-		<link href="css/now-ui-kit.min.css" rel="stylesheet">
 </head>
+<!-- Google tag (gtag.js) --> 
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HSGW69E28V"></script>
+<script>   
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());   
+    gtag('config', 'G-HSGW69E28V'); 
+</script>
 <script>
     $(document).ready(function () {
         $('[data-toggle="popover"]').popover({
@@ -82,84 +85,58 @@
                     <li class="phone"><i class="fas fa-phone" aria-hidden="true"></i><a href="tel:+14183211335"
                             class="allsides"> +1 418 321 1335</a></li>
                     <li class="website"><i class="fas fa-globe" aria-hidden="true"></i><a
-                            href="https://www.chavazystem.tech/" target="_blank" class="allsides"></a>
-                        https://www.chavazystem.tech</a></li>
+                            href="https://www.chavazystem.tech/" target="_blank"
+                            class="allsides"> https://www.chavazystem.tech</a></li>
                     <li class="linkedin"><i class="fab fa-linkedin-in" aria-hidden="true"></i><a
                             href="https://www.linkedin.com/in/jorge-chava/?locale=en_US" target="_blank"
                             class="allsides"> linkedin.com/in/jorge-chava</a></li>
                     <li class="github"><i class="fab fa-github" aria-hidden="true"></i><a
-                            href="https://github.com/jorgechavarriaga/" target="_blank" class="allsides">
-                            github.com/jorgechavarriaga</a></li>
+                            href="https://github.com/jorgechavarriaga/" target="_blank"
+                            class="allsides"> github.com/jorgechavarriaga</a></li>
                     <li class="whatsapp"><i class="fab fa-whatsapp" aria-hidden="true"></i><a
                             href="http://wa.me/+14183211335" target="_blank" class="allsides"> Whatsapp</a></li>
                 </ul>
             </div>
             <!--End contact-container-->
+
         </div>
         <!--End sidebar-wrapper-->
         <!-- Start main-wrapper-->
         <div class="main-wrapper">
-            
             <!--Start section-->
-            <section style="padding: 10px;" class="section summary-section">
-                <h2 class="section-title"><span class="icon-holder"><i class="material-icons">qr_code</i></span>QR Code Generator Online</h2>
+            <section class="section summary-section">
+                <h2 class="section-title"><span class="icon-holder"><i class="fas fa-qrcode" ></i></span>
+                    QR CODE GENERATOR ONLINE
+                </h2>
                 <!--Start summary-->
                 <div class="summary details">
-                    <div class="section section-tabs" style="padding: 0px; bottom: 10px;">
+                    <div class="section section-tabs" >
                         <div class="container">
                             <h2 class="text-center text-white font-weight-bold">QR Generator Online</h2>
-                            <div class="row">
-            
-                                <!-- Output Card -->
-                                <div class="col-3">
-                                    <div class="card h-100">
-                                        <div class="card-body">
-                                            <div class="text-center">
-                                                <h3>QR Code</h3>
-            
-                                                <!-- QR Code Image -->
-                                                <!-- <img id="QRImage" crossorigin="anonymous" src="https://chart.googleapis.com/chart?cht=qr&chl=&chs=547x547&chld=L|0" class="qr-code img-thumbnail img-responsive" alt="QR Code"> -->
-                                                <img id="QRImage" crossorigin="anonymous" src="QRCode.jpg" class="qr-code img-thumbnail img-responsive" alt="QR Code">
-            
-                                                <!-- Download Button -->
-                                                <a target="_blank" href="" download="QR Code.jpg" class="downloadQR">
-                                                    <button style="background-color: #4B6A78; padding: 10px;" class="btn btn-primary">Download QR</button>
-                                                </a>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-            
+                            <div class="row" style="display: block;">
                                 <!-- Input Card -->
-                                <div class="col-9">
+                                <!-- <div class="col-9"> -->
                                     <div class="card h-100">
                                         <div class="card-header">
-            
                                             <!-- QR Code types -->
                                             <ul class="nav nav-tabs nav-tabs-neutral justify-content-center" role="tablist" style="background-color: #4B6A78;" >
-                                                <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#url" role="tab">URL</a></li>
-                                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#text" role="tab">Text</a></li>
-                                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#wifiqr" role="tab">WiFi</a></li>
-                                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#vcardqr" role="tab">vCard</a></li>
-                                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#mailqr" role="tab">Email</a></li>
+                                                <li class="nav-item"><a class="nav-link active " data-toggle="tab" href="#url" role="tab"><i class="fas fa-link"></i> URL</a></li>
+                                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#text" role="tab"><i class="fas fa-align-left"></i> Text</a></li>
+                                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#wifiqr" role="tab"><i class="fas fa-wifi"></i> WiFi</a></li>
+                                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#vcardqr" role="tab"><i class="fas fa-address-card"></i> vCard</a></li>
+                                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#mailqr" role="tab"><i style="color: black;" class="fas fa-envelope fa-inverse"></i> Email</a></li>
                                             </ul>
                                         </div>
                                         <div class="card-body">
                                             <div class="tab-content text-center">
-            
                                                 <!-- URL Section -->
                                                 <div class="tab-pane active" id="url" role="tabpanel">
                                                     <form onsubmit="genqr('url')">
                                                         <div class="input-group no-border input-lg">
-                                                            <div class="input-group-prepend">
-                                                                <span class="input-group-text">
-                                                                <i class="now-ui-icons location_world"></i>
-                                                                </span>
-                                                            </div>
-                                                            <input type="url" id="urlcontent" placeholder="URL" class="form-control" required>
+                                                            <input type="url" id="urlcontent" placeholder="https://www.yoourpage.ca" class="form-control" required>
                                                         </div>
-                                                        <button style="background-color: #4B6A78;" class="text-center btn btn-primary">Generate</button>
+
+                                                        <button style="background-color: #4B6A78; margin-top: 15px; border-radius: 1rem;" class="text-center btn btn-primary">Generate</button>
                                                     </form>
                                                 </div>
             
@@ -167,7 +144,7 @@
                                                 <div class="tab-pane" id="text" role="tabpanel">
                                                     <form onsubmit="genqr('text')">
                                                         <textarea id="textcontent" placeholder="Enter Your Text Here" class="form-control" required></textarea>
-                                                        <button style="background-color: #4B6A78;" class="text-center btn btn-primary">Generate</button>
+                                                        <button style="background-color: #4B6A78; margin-top: 15px; border-radius: 1rem;" class="text-center btn btn-primary">Generate</button>
                                                     </form>
                                                 </div>
             
@@ -201,7 +178,7 @@
                                                                 </select>
                                                             </div>
                                                         </div>
-                                                        <button style="background-color: #4B6A78;" class="text-center btn btn-primary">Generate</button>
+                                                        <button style="background-color: #4B6A78; margin-top: 15px; border-radius: 1rem;" class="text-center btn btn-primary">Generate</button>
                                                     </form>
                                                 </div>
             
@@ -274,12 +251,9 @@
                                                                 <input type="text" class="form-control" id="birthday" placeholder="Birthday (YYYY-MM-DD)">
                                                             </div>
                                                         </div>
-                                                        <button style="background-color: #4B6A78;" class="text-center btn btn-primary">Generate</button>
+                                                        <button style="background-color: #4B6A78; margin-top: 15px; border-radius: 1rem;" class="text-center btn btn-primary">Generate</button>
                                                     </form>
                                                 </div>
-            
-
-            
                                                 <!-- Email Section -->
                                                 <div class="tab-pane" id="mailqr" role="tabpanel">
                                                     <form onsubmit="genqr('email')">
@@ -295,154 +269,80 @@
                                                                 <textarea class="form-control" id="emailcontent" placeholder="Email Content"></textarea>
                                                             </div>
                                                         </div>
-                                                        <button style="background-color: #4B6A78;" class="text-center btn btn-primary">Generate</button>
+                                                        <button style="background-color: #4B6A78; margin-top: 15px; border-radius: 1rem;" class="text-center btn btn-primary">Generate</button>
                                                     </form>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                <!-- </div> -->
+                                                                <!-- Output Card -->
+                                <!-- <div class="col-3"> -->
+                                    <div class="card h-100">
+                                        <div class="card-body">
+                                            <div class="text-center">
+                                                <h3>QR Code</h3>
+                                                <img id="QRImage" crossorigin="anonymous" src="QRCode.jpg" class="qr-code img-thumbnail img-responsive" alt="QR Code">
+                                                <br><br><br>
+                                                <a target="_blank" href="" download="QR Code.jpg" class="downloadQR">
+                                                    <button style="background-color: #4B6A78;  border-radius: 1rem;" class="btn btn-primary">Download QR</button>
+                                                </a>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                <!-- </div> -->
                             </div>
                         </div>
                     </div>
-                    
                 </div>
-                <!--End summary-->
+                <div>
+                    <br><br>
+                </div>
             </section>
-            <!--End section-->
-
-            <!--Start section-->
-            <section class="section summary-section">
-                <h2 class="section-title"><span class="icon-holder"><i class="material-icons">security</i></span>SECURITY</h2>
-                <!--Start summary-->
-                <div class="summary details">
-                    <ul>
-                        <li>CRACK WIFI PASSWORD</li>
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/Q7AsCpNARDE"
-                            title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen></iframe>
-                        <li>CRACK PASSWORD PROTECED FILES</li>
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/M7QNJuEoEys"
-                            title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen></iframe>
-                    </ul>
-                </div>
-                <!--End summary-->
-            </section>
-            <!--End section-->
-            <section class="section experiences-section">
-                <h2 class="section-title"><span class="icon-holder"><i class="material-icons">perm_data_setting</i></span>DATA ANALYSIS
-                </h2>
-                <!-- Start item - Codeboxx -->
-                <div class="item">
-                    <div class="meta">
-                        <div class="upper-row">
-                            <h3 class="job-title"></h3>
-                            <div class="time"></div>
-                        </div><!--//upper-row-->
-                        <div class="company"><a href="https://codeboxx.dev/" target="_blank" class="allsides"></a></div>
-                    </div><!--//meta-->
-                    <div class="details">
-                        <ul>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                        </ul>
-                    </div>
-                    <!--//details-->
-                </div>
-                <!--End item-->
-            </section><!--//section-->
-
-            <section class="section experiences-section">
-                <h2 class="section-title"><span class="icon-holder"><i class="fas fa-lock"></i></span>IoT
-                </h2>
-                <!-- Start item - Codeboxx -->
-                <div class="item">
-                    <div class="meta">
-                        <div class="upper-row">
-                            <h3 class="job-title"></h3>
-                            <div class="time"></div>
-                        </div><!--//upper-row-->
-                        <div class="company"><a href="https://codeboxx.dev/" target="_blank" class="allsides"></a></div>
-                    </div><!--//meta-->
-                    <div class="details">
-                        <ul>
-                            <li></li>
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/6knQBuB4D3U"
-                                title="YouTube video player" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                allowfullscreen></iframe>
-                            <li></li>
-                            <li></li>
-                        </ul>
-                    </div>
-                    <!--//details-->
-                </div>
-                <!--End item-->
-            </section><!--//section-->
-
-        </div><!--//main-body-->
+        </div>
+        <!--//main-body-->
     </div>
     <footer class="footer">
         <div class="text-center">
             <small class="copyright"></small>
-        </div><!--//container-->
-        <!-- <section>
-            <div class="text-center">
-                <a id="test" class="btn  btn-lg my_animated_button" style="color: #fff" href="https://www.chavazystem.tech/attacks.html">
-                    ... Some projects
-                </a>
-            </div>
+        </div>
         </section> -->
-    </footer><!--//footer-->
+    </footer>
     <!-- JavaScripts -->
-		<script src="js/jquery.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<script src="js/now-ui-kit.min.js"></script>
-		
-		<!-- The Magic Begins Here -->
-		<script>
-			// To Convert Image to base64 for direct download
-			function getDataUrl(img) {
-				const canvas = document.createElement('canvas');
-				const ctx = canvas.getContext('2d');
-				// canvas.width = img.width;
-				// canvas.height = img.height;
-				canvas.width = 547;
-				canvas.height = 547;
-                // console.log(canvas.width, canvas.height)
-				ctx.drawImage(img, 0, 0);
-				return canvas.toDataURL('image/jpeg');
-			}
-			
-			
-			// To generate QR code
-			function genqr(type) {
-				if (type=="url") {
-					$('.qr-code').attr('src', 'https://chart.googleapis.com/chart?cht=qr&chl=' + $('<div/>').text($('#urlcontent').val()).html() + '&chs=547x547&chld=L|0');
-				} else if (type=="text") {
-					$('.qr-code').attr('src', 'https://chart.googleapis.com/chart?cht=qr&chl=' + $('<div/>').text($('#textcontent').val()).html() + '&chs=547x547&chld=L|0');
-				} else if (type=="wifi") {
-					$('.qr-code').attr('src', 'https://chart.googleapis.com/chart?cht=qr&chl=WIFI:T:' + $('<div/>').text($('#crpt').val() + ';S:' + $('#ssid').val() + ';P:' + $('#pswd').val() + ';H:' + $('#hddn').val()).html() + '&chs=547x547&chld=L|0');
-				} else if (type=="vcard") {
-					$('.qr-code').attr('src', 'https://chart.googleapis.com/chart?cht=qr&chl=BEGIN:VCARD%0AVERSION:3.0%0AN:' + $('<div/>').text($('#lname').val() + ';' + $('#fname').val() + '%0AFN:' + $('#fname').val() + ' ' + $('#lname').val() + '%0AORG:' + $('#company').val() + '%0ATITLE:' + $('#job').val() + '%0AADR:;;' + $('#street').val() + ';' + $('#city').val() + ';' + $('#state').val() + ';' + $('#zip').val() + ';' + $('#country').val() + '%0ATEL;CELL:' + $('#mobile').val() + '%0ATEL;WORK;VOICE:' + $('#phone').val() + '%0ATEL;FAX:' + $('#fax').val() + '%0AEMAIL;WORK;INTERNET:' + $('#email').val() + '%0AURL:' + $('#website').val() + '%0ABDAY:' + $('#birthday').val() + '%0AEND:VCARD').html() + '&chs=547x547&chld=L|0');
-				} else if (type=="sms") {
-					$('.qr-code').attr('src', 'https://chart.googleapis.com/chart?cht=qr&chl=SMSTO:' + $('<div/>').text($('#smsnumber').val() + ':' + $('#smscontent').val()).html() + '&chs=547x547&chld=L|0');
-				} else if (type=="email") {
-					$('.qr-code').attr('src', 'https://chart.googleapis.com/chart?cht=qr&chl=MATMSG:TO:' + $('<div/>').text($('#emailid').val() + ';SUB:' + $('#emailsubject').val() + ';BODY:' + $('#emailcontent').val() + ';;').html() + '&chs=547x547&chld=L|0');
-				} else if (type=="tweet") {
-					$('.qr-code').attr('src', 'https://chart.googleapis.com/chart?cht=qr&chl=https://twitter.com/intent/tweet?text=' + encodeURIComponent(encodeURIComponent(document.getElementById("tweet").value)) + '&chs=547x547&chld=L|0');
-				}
-				event.preventDefault();
-				document.querySelector('#QRImage').addEventListener('load', function (event) {
-					$('.downloadQR').attr('href', getDataUrl(event.currentTarget));
-				});
-			}
-		</script>
-
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        function getDataUrl(img) {
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            canvas.width = img.width;
+            canvas.height = img.height;
+            ctx.drawImage(img, 0, 0);
+            return canvas.toDataURL('image/jpeg');
+        }
+        function genqr(type) {
+            if (type=="url") {
+                $('.qr-code').attr('src', 'https://chart.googleapis.com/chart?cht=qr&chl=' + $('<div/>').text($('#urlcontent').val()).html() + '&chs=360x360&chld=L|0');
+            } else if (type=="text") {
+                $('.qr-code').attr('src', 'https://chart.googleapis.com/chart?cht=qr&chl=' + $('<div/>').text($('#textcontent').val()).html() + '&chs=360x360&chld=L|0');
+            } else if (type=="wifi") {
+                $('.qr-code').attr('src', 'https://chart.googleapis.com/chart?cht=qr&chl=WIFI:T:' + $('<div/>').text($('#crpt').val() + ';S:' + $('#ssid').val() + ';P:' + $('#pswd').val() + ';H:' + $('#hddn').val()).html() + '&chs=360x360&chld=L|0');
+            } else if (type=="vcard") {
+                $('.qr-code').attr('src', 'https://chart.googleapis.com/chart?cht=qr&chl=BEGIN:VCARD%0AVERSION:3.0%0AN:' + $('<div/>').text($('#lname').val() + ';' + $('#fname').val() + '%0AFN:' + $('#fname').val() + ' ' + $('#lname').val() + '%0AORG:' + $('#company').val() + '%0ATITLE:' + $('#job').val() + '%0AADR:;;' + $('#street').val() + ';' + $('#city').val() + ';' + $('#state').val() + ';' + $('#zip').val() + ';' + $('#country').val() + '%0ATEL;CELL:' + $('#mobile').val() + '%0ATEL;WORK;VOICE:' + $('#phone').val() + '%0ATEL;FAX:' + $('#fax').val() + '%0AEMAIL;WORK;INTERNET:' + $('#email').val() + '%0AURL:' + $('#website').val() + '%0ABDAY:' + $('#birthday').val() + '%0AEND:VCARD').html() + '&chs=360x360&chld=L|0');
+            } else if (type=="sms") {
+                $('.qr-code').attr('src', 'https://chart.googleapis.com/chart?cht=qr&chl=SMSTO:' + $('<div/>').text($('#smsnumber').val() + ':' + $('#smscontent').val()).html() + '&chs=360x360&chld=L|0');
+            } else if (type=="email") {
+                $('.qr-code').attr('src', 'https://chart.googleapis.com/chart?cht=qr&chl=MATMSG:TO:' + $('<div/>').text($('#emailid').val() + ';SUB:' + $('#emailsubject').val() + ';BODY:' + $('#emailcontent').val() + ';;').html() + '&chs=360x360&chld=L|0');
+            } else if (type=="tweet") {
+                $('.qr-code').attr('src', 'https://chart.googleapis.com/chart?cht=qr&chl=https://twitter.com/intent/tweet?text=' + encodeURIComponent(encodeURIComponent(document.getElementById("tweet").value)) + '&chs=360x360&chld=L|0');
+            }
+            event.preventDefault();
+            document.querySelector('#QRImage').addEventListener('load', function (event) {
+                $('.downloadQR').attr('href', getDataUrl(event.currentTarget));
+            });
+        }
+    </script>
 </body>
 
 </html>
