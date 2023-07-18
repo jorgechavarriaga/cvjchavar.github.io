@@ -1,16 +1,25 @@
 import DeviceDetector from "https://cdn.skypack.dev/device-detector-js@2.2.10";
-// Usage: testSupport({client?: string, os?: string}[])
-// Client and os are regular expressions.
-// See: https://cdn.jsdelivr.net/npm/device-detector-js@2.2.10/README.md for
-// legal values for client and os
 testSupport([
     { client: 'Chrome' },
 ]);
 
 const boton = document.createElement("button");
-boton.innerText = "Mostrar/Ocultar Control Panel";
+boton.innerText = "Tessalation";
+boton.classList.add("btn", "btn-primary");
 document.getElementById("boton").appendChild(boton);
+let showTesselation = false;
 
+const boton1 = document.createElement("button");
+boton1.innerText = "Oval";
+boton1.classList.add("btn", "btn-primary");
+document.getElementById("boton1").appendChild(boton1);
+let showOval = false;
+
+const tesselationOnOff = document.createElement("span");
+boton.appendChild(tesselationOnOff);
+
+const ovalOnOff = document.createElement("span");
+boton.appendChild(ovalOnOff);
 
 
 function testSupport(supportedDevices) {
@@ -167,9 +176,9 @@ function onResults(results) {
         }
     });
     // Face...
-    drawingUtils.drawConnectors(canvasCtx, results.faceLandmarks, mpHolistic.FACEMESH_TESSELATION, {
-        color: '#FFFFFF', lineWidth: 1
-    });
+    if (showTesselation !== false){
+        drawingUtils.drawConnectors(canvasCtx, results.faceLandmarks, mpHolistic.FACEMESH_TESSELATION, {color: '#FFFFFF', lineWidth: 1});
+    }
     // drawingUtils.drawConnectors(canvasCtx, results.faceLandmarks, mpHolistic.FACEMESH_RIGHT_EYE, { color: 'rgb(0,217,231)' });
     // drawingUtils.drawConnectors(canvasCtx, results.faceLandmarks, mpHolistic.FACEMESH_RIGHT_EYEBROW, { color: 'rgb(0,217,231)' });
     // drawingUtils.drawConnectors(canvasCtx, results.faceLandmarks, mpHolistic.FACEMESH_LEFT_EYE, { color: 'rgb(255,138,0)' });
@@ -253,12 +262,28 @@ new controls
     });
 
 const controlPanel = document.querySelector(".control-panel");
-controlPanel.style.display = "none";
+// controlPanel.style.display = "block";
 
 boton.addEventListener("click", function () {
-    if (controlPanel.style.display === "none") {
-        controlPanel.style.display = "block";
-    } else {
-        controlPanel.style.display = "none";
-    }
+    showTesselation = !showTesselation;
+    tesselationOnOff.innerText = showTesselation ? " ON" : " OFF";
+    if (showTesselation) {
+        boton.classList.remove("btn-danger");
+        boton.classList.add("btn-success");
+      } else {
+        boton.classList.remove("btn-success");
+        boton.classList.add("btn-danger");
+      }
+});
+
+boton1.addEventListener("click", function () {
+    showOval = !showOval;
+    ovalOnOff.innerText = showOval ? " ON" : " OFF";
+    if (showOval) {
+        boton1.classList.remove("btn-danger");
+        boton1.classList.add("btn-success");
+      } else {
+        boton1.classList.remove("btn-success");
+        boton1.classList.add("btn-danger");
+      }
 });
