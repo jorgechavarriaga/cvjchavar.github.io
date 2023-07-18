@@ -118,12 +118,14 @@
                                                 <h3>QR Code</h3>
             
                                                 <!-- QR Code Image -->
-                                                <img id="QRImage" crossorigin="anonymous" src="https://chart.googleapis.com/chart?cht=qr&chl=&chs=360x360&chld=L|0" class="qr-code img-thumbnail img-responsive" alt="QR Code">
+                                                <!-- <img id="QRImage" crossorigin="anonymous" src="https://chart.googleapis.com/chart?cht=qr&chl=&chs=547x547&chld=L|0" class="qr-code img-thumbnail img-responsive" alt="QR Code"> -->
+                                                <img id="QRImage" crossorigin="anonymous" src="QRCode.jpg" class="qr-code img-thumbnail img-responsive" alt="QR Code">
             
                                                 <!-- Download Button -->
                                                 <a target="_blank" href="" download="QR Code.jpg" class="downloadQR">
                                                     <button style="background-color: #4B6A78; padding: 10px;" class="btn btn-primary">Download QR</button>
                                                 </a>
+                                                
                                             </div>
                                         </div>
                                     </div>
@@ -407,8 +409,11 @@
 			function getDataUrl(img) {
 				const canvas = document.createElement('canvas');
 				const ctx = canvas.getContext('2d');
-				canvas.width = img.width;
-				canvas.height = img.height;
+				// canvas.width = img.width;
+				// canvas.height = img.height;
+				canvas.width = 547;
+				canvas.height = 547;
+                // console.log(canvas.width, canvas.height)
 				ctx.drawImage(img, 0, 0);
 				return canvas.toDataURL('image/jpeg');
 			}
@@ -417,19 +422,19 @@
 			// To generate QR code
 			function genqr(type) {
 				if (type=="url") {
-					$('.qr-code').attr('src', 'https://chart.googleapis.com/chart?cht=qr&chl=' + $('<div/>').text($('#urlcontent').val()).html() + '&chs=360x360&chld=L|0');
+					$('.qr-code').attr('src', 'https://chart.googleapis.com/chart?cht=qr&chl=' + $('<div/>').text($('#urlcontent').val()).html() + '&chs=547x547&chld=L|0');
 				} else if (type=="text") {
-					$('.qr-code').attr('src', 'https://chart.googleapis.com/chart?cht=qr&chl=' + $('<div/>').text($('#textcontent').val()).html() + '&chs=360x360&chld=L|0');
+					$('.qr-code').attr('src', 'https://chart.googleapis.com/chart?cht=qr&chl=' + $('<div/>').text($('#textcontent').val()).html() + '&chs=547x547&chld=L|0');
 				} else if (type=="wifi") {
-					$('.qr-code').attr('src', 'https://chart.googleapis.com/chart?cht=qr&chl=WIFI:T:' + $('<div/>').text($('#crpt').val() + ';S:' + $('#ssid').val() + ';P:' + $('#pswd').val() + ';H:' + $('#hddn').val()).html() + '&chs=360x360&chld=L|0');
+					$('.qr-code').attr('src', 'https://chart.googleapis.com/chart?cht=qr&chl=WIFI:T:' + $('<div/>').text($('#crpt').val() + ';S:' + $('#ssid').val() + ';P:' + $('#pswd').val() + ';H:' + $('#hddn').val()).html() + '&chs=547x547&chld=L|0');
 				} else if (type=="vcard") {
-					$('.qr-code').attr('src', 'https://chart.googleapis.com/chart?cht=qr&chl=BEGIN:VCARD%0AVERSION:3.0%0AN:' + $('<div/>').text($('#lname').val() + ';' + $('#fname').val() + '%0AFN:' + $('#fname').val() + ' ' + $('#lname').val() + '%0AORG:' + $('#company').val() + '%0ATITLE:' + $('#job').val() + '%0AADR:;;' + $('#street').val() + ';' + $('#city').val() + ';' + $('#state').val() + ';' + $('#zip').val() + ';' + $('#country').val() + '%0ATEL;CELL:' + $('#mobile').val() + '%0ATEL;WORK;VOICE:' + $('#phone').val() + '%0ATEL;FAX:' + $('#fax').val() + '%0AEMAIL;WORK;INTERNET:' + $('#email').val() + '%0AURL:' + $('#website').val() + '%0ABDAY:' + $('#birthday').val() + '%0AEND:VCARD').html() + '&chs=360x360&chld=L|0');
+					$('.qr-code').attr('src', 'https://chart.googleapis.com/chart?cht=qr&chl=BEGIN:VCARD%0AVERSION:3.0%0AN:' + $('<div/>').text($('#lname').val() + ';' + $('#fname').val() + '%0AFN:' + $('#fname').val() + ' ' + $('#lname').val() + '%0AORG:' + $('#company').val() + '%0ATITLE:' + $('#job').val() + '%0AADR:;;' + $('#street').val() + ';' + $('#city').val() + ';' + $('#state').val() + ';' + $('#zip').val() + ';' + $('#country').val() + '%0ATEL;CELL:' + $('#mobile').val() + '%0ATEL;WORK;VOICE:' + $('#phone').val() + '%0ATEL;FAX:' + $('#fax').val() + '%0AEMAIL;WORK;INTERNET:' + $('#email').val() + '%0AURL:' + $('#website').val() + '%0ABDAY:' + $('#birthday').val() + '%0AEND:VCARD').html() + '&chs=547x547&chld=L|0');
 				} else if (type=="sms") {
-					$('.qr-code').attr('src', 'https://chart.googleapis.com/chart?cht=qr&chl=SMSTO:' + $('<div/>').text($('#smsnumber').val() + ':' + $('#smscontent').val()).html() + '&chs=360x360&chld=L|0');
+					$('.qr-code').attr('src', 'https://chart.googleapis.com/chart?cht=qr&chl=SMSTO:' + $('<div/>').text($('#smsnumber').val() + ':' + $('#smscontent').val()).html() + '&chs=547x547&chld=L|0');
 				} else if (type=="email") {
-					$('.qr-code').attr('src', 'https://chart.googleapis.com/chart?cht=qr&chl=MATMSG:TO:' + $('<div/>').text($('#emailid').val() + ';SUB:' + $('#emailsubject').val() + ';BODY:' + $('#emailcontent').val() + ';;').html() + '&chs=360x360&chld=L|0');
+					$('.qr-code').attr('src', 'https://chart.googleapis.com/chart?cht=qr&chl=MATMSG:TO:' + $('<div/>').text($('#emailid').val() + ';SUB:' + $('#emailsubject').val() + ';BODY:' + $('#emailcontent').val() + ';;').html() + '&chs=547x547&chld=L|0');
 				} else if (type=="tweet") {
-					$('.qr-code').attr('src', 'https://chart.googleapis.com/chart?cht=qr&chl=https://twitter.com/intent/tweet?text=' + encodeURIComponent(encodeURIComponent(document.getElementById("tweet").value)) + '&chs=360x360&chld=L|0');
+					$('.qr-code').attr('src', 'https://chart.googleapis.com/chart?cht=qr&chl=https://twitter.com/intent/tweet?text=' + encodeURIComponent(encodeURIComponent(document.getElementById("tweet").value)) + '&chs=547x547&chld=L|0');
 				}
 				event.preventDefault();
 				document.querySelector('#QRImage').addEventListener('load', function (event) {
