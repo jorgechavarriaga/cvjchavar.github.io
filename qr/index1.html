@@ -1,266 +1,404 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
 
-		<!-- Favicon -->
-		<link rel="icon" type="image/png" href="favicon.png">
-
-		<title>QR Generator</title>
-
-		<!-- Stylesheets -->
+<head>
+    <title>Jorge Chavarriaga - CV</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jorge Chavarriaga - CV">
+    <meta name="author" content="Jorge Chavarriaga">
+    <link rel="shortcut icon" href="favicon.ico">
+    <!-- Google Font -->
+    <link
+        href='https://fonts.googleapis.com/css?family=Roboto:400,500,400italic,300italic,300,500italic,700,700italic,900,900italic'
+        rel='stylesheet' type='text/css'>
+    <!-- FontAwesome JS-->
+    <script src="https://kit.fontawesome.com/ff32f15468.js" crossorigin="anonymous"></script>
+    <!-- <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/js/all.min.js"></script> -->
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="../assets/css/cv.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css"
+        integrity="sha512-Cv93isQdFwaKBV+Z4X8kaVBYWHST58Xb/jVOcV9aRsGSArZsgAnFIhMpDoMDcFNoUtday1hdjn0nGp3+KZyyFw=="
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    		<!-- Stylesheets -->
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet">
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<link href="css/now-ui-kit.min.css" rel="stylesheet">
-	</head>
-	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-9S0DZFRWVL"></script>
-	<script>
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
+</head>
+<script>
+    $(document).ready(function () {
+        $('[data-toggle="popover"]').popover({
+            placement: 'top',
+            trigger: 'hover',
+            template: '<div class="popover"><div class="arrow"></div><h3 class="popover-header"></h3><div class="popover-body"></div><div class="popover-footer"></a></div></div>'
 
-	gtag('config', 'G-9S0DZFRWVL');
-	</script>
-	<!-- Main Body -->
-	<body style="background-image:url('bg.jpg');">
-		<div class="section section-tabs">
-			<div class="container">
-				<h2 class="text-center text-white font-weight-bold">QR Generator Online</h2>
-				<div class="row">
+        });
+    });
+</script>
 
-					<!-- Output Card -->
-					<div class="col-3">
-						<div class="card h-100">
-							<div class="card-body">
-								<div class="text-center">
-									<h3>QR Code</h3>
+<body>
+    <!--Start dropdown language -->
+    <div class="dropdown">
+        <button class="btn dropdown-toggle " type="button" id="dropdownMenuButton" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Language
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <!-- <a class="dropdown-item" href="indexfr.html"><span class="flag-icon flag-icon-fr"></span> Français</a> -->
+            <a class="dropdown-item" href="indexsp.html"><span class="flag-icon flag-icon-es"></span> Spanish</a>
+        </div>
+    </div>
+    <!-- End dropdown language -->
 
-									<!-- QR Code Image -->
-									<img id="QRImage" crossorigin="anonymous" src="https://chart.googleapis.com/chart?cht=qr&chl=&chs=360x360&chld=L|0" class="qr-code img-thumbnail img-responsive" alt="QR Code">
+    <div class="wrapper">
+        <!--Start sidebar-wrapper-->
+        <div class="sidebar-wrapper">
+            <!--Start profile-container-->
+            <div class="profile-container">
+                <img class="avatar" src="../assets/images/jorgechavarriaga.jpg" alt="Jorge Chavarriaga" />
+                <h1 class="name">Jorge Chavarriaga</h1>
+                <h3 class="tagline">Logistic Manager</h3>
+                <h3 class="tagline">Security Engineer </h3>
+                <h3 class="tagline">Full Stack Developer</h3>
+                <h3 class="tagline">Mechanical Engineer</h3>
+            </div>
+            <!--End profile-container-->
 
-									<!-- Download Button -->
-									<a target="_blank" href="" download="QR Code.jpg" class="downloadQR">
-										<button class="btn btn-primary">Download QR</button>
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
+            <!--Start contact-container-->
+            <div class="contact-container container-block">
+                <h2 class="container-block-title"><i class="fas fa-user" aria-hidden="true"></i> Contact</h2>
+                <ul class="list-unstyled contact-list">
+                    <li class="email"><i class="fas fa-envelope" aria-hidden="true"></i><a
+                            href="mailto: jorge.chavarriaga@gmail.com" class="allsides"> jorge.chavarriaga@gmail.com</a>
+                    </li>
+                    <li class="phone"><i class="fas fa-phone" aria-hidden="true"></i><a href="tel:+14183211335"
+                            class="allsides"> +1 418 321 1335</a></li>
+                    <li class="website"><i class="fas fa-globe" aria-hidden="true"></i><a
+                            href="https://www.chavazystem.tech/" target="_blank" class="allsides"></a>
+                        https://www.chavazystem.tech</a></li>
+                    <li class="linkedin"><i class="fab fa-linkedin-in" aria-hidden="true"></i><a
+                            href="https://www.linkedin.com/in/jorge-chava/?locale=en_US" target="_blank"
+                            class="allsides"> linkedin.com/in/jorge-chava</a></li>
+                    <li class="github"><i class="fab fa-github" aria-hidden="true"></i><a
+                            href="https://github.com/jorgechavarriaga/" target="_blank" class="allsides">
+                            github.com/jorgechavarriaga</a></li>
+                    <li class="whatsapp"><i class="fab fa-whatsapp" aria-hidden="true"></i><a
+                            href="http://wa.me/+14183211335" target="_blank" class="allsides"> Whatsapp</a></li>
+                </ul>
+            </div>
+            <!--End contact-container-->
+        </div>
+        <!--End sidebar-wrapper-->
+        <!-- Start main-wrapper-->
+        <div class="main-wrapper">
+            
+            <!--Start section-->
+            <section style="padding: 10px;" class="section summary-section">
+                <h2 class="section-title"><span class="icon-holder"><i class="material-icons">qr_code</i></span>QR Code Generator Online</h2>
+                <!--Start summary-->
+                <div class="summary details">
+                    <div class="section section-tabs" style="padding: 0px; bottom: 10px;">
+                        <div class="container">
+                            <h2 class="text-center text-white font-weight-bold">QR Generator Online</h2>
+                            <div class="row">
+            
+                                <!-- Output Card -->
+                                <div class="col-3">
+                                    <div class="card h-100">
+                                        <div class="card-body">
+                                            <div class="text-center">
+                                                <h3>QR Code</h3>
+            
+                                                <!-- QR Code Image -->
+                                                <!-- <img id="QRImage" crossorigin="anonymous" src="https://chart.googleapis.com/chart?cht=qr&chl=&chs=547x547&chld=L|0" class="qr-code img-thumbnail img-responsive" alt="QR Code"> -->
+                                                <img id="QRImage" crossorigin="anonymous" src="QRCode.jpg" class="qr-code img-thumbnail img-responsive" alt="QR Code">
+            
+                                                <!-- Download Button -->
+                                                <a target="_blank" href="" download="QR Code.jpg" class="downloadQR">
+                                                    <button style="background-color: #4B6A78; padding: 10px;" class="btn btn-primary">Download QR</button>
+                                                </a>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+            
+                                <!-- Input Card -->
+                                <div class="col-9">
+                                    <div class="card h-100">
+                                        <div class="card-header">
+            
+                                            <!-- QR Code types -->
+                                            <ul class="nav nav-tabs nav-tabs-neutral justify-content-center" role="tablist" style="background-color: #4B6A78;" >
+                                                <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#url" role="tab">URL</a></li>
+                                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#text" role="tab">Text</a></li>
+                                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#wifiqr" role="tab">WiFi</a></li>
+                                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#vcardqr" role="tab">vCard</a></li>
+                                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#mailqr" role="tab">Email</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="tab-content text-center">
+            
+                                                <!-- URL Section -->
+                                                <div class="tab-pane active" id="url" role="tabpanel">
+                                                    <form onsubmit="genqr('url')">
+                                                        <div class="input-group no-border input-lg">
+                                                            <div class="input-group-prepend">
+                                                                <span class="input-group-text">
+                                                                <i class="now-ui-icons location_world"></i>
+                                                                </span>
+                                                            </div>
+                                                            <input type="url" id="urlcontent" placeholder="URL" class="form-control" required>
+                                                        </div>
+                                                        <button style="background-color: #4B6A78;" class="text-center btn btn-primary">Generate</button>
+                                                    </form>
+                                                </div>
+            
+                                                <!-- Text Section -->
+                                                <div class="tab-pane" id="text" role="tabpanel">
+                                                    <form onsubmit="genqr('text')">
+                                                        <textarea id="textcontent" placeholder="Enter Your Text Here" class="form-control" required></textarea>
+                                                        <button style="background-color: #4B6A78;" class="text-center btn btn-primary">Generate</button>
+                                                    </form>
+                                                </div>
+            
+                                                <!-- WiFi Section -->
+                                                <div class="tab-pane" id="wifiqr" role="tabpanel">
+                                                    <form onsubmit="genqr('wifi')">
+                                                        <div class="form-row">
+                                                            <div class="form-group col-md-6">
+                                                                <label>SSID</label>
+                                                                <input type="text" class="form-control" id="ssid" placeholder="SSID" required>
+                                                            </div>
+                                                            <div class="form-group col-md-6">
+                                                                <label>Password</label>
+                                                                <input type="text" class="form-control" id="pswd" placeholder="Password">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-row">
+                                                            <div class="form-group col-md-6">
+                                                                <label>Security</label>
+                                                                <select id="crpt" class="form-control">
+                                                                    <option value="nopass">None</option>
+                                                                    <option value="WPA" selected>WPA/WPA2</option>
+                                                                    <option value="WEP">WEP</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="form-group col-md-6">
+                                                                <label>Type</label>
+                                                                <select id="hddn" class="form-control">
+                                                                    <option value="false" selected>Visible</option>
+                                                                    <option value="true">Hidden</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <button style="background-color: #4B6A78;" class="text-center btn btn-primary">Generate</button>
+                                                    </form>
+                                                </div>
+            
+                                                <!-- vCard Section -->
+                                                <div class="tab-pane" id="vcardqr" role="tabpanel">
+                                                    <form onsubmit="genqr('vcard')">
+                                                        <label>Name</label>
+                                                        <div class="form-row">
+                                                            <div class="form-group col-md-6">
+                                                                <input type="text" class="form-control" id="fname" placeholder="First Name">
+                                                            </div>
+                                                            <div class="form-group col-md-6">
+                                                                <input type="text" class="form-control" id="lname" placeholder="Last Name">
+                                                            </div>
+                                                        </div>
+                                                        <label>Contact</label>
+                                                        <div class="form-row">
+                                                            <div class="form-group col-md-6">
+                                                                <input type="text" class="form-control" id="phone" placeholder="Phone">
+                                                            </div>
+                                                            <div class="form-group col-md-6">
+                                                                <input type="text" class="form-control" id="fax" placeholder="Fax">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-row">
+                                                            <div class="form-group col-md-6">
+                                                                <input type="text" class="form-control" id="mobile" placeholder="Mobile">
+                                                            </div>
+                                                            <div class="form-group col-md-6">
+                                                                <input type="email" class="form-control" id="email" placeholder="Email">
+                                                            </div>
+                                                        </div>
+                                                        <label>Address</label>
+                                                        <div class="form-row">
+                                                            <div class="form-group col-md-12">
+                                                                <input type="text" class="form-control" id="street" placeholder="Street">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-row">
+                                                            <div class="form-group col-md-6">
+                                                                <input type="text" class="form-control" id="city" placeholder="City">
+                                                            </div>
+                                                            <div class="form-group col-md-6">
+                                                                <input type="text" class="form-control" id="state" placeholder="State">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-row">
+                                                            <div class="form-group col-md-6">
+                                                                <input type="text" class="form-control" id="country" placeholder="Country">
+                                                            </div>
+                                                            <div class="form-group col-md-6">
+                                                                <input type="text" class="form-control" id="zip" placeholder="Zip Code">
+                                                            </div>
+                                                        </div>
+                                                        <label>Company</label>
+                                                        <div class="form-row">
+                                                            <div class="form-group col-md-6">
+                                                                <input type="text" class="form-control" id="company" placeholder="Company Name">
+                                                            </div>
+                                                            <div class="form-group col-md-6">
+                                                                <input type="text" class="form-control" id="job" placeholder="Job Title">
+                                                            </div>
+                                                        </div>
+                                                        <label>Others</label>
+                                                        <div class="form-row">
+                                                            <div class="form-group col-md-6">
+                                                                <input type="text" class="form-control" id="website" placeholder="Website">
+                                                            </div>
+                                                            <div class="form-group col-md-6">
+                                                                <input type="text" class="form-control" id="birthday" placeholder="Birthday (YYYY-MM-DD)">
+                                                            </div>
+                                                        </div>
+                                                        <button style="background-color: #4B6A78;" class="text-center btn btn-primary">Generate</button>
+                                                    </form>
+                                                </div>
+            
 
-					<!-- Input Card -->
-					<div class="col-9">
-						<div class="card h-100">
-							<div class="card-header">
+            
+                                                <!-- Email Section -->
+                                                <div class="tab-pane" id="mailqr" role="tabpanel">
+                                                    <form onsubmit="genqr('email')">
+                                                        <div class="form-row">
+                                                            <div class="form-group col-12">
+                                                                <input type="text" class="form-control" id="emailid" placeholder="Your Email">
+                                                            </div>
+                                                            <div class="form-group col-12">
+                                                                <input type="text" class="form-control" id="emailsubject" placeholder="Subject">
+                                                            </div>
+                                                            <div class="form-group col-12">
+                                                                <label>Email Content</label>
+                                                                <textarea class="form-control" id="emailcontent" placeholder="Email Content"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <button style="background-color: #4B6A78;" class="text-center btn btn-primary">Generate</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <!--End summary-->
+            </section>
+            <!--End section-->
 
-								<!-- QR Code types -->
-								<ul class="nav nav-tabs nav-tabs-neutral justify-content-center" role="tablist" data-background-color="orange">
-									<li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#url" role="tab">URL</a></li>
-									<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#text" role="tab">Text</a></li>
-									<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#wifiqr" role="tab">WiFi</a></li>
-									<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#vcardqr" role="tab">vCard</a></li>
-									<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#smsqr" role="tab">SMS</a></li>
-									<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#mailqr" role="tab">Email</a></li>
-									<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#twitter" role="tab">Twitter</a></li>
-								</ul>
+            <!--Start section-->
+            <section class="section summary-section">
+                <h2 class="section-title"><span class="icon-holder"><i class="material-icons">security</i></span>SECURITY</h2>
+                <!--Start summary-->
+                <div class="summary details">
+                    <ul>
+                        <li>CRACK WIFI PASSWORD</li>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/Q7AsCpNARDE"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                        <li>CRACK PASSWORD PROTECED FILES</li>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/M7QNJuEoEys"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                    </ul>
+                </div>
+                <!--End summary-->
+            </section>
+            <!--End section-->
+            <section class="section experiences-section">
+                <h2 class="section-title"><span class="icon-holder"><i class="material-icons">perm_data_setting</i></span>DATA ANALYSIS
+                </h2>
+                <!-- Start item - Codeboxx -->
+                <div class="item">
+                    <div class="meta">
+                        <div class="upper-row">
+                            <h3 class="job-title"></h3>
+                            <div class="time"></div>
+                        </div><!--//upper-row-->
+                        <div class="company"><a href="https://codeboxx.dev/" target="_blank" class="allsides"></a></div>
+                    </div><!--//meta-->
+                    <div class="details">
+                        <ul>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                    <!--//details-->
+                </div>
+                <!--End item-->
+            </section><!--//section-->
 
-							</div>
-							<div class="card-body">
-								<div class="tab-content text-center">
+            <section class="section experiences-section">
+                <h2 class="section-title"><span class="icon-holder"><i class="fas fa-lock"></i></span>IoT
+                </h2>
+                <!-- Start item - Codeboxx -->
+                <div class="item">
+                    <div class="meta">
+                        <div class="upper-row">
+                            <h3 class="job-title"></h3>
+                            <div class="time"></div>
+                        </div><!--//upper-row-->
+                        <div class="company"><a href="https://codeboxx.dev/" target="_blank" class="allsides"></a></div>
+                    </div><!--//meta-->
+                    <div class="details">
+                        <ul>
+                            <li></li>
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/6knQBuB4D3U"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen></iframe>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                    <!--//details-->
+                </div>
+                <!--End item-->
+            </section><!--//section-->
 
-									<!-- URL Section -->
-									<div class="tab-pane active" id="url" role="tabpanel">
-										<form onsubmit="genqr('url')">
-											<div class="input-group no-border input-lg">
-												<div class="input-group-prepend">
-													<span class="input-group-text">
-													<i class="now-ui-icons location_world"></i>
-													</span>
-												</div>
-												<input type="url" id="urlcontent" placeholder="URL" class="form-control" required>
-											</div>
-											<button class="text-center btn btn-primary">Generate</button>
-										</form>
-									</div>
-
-									<!-- Text Section -->
-									<div class="tab-pane" id="text" role="tabpanel">
-										<form onsubmit="genqr('text')">
-											<textarea id="textcontent" placeholder="Enter Your Text Here" class="form-control" required></textarea>
-											<button class="text-center btn btn-primary">Generate</button>
-										</form>
-									</div>
-
-									<!-- WiFi Section -->
-									<div class="tab-pane" id="wifiqr" role="tabpanel">
-										<form onsubmit="genqr('wifi')">
-											<div class="form-row">
-												<div class="form-group col-md-6">
-													<label>SSID</label>
-													<input type="text" class="form-control" id="ssid" placeholder="SSID" required>
-												</div>
-												<div class="form-group col-md-6">
-													<label>Password</label>
-													<input type="text" class="form-control" id="pswd" placeholder="Password">
-												</div>
-											</div>
-											<div class="form-row">
-												<div class="form-group col-md-6">
-													<label>Security</label>
-													<select id="crpt" class="form-control">
-														<option value="nopass">None</option>
-														<option value="WPA" selected>WPA/WPA2</option>
-														<option value="WEP">WEP</option>
-													</select>
-												</div>
-												<div class="form-group col-md-6">
-													<label>Type</label>
-													<select id="hddn" class="form-control">
-														<option value="false" selected>Visible</option>
-														<option value="true">Hidden</option>
-													</select>
-												</div>
-											</div>
-											<button class="text-center btn btn-primary">Generate</button>
-										</form>
-									</div>
-
-									<!-- vCard Section -->
-									<div class="tab-pane" id="vcardqr" role="tabpanel">
-										<form onsubmit="genqr('vcard')">
-											<label>Name</label>
-											<div class="form-row">
-												<div class="form-group col-md-6">
-													<input type="text" class="form-control" id="fname" placeholder="First Name">
-												</div>
-												<div class="form-group col-md-6">
-													<input type="text" class="form-control" id="lname" placeholder="Last Name">
-												</div>
-											</div>
-											<label>Contact</label>
-											<div class="form-row">
-												<div class="form-group col-md-6">
-													<input type="text" class="form-control" id="phone" placeholder="Phone">
-												</div>
-												<div class="form-group col-md-6">
-													<input type="text" class="form-control" id="fax" placeholder="Fax">
-												</div>
-											</div>
-											<div class="form-row">
-												<div class="form-group col-md-6">
-													<input type="text" class="form-control" id="mobile" placeholder="Mobile">
-												</div>
-												<div class="form-group col-md-6">
-													<input type="email" class="form-control" id="email" placeholder="Email">
-												</div>
-											</div>
-											<label>Address</label>
-											<div class="form-row">
-												<div class="form-group col-md-12">
-													<input type="text" class="form-control" id="street" placeholder="Street">
-												</div>
-											</div>
-											<div class="form-row">
-												<div class="form-group col-md-6">
-													<input type="text" class="form-control" id="city" placeholder="City">
-												</div>
-												<div class="form-group col-md-6">
-													<input type="text" class="form-control" id="state" placeholder="State">
-												</div>
-											</div>
-											<div class="form-row">
-												<div class="form-group col-md-6">
-													<input type="text" class="form-control" id="country" placeholder="Country">
-												</div>
-												<div class="form-group col-md-6">
-													<input type="text" class="form-control" id="zip" placeholder="Zip Code">
-												</div>
-											</div>
-											<label>Company</label>
-											<div class="form-row">
-												<div class="form-group col-md-6">
-													<input type="text" class="form-control" id="company" placeholder="Company Name">
-												</div>
-												<div class="form-group col-md-6">
-													<input type="text" class="form-control" id="job" placeholder="Job Title">
-												</div>
-											</div>
-											<label>Others</label>
-											<div class="form-row">
-												<div class="form-group col-md-6">
-													<input type="text" class="form-control" id="website" placeholder="Website">
-												</div>
-												<div class="form-group col-md-6">
-													<input type="text" class="form-control" id="birthday" placeholder="Birthday (YYYY-MM-DD)">
-												</div>
-											</div>
-											<button class="text-center btn btn-primary">Generate</button>
-										</form>
-									</div>
-
-									<!-- SMS Section -->
-									<div class="tab-pane" id="smsqr" role="tabpanel">
-										<form onsubmit="genqr('sms')">
-											<div class="form-row">
-												<div class="form-group col-12">
-													<input type="text" class="form-control" id="smsnumber" placeholder="Your Number">
-												</div>
-												<div class="form-group col-12">
-													<label>SMS Content</label>
-													<textarea class="form-control" id="smscontent" placeholder="SMS Content"></textarea>
-												</div>
-											</div>
-											<button class="text-center btn btn-primary">Generate</button>
-										</form>
-									</div>
-
-									<!-- Email Section -->
-									<div class="tab-pane" id="mailqr" role="tabpanel">
-										<form onsubmit="genqr('email')">
-											<div class="form-row">
-												<div class="form-group col-12">
-													<input type="text" class="form-control" id="emailid" placeholder="Your Email">
-												</div>
-												<div class="form-group col-12">
-													<input type="text" class="form-control" id="emailsubject" placeholder="Subject">
-												</div>
-												<div class="form-group col-12">
-													<label>Email Content</label>
-													<textarea class="form-control" id="emailcontent" placeholder="Email Content"></textarea>
-												</div>
-											</div>
-											<button class="text-center btn btn-primary">Generate</button>
-										</form>
-									</div>
-
-									<!-- Twitter Section -->
-									<div class="tab-pane" id="twitter" role="tabpanel">
-										<form onsubmit="genqr('tweet')">
-											<div class="form-row">
-												<div class="form-group col-12">
-													<label>Tweet Content</label>
-													<textarea class="form-control" id="tweet" placeholder="Tweet Content" maxlength="280" required></textarea>
-												</div>
-											</div>
-											<button class="text-center btn btn-primary">Generate</button>
-										</form>
-									</div>
-
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		
-		<!-- Footer -->
-		
-		<footer class="footer fixed-bottom" data-background-color="black">
-			<div class="container text-center">ChavaZystem Tech ®</div>
-		</footer>
-		
-		<!-- JavaScripts -->
+        </div><!--//main-body-->
+    </div>
+    <footer class="footer">
+        <div class="text-center">
+            <small class="copyright"></small>
+        </div><!--//container-->
+        <!-- <section>
+            <div class="text-center">
+                <a id="test" class="btn  btn-lg my_animated_button" style="color: #fff" href="https://www.chavazystem.tech/attacks.html">
+                    ... Some projects
+                </a>
+            </div>
+        </section> -->
+    </footer><!--//footer-->
+    <!-- JavaScripts -->
 		<script src="js/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 		<script src="js/now-ui-kit.min.js"></script>
@@ -271,8 +409,11 @@
 			function getDataUrl(img) {
 				const canvas = document.createElement('canvas');
 				const ctx = canvas.getContext('2d');
-				canvas.width = img.width;
-				canvas.height = img.height;
+				// canvas.width = img.width;
+				// canvas.height = img.height;
+				canvas.width = 547;
+				canvas.height = 547;
+                // console.log(canvas.width, canvas.height)
 				ctx.drawImage(img, 0, 0);
 				return canvas.toDataURL('image/jpeg');
 			}
@@ -281,19 +422,19 @@
 			// To generate QR code
 			function genqr(type) {
 				if (type=="url") {
-					$('.qr-code').attr('src', 'https://chart.googleapis.com/chart?cht=qr&chl=' + $('<div/>').text($('#urlcontent').val()).html() + '&chs=360x360&chld=L|0');
+					$('.qr-code').attr('src', 'https://chart.googleapis.com/chart?cht=qr&chl=' + $('<div/>').text($('#urlcontent').val()).html() + '&chs=547x547&chld=L|0');
 				} else if (type=="text") {
-					$('.qr-code').attr('src', 'https://chart.googleapis.com/chart?cht=qr&chl=' + $('<div/>').text($('#textcontent').val()).html() + '&chs=360x360&chld=L|0');
+					$('.qr-code').attr('src', 'https://chart.googleapis.com/chart?cht=qr&chl=' + $('<div/>').text($('#textcontent').val()).html() + '&chs=547x547&chld=L|0');
 				} else if (type=="wifi") {
-					$('.qr-code').attr('src', 'https://chart.googleapis.com/chart?cht=qr&chl=WIFI:T:' + $('<div/>').text($('#crpt').val() + ';S:' + $('#ssid').val() + ';P:' + $('#pswd').val() + ';H:' + $('#hddn').val()).html() + '&chs=360x360&chld=L|0');
+					$('.qr-code').attr('src', 'https://chart.googleapis.com/chart?cht=qr&chl=WIFI:T:' + $('<div/>').text($('#crpt').val() + ';S:' + $('#ssid').val() + ';P:' + $('#pswd').val() + ';H:' + $('#hddn').val()).html() + '&chs=547x547&chld=L|0');
 				} else if (type=="vcard") {
-					$('.qr-code').attr('src', 'https://chart.googleapis.com/chart?cht=qr&chl=BEGIN:VCARD%0AVERSION:3.0%0AN:' + $('<div/>').text($('#lname').val() + ';' + $('#fname').val() + '%0AFN:' + $('#fname').val() + ' ' + $('#lname').val() + '%0AORG:' + $('#company').val() + '%0ATITLE:' + $('#job').val() + '%0AADR:;;' + $('#street').val() + ';' + $('#city').val() + ';' + $('#state').val() + ';' + $('#zip').val() + ';' + $('#country').val() + '%0ATEL;CELL:' + $('#mobile').val() + '%0ATEL;WORK;VOICE:' + $('#phone').val() + '%0ATEL;FAX:' + $('#fax').val() + '%0AEMAIL;WORK;INTERNET:' + $('#email').val() + '%0AURL:' + $('#website').val() + '%0ABDAY:' + $('#birthday').val() + '%0AEND:VCARD').html() + '&chs=360x360&chld=L|0');
+					$('.qr-code').attr('src', 'https://chart.googleapis.com/chart?cht=qr&chl=BEGIN:VCARD%0AVERSION:3.0%0AN:' + $('<div/>').text($('#lname').val() + ';' + $('#fname').val() + '%0AFN:' + $('#fname').val() + ' ' + $('#lname').val() + '%0AORG:' + $('#company').val() + '%0ATITLE:' + $('#job').val() + '%0AADR:;;' + $('#street').val() + ';' + $('#city').val() + ';' + $('#state').val() + ';' + $('#zip').val() + ';' + $('#country').val() + '%0ATEL;CELL:' + $('#mobile').val() + '%0ATEL;WORK;VOICE:' + $('#phone').val() + '%0ATEL;FAX:' + $('#fax').val() + '%0AEMAIL;WORK;INTERNET:' + $('#email').val() + '%0AURL:' + $('#website').val() + '%0ABDAY:' + $('#birthday').val() + '%0AEND:VCARD').html() + '&chs=547x547&chld=L|0');
 				} else if (type=="sms") {
-					$('.qr-code').attr('src', 'https://chart.googleapis.com/chart?cht=qr&chl=SMSTO:' + $('<div/>').text($('#smsnumber').val() + ':' + $('#smscontent').val()).html() + '&chs=360x360&chld=L|0');
+					$('.qr-code').attr('src', 'https://chart.googleapis.com/chart?cht=qr&chl=SMSTO:' + $('<div/>').text($('#smsnumber').val() + ':' + $('#smscontent').val()).html() + '&chs=547x547&chld=L|0');
 				} else if (type=="email") {
-					$('.qr-code').attr('src', 'https://chart.googleapis.com/chart?cht=qr&chl=MATMSG:TO:' + $('<div/>').text($('#emailid').val() + ';SUB:' + $('#emailsubject').val() + ';BODY:' + $('#emailcontent').val() + ';;').html() + '&chs=360x360&chld=L|0');
+					$('.qr-code').attr('src', 'https://chart.googleapis.com/chart?cht=qr&chl=MATMSG:TO:' + $('<div/>').text($('#emailid').val() + ';SUB:' + $('#emailsubject').val() + ';BODY:' + $('#emailcontent').val() + ';;').html() + '&chs=547x547&chld=L|0');
 				} else if (type=="tweet") {
-					$('.qr-code').attr('src', 'https://chart.googleapis.com/chart?cht=qr&chl=https://twitter.com/intent/tweet?text=' + encodeURIComponent(encodeURIComponent(document.getElementById("tweet").value)) + '&chs=360x360&chld=L|0');
+					$('.qr-code').attr('src', 'https://chart.googleapis.com/chart?cht=qr&chl=https://twitter.com/intent/tweet?text=' + encodeURIComponent(encodeURIComponent(document.getElementById("tweet").value)) + '&chs=547x547&chld=L|0');
 				}
 				event.preventDefault();
 				document.querySelector('#QRImage').addEventListener('load', function (event) {
@@ -301,6 +442,7 @@
 				});
 			}
 		</script>
-		
-	</body>
+
+</body>
+
 </html>
