@@ -116,6 +116,29 @@ a.my_animated_button::before{
   color: #97AAC3
 }
 
+.list-assurance {
+  font-size: 16px;
+  list-style: none;
+  padding-left: 0; /* Elimina el relleno izquierdo para que el texto esté alineado */
+}
+
+.list-assurance li {
+  padding-left: 20px; /* Agrega un relleno izquierdo para crear una indentación */
+  position: relative; /* Establece la posición relativa para poder agregar el icono */
+  margin-bottom: 10px; /* Espaciado entre los elementos de la lista */
+}
+
+.list-assurance li::before {
+  content: "\f00c"; /* Código del icono de pesos (Font Awesome) */
+  font-family: "Font Awesome 5 Free"; /* Establece la fuente del icono */
+  font-weight: 900; /* Establece el grosor del icono */
+  position: absolute; /* Establece la posición absoluta del icono */
+  left: 0; /* Posición izquierda del icono con respecto al elemento li */
+  top: 0; /* Posición superior del icono con respecto al elemento li */
+}
+
+
+
 .progress{
   height: 15px;
   background: #eee;
@@ -162,7 +185,7 @@ a.my_animated_button::before{
   right: 0;
   width: 280px;
   height: 100%;
-  min-height: 540px;
+  min-height: 400px;
   color: #fff;
 }
 
@@ -180,7 +203,7 @@ a.my_animated_button::before{
 .sidebar-wrapper .name {
   font-size: 32px;
   font-weight: 900;
-  margin-top: 0;
+  margin-top: 10px;
   margin-bottom: 10px;
 }
 
@@ -313,11 +336,12 @@ a.my_animated_button::before{
   padding: 60px;
   padding-right: 300px;
   padding-bottom: 5px;
+  
 }
 
 .main-wrapper .section-title {
   text-transform: uppercase;
-  font-size: 20px;
+  font-size: 1.3em;
   font-weight: 500;
   color: #2e4049;
   position: relative;
@@ -325,10 +349,45 @@ a.my_animated_button::before{
   margin-bottom: 20px;
 }
 
+.lang-container {
+  padding: 5px;
+  float: right;
+  position: relative;
+  margin-top: -1.5rem;
+  margin-right: -1.75rem;
+}
+
+.select_leng {
+  background-color: #003da5;
+  color: white
+}
+
+.icon_txt{
+  padding-left: .75em;
+}
+
+.icon_txt1{
+  padding-left: .75em;
+}
+
+.list-unstyled {
+  padding-left: .75em;
+}
+
+.list_assurance{
+  padding-left: 1rem;
+}
+
+.whastapp_green{
+  color:#4aba77
+}
+
+
 .main-wrapper .section-title .icon-holder {
   width: 30px;
   height: 30px;
   margin-right: 8px;
+  padding-top: 3px;
   display: inline-block;
   color: #fff;
   -webkit-border-radius: 50%;
@@ -343,7 +402,7 @@ a.my_animated_button::before{
   text-align: center;
   font-size: 22px;
   position: relative;
-  top: -8px;
+  
 }
 
 .main-wrapper .section-title .icon-holder .svg-inline--fa {
@@ -478,6 +537,13 @@ transition:0.5s;
   }
   .main-wrapper .upper-row {
     margin-bottom: 0;
+  }
+
+  .lang-container {
+    padding: 5px;
+    float: right;
+    position: relative;
+    margin-top: -1.5rem;
   }
 }
 
