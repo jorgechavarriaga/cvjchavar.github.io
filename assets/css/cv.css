@@ -576,6 +576,10 @@ transition:0.5s;
 
 
 @media (max-width: 767.98px) {
+  .modal-content {
+    color: black; /* Cambia el color de la fuente a negro para dispositivos móviles */
+  }
+  
   .sidebar-wrapper {
     position: static;
     width: inherit;
