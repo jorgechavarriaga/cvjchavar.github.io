@@ -1,4 +1,46 @@
 {
     "title": "Paula Álvarez - Aprendiz de seguros personales",
-    "contacto": "Contacto"
+    "contacto": "Contacto",
+    "tagline": "Aprendiz de seguros personales",
+    "seguro_personas": "SEGUROS PERSONALES",
+    "auto_txt":" Automóvil",
+    "auto_li1":"Asistencia 24/7 en caso de siniestro.",
+    "auto_li2":"Entre los tiempos de pago de reclamaciones más rápidos del mercado.",
+    "auto_li3":"Asistencia rápida, sencilla y eficaz en caso de reclamación.",
+    "auto_li4":"Coberturas a la medida de tus necesidades.",
+    "btnSoumissionOne":"Obtener mi cotización",
+    "btnWhatsappOne":"Whatsapp",
+    "btnSoumissionOne_inquilinos":"Obtener mi cotización",
+    "btnWhatsappOne_inquilinos":"Whatsapp",
+    "propietarios_hogar_l1":"Seguro de hogar para propietarios de casas.",
+    "btnSoumissionOne_propietarios_hogar":"Obtener mi cotización",
+    "btnWhatsappOne_propietarios_hogar":"Whatsapp",
+    "btnSoumissionOne_propietarios_condo":"Obtener mi cotización",
+    "btnWhatsappOne_propietarios_condo":"Whatsapp",
+    "propietarios_hogar_txt":"Propietarios Casa",
+    "inquilinos_txt":" Seguro inquilinos",
+    "inquilinos_l1":"Seguro de hogar para inquilinos.", 
+    "propietarios_condo_txt":"Propietarios Condo",
+    "propietarios_condo_l1":"Seguro de hogar para propietarios de Condos.",
+    "auto_recreativo_txt":"Casa rodante",
+    "auto_recreativo_l1":"Seguro para vehiculos recreativos (Casa rodante, moto, moto nieve, etc.)",
+    "btnSoumissionOne_auto_recreativo":"Obtener mi cotización",
+    "btnWhatsappOne_auto_recreativo":"Whatsapp",
+    "mas_ahorro_txt":"Aún más ahorros*",
+    "mas_ahorro_l1":"Hasta un 15% de descuento si aseguras más de un vehículo.",
+    "mas_ahorro_l2":"Hasta un 10% de descuento si tienes otro producto de iA Financial Group.",
+    "mas_ahorro_l3":"Descuentos si combinas tu seguro de auto y hogar.",
+    "mas_ahorro_l4":"Descuento por buen historial de manejo o si no tiene quejas.",
+    "condiciones_txt":"* Ciertas condiciones aplican.",
+    "modal_p1":"Durante casi dos décadas, trabajé alineando los objetivos de las compañías con las necesidades de las personas y sus familias.",
+    "modal_p2":"Creo firmemente en que escuchar a los demás, me permite comprender sus necesidades particulares y ofrecer soluciones integrales que perduran en el tiempo.",
+    "modal_p3":"Soy ingeniera, especialista en Mercadeo internacional, lo que, sumado a mi experiencia profesional, me ha permitido desarrollar un amplio pensamiento analítico, así como comprender diferentes herramientas administrativas y financieras orientadas a planear el futuro de manera dinámica y efectiva.",
+    "modal_p4":"Los últimos 7 años me he dedicado a invertir en la bolsa, y gerenciar mi propia empresa, además, de superar los obstáculos y retos que ha traído para mí y mi familia, ser inmigrantes, adaptarnos a un nuevo país y a un sistema totalmente diferente.",
+    "modal_p5":"Recomenzar la vida desde cero es todo un desafío, encontrar retos en situaciones tan sencillas como tomar un seguro de auto o en otras tan significativas como comprar mi propia casa, o planear mi ahorro para el retiro, me ha motivado a aplicar mi experiencia y conocimientos en apoyar a personas y familias en la construcción de un plan y la toma de decisiones acertadas para su presente y su futuro.",
+    "modal_p6": "Soy <strong><i>Paula Álvarez</i></strong> y los invito a seguirme y escucharme.",
+    "modal_p7":"¡Por eso hoy estoy aquí!"
 }
+
+
+
+
