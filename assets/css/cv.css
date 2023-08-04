@@ -244,7 +244,7 @@ a.my_animated_button::before{
   padding: 20px;
   border: 1px solid #888;
   width: 80%;
-  color: red; 
+  color: black; 
   text-align: justify; }
 
 .close {
@@ -579,7 +579,7 @@ transition:0.5s;
   .modal-content {
     color: black; /* Cambia el color de la fuente a negro para dispositivos móviles */
   }
-  
+
   .sidebar-wrapper {
     position: static;
     width: inherit;
