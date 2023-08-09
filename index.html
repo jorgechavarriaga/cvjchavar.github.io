@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Jorge Chavarriaga - CV</title>
+    <title id="title">Jorge Chavarriaga - CV</title>
     <!-- Meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,13 +27,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css"
         integrity="sha512-Cv93isQdFwaKBV+Z4X8kaVBYWHST58Xb/jVOcV9aRsGSArZsgAnFIhMpDoMDcFNoUtday1hdjn0nGp3+KZyyFw=="
         crossorigin="anonymous" />
+    <script src="/assets/js/changeLanguage.js"></script>
 </head>
-<!-- Google tag (gtag.js) --> 
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-HSGW69E28V"></script>
-<script>   
+<script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());   
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
     gtag('config', 'G-HSGW69E28V'); 
 </script>
 <script>
@@ -42,25 +43,13 @@
             placement: 'top',
             trigger: 'hover',
             template: '<div class="popover"><div class="arrow"></div><h3 class="popover-header"></h3><div class="popover-body"></div><div class="popover-footer"></a></div></div>'
-
         });
     });
 </script>
 
 <body>
     <!--Start dropdown language -->
-    <div class="dropdown">
-        <button class="btn dropdown-toggle " type="button" id="dropdownMenuButton" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            Language
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <!-- <a class="dropdown-item" href="indexfr.html"><span class="flag-icon flag-icon-fr"></span> Français</a> -->
-            <a class="dropdown-item" href="indexsp.html"><span class="flag-icon flag-icon-es"></span> Spanish</a>
-        </div>
-    </div>
     <!-- End dropdown language -->
-
     <div class="wrapper">
         <!--Start sidebar-wrapper-->
         <div class="sidebar-wrapper">
@@ -68,382 +57,292 @@
             <div class="profile-container">
                 <img class="avatar" src="assets/images/jorgechavarriaga.jpg" alt="Jorge Chavarriaga" />
                 <h1 class="name">Jorge Chavarriaga</h1>
-                <h3 class="tagline">Logistic Manager</h3>
-                <h3 class="tagline">Security Engineer </h3>
-                <h3 class="tagline">Full Stack Developer</h3>
-                <h3 class="tagline">Mechanical Engineer</h3>
+                <h3 id="profile-container-3" class="tagline"></h3>
+                <h3 id="profile-container-2" class="tagline"></h3>
+                <h3 id="profile-container-1" class="tagline"></h3>
+                <h3 id="profile-container-4" class="tagline"></h3>
             </div>
             <!--End profile-container-->
-
             <!--Start contact-container-->
             <div class="contact-container container-block">
-                <h2 class="container-block-title"><i class="fas fa-user" aria-hidden="true"></i> Contact</h2>
+                <h2 id="contact" class="container-block-title"></h2>
                 <ul class="list-unstyled contact-list">
-                    <li class="email"><i class="fas fa-envelope" aria-hidden="true"></i><a
-                            href="mailto: jorge.chavarriaga@gmail.com" class="allsides"> jorge.chavarriaga@gmail.com</a>
+                    <li class="email"><i class="fas fa-envelope" aria-hidden="true"></i>
+                        <a href="mailto: jorge.chavarriaga@gmail.com" class="allsides"> jorge.chavarriaga@gmail.com</a>
                     </li>
-                    <li class="phone"><i class="fas fa-phone" aria-hidden="true"></i><a href="tel:+14183211335"
-                            class="allsides"> +1 418 321 1335</a></li>
-                    <li class="website"><i class="fas fa-globe" aria-hidden="true"></i><a
-                            href="https://www.chavazystem.tech/" target="_blank"
-                            class="allsides"> https://www.chavazystem.tech</a></li>
-                    <li class="linkedin"><i class="fab fa-linkedin-in" aria-hidden="true"></i><a
-                            href="https://www.linkedin.com/in/jorge-chava/?locale=en_US" target="_blank"
-                            class="allsides"> linkedin.com/in/jorge-chava</a></li>
-                    <li class="github"><i class="fab fa-github" aria-hidden="true"></i><a
-                            href="https://github.com/jorgechavarriaga/" target="_blank"
-                            class="allsides"> github.com/jorgechavarriaga</a></li>
-                    <li class="whatsapp"><i class="fab fa-whatsapp" aria-hidden="true"></i><a
-                            href="http://wa.me/+14183211335" target="_blank" class="allsides"> Whatsapp</a></li>
+                    <li class="phone"><i class="fas fa-phone" aria-hidden="true"></i>
+                        <a href="tel:+14183211335" class="allsides"> +1 418 321 1335</a>
+                    </li>
+                    <li class="website"><i class="fas fa-globe" aria-hidden="true"></i>
+                        <a href="https://www.chavazystem.tech/" target="_blank"
+                            class="allsides">https://www.chavazystem.tech</a>
+                    </li>
+                    <li class="linkedin"><i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                        <a href="https://www.linkedin.com/in/jorge-chava/?locale=en_US" target="_blank"
+                            class="allsides"> linkedin.com/in/jorge-chava</a>
+                    </li>
+                    <li class="github"><i class="fab fa-github" aria-hidden="true"></i>
+                        <a href="https://github.com/jorgechavarriaga/" target="_blank"
+                            class="allsides">github.com/jorgechavarriaga</a>
+                    </li>
+                    <li class="whatsapp"><i class="fab fa-whatsapp" aria-hidden="true"></i>
+                        <a href="http://wa.me/+14183211335" target="_blank" class="allsides"> Whatsapp</a>
+                    </li>
+                    <li class="whatsapp"><i class="fab fa-telegram-plane" aria-hidden="true"></i>
+                        <a href="https://t.me/+14183211335" target="_blank" class="allsides"> Telegram</a>
+                    </li>
                 </ul>
             </div>
             <!--End contact-container-->
-
             <!--Start education-container-->
             <div class="education-container container-block">
-                <h2 class="container-block-title"><i class="fas fa-graduation-cap" aria-hidden="true"></i> Education
-                </h2>
+                <h2 id="education_txt" class="container-block-title"></h2>
                 <div class="item">
-                    <h4 class="degree">Security Engineer Nanodegree</h4>
-                    <h5 class="meta"><a href="https://www.udacity.com/" target="_blank" class="allsides">Udacity</a>
-                    </h5>
-                    <div class="time">2021 - 2021</div>
-                    <div class="time">On Line</div>
+                    <h4 id="education_degree_title6" class="degree"></h4>
+                    <h5 class="meta"><a
+                            href="https://www.coursera.org/programs/rac-google-project-manager-program-tbrgt/professional-certificates/google-it-automation?collectionId=eYy6e"
+                            target="_blank" class="allsides" id="education_degree_univ6"></a></h5>
+                    <div id="education_degree_time6" class="time"></div>
+                    <div id="education_degree_place6" class="time"></div>
                 </div>
                 <div class="item">
-                    <h4 class="degree">Full Stack Developer</h4>
-                    <h5 class="meta"><a href="https://www.codeboxx.biz/" target="_blank" class="allsides">Codeboxx
-                            Technology School</a></h5>
-                    <div class="time">2020 - 2020</div>
-                    <div class="time">Canada</div>
+                    <h4 id="education_degree_title5" class="degree"></h4>
+                    <h5 class="meta"><a href="https://www.udacity.com/course/security-engineer-nanodegree--nd698"
+                            target="_blank" class="allsides" id="education_degree_univ5"></a></h5>
+                    <div id="education_degree_time5" class="time"></div>
+                    <div id="education_degree_place5" class="time"></div>
                 </div>
                 <div class="item">
-                    <h4 class="degree">Specialization in Manager Skills</h4>
-                    <h5 class="meta"><a href="https://business.gwu.edu/" target="_blank" class="allsides">The George
-                            Washington University <br>School of Business</a></h5>
-                    <div class="time">2017 - 2017</div>
-                    <div class="time">Colombia</div>
+                    <h4 id="education_degree_title4" class="degree"></h4>
+                    <h5 class="meta"><a href="https://www.codeboxx.biz/" target="_blank" class="allsides"
+                            id="education_degree_univ4"></a></h5>
+                    <div id="education_degree_time4" class="time"></div>
+                    <div id="education_degree_place4" class="time"></div>
                 </div>
                 <div class="item">
-                    <!-- <h4 class="degree">Diploma in Business Logistic</h4> -->
-                    <h4 class="degree">
-                        <a data-toggle="popover" data-html="true" class="allsides" title="<h5>Diploma in Business Logistic</h5><br><h6>Comparative Evaluation of Studies Completed Outside Quebec</h6>
-                            " data-content="
-                            <p>
-                                <strong>BENCHMARK:</strong>
-                                <a>Specialized Graduate Diploma</a>
-                            </p>
-                            <p>
-                                <strong>TITLE:</strong>
-                                <a>Business Management</a>
-                            </p>
-                            ">
-                            Diploma in Business Logistic <i class="fa-solid fa-circle-info"></i>
-                        </a>
-                    </h4>
-                    <h5 class="meta"><a href="https://udem.edu.co/index.php/en/" target="_blank"
-                            class="allsides">Medellin University</a></h5>
-                    <div class="time">2005 - 2006</div>
-                    <div class="time">Colombia</div>
+                    <h4 id="education_degree_title3" class="degree"></h4>
+                    <h5 class="meta"><a href="https://business.gwu.edu/" target="_blank" class="allsides"
+                            id="education_degree_univ3"></a></h5>
+                    <div id="education_degree_time3" class="time"></div>
+                    <div id="education_degree_place3" class="time"></div>
                 </div>
                 <div class="item">
                     <h4 class="degree">
-                        <a data-toggle="popover" data-html="true" class="allsides" title="<h5>Mechanical Engineering</h5><br><h6>Comparative Evaluation of Studies Completed Outside Quebec</h6>
-                            " data-content="
-                            <p>
-                                <strong>BENCHMARK:</strong>
-                                <a class='test'>Baccalaureate</a>
-                            </p>
-                            <p>
-                                <strong>TITLE:</strong>
-                                <a class='test'>MECHANICAL ENGINEERING</a>
-                            </p>
-                            ">
-                            Mechanical Engineering <i class="fa-solid fa-circle-info"></i>
-                        </a>
+                        <a data-toggle="popover" data-html="true" class="allsides" id="diploma-link2"
+                            data-original-title="" data-content=""></a>
                     </h4>
-                    <h5 class="meta"><a href="https://business.gwu.edu/" target="_blank" class="allsides">EAFIT
-                            University</a></h5>
-                    <div class="time">1992 - 1997</div>
-                    <div class="time">Colombia</div>
+                    <h5 class="meta"><a href="https://udem.edu.co/index.php/en/" target="_blank" class="allsides"
+                            id="education_degree_univ2"></a></h5>
+                    <div id="education_degree_time2" class="time"></div>
+                    <div id="education_degree_place2" class="time"></div>
+                </div>
+                <div class="item">
+                    <h4 class="degree">
+                        <a data-toggle="popover" data-html="true" class="allsides" id="diploma-link1"
+                            data-original-title="" data-content=""></a>
+                    </h4>
+                    <h5 class="meta"><a href="https://www.eafit.edu.co/international/eng/Paginas/eng.aspx"
+                            target="_blank" class="allsides" id="education_degree_univ1"></a></h5>
+                    <div id="education_degree_time1" class="time"></div>
+                    <div id="education_degree_place1" class="time"></div>
                 </div>
             </div>
             <!--End education-container-->
-
             <!-- Start languages container-->
             <div class="languages-container container-block">
                 <div class="skillset">
-                    <h2 class="container-block-title"><i class="fas fa-flag" aria-hidden="true"></i> Languages</h2>
+                    <h2 id="language_txt" class="container-block-title"></h2>
                     <ul class="list-unstyled interests-list">
-                        <li>Spanish
-                            <div class="progress level-bar-lan">
-                                <div class="progress-bar theme-progress-bar-lan" role="progressbar" style="width: 100%"
-                                    aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100 %</div>
+                        <li>
+                            <div class="language-entry">
+                                <span id="language_1"></span>
+                                <div class="progress level-bar-lan">
+                                    <div class="progress-bar theme-progress-bar-lan" role="progressbar"
+                                        style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                                        100 %</div>
+                                </div>
                             </div>
                         </li>
-                        <div class="text-right lang-desc">Native</div>
-                        <li>English
-                            <div class="progress level-bar-lan">
-                                <div class="progress-bar theme-progress-bar-lan" role="progressbar" style="width: 80%"
-                                    aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80 %</div>
+                        <div id="language_native" class="text-right lang-desc"></div>
+                        <li>
+                            <div class="language-entry">
+                                <span id="language_2"></span>
+                                <div class="progress level-bar-lan">
+                                    <div class="progress-bar theme-progress-bar-lan" role="progressbar"
+                                        style="width: 80%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">80
+                                        %</div>
+                                </div>
                             </div>
                         </li>
-                        <div class="text-right lang-desc">Fluent</div>
-                        <li>French
-                            <div class="progress level-bar-lan">
-                                <div class="progress-bar theme-progress-bar-lan" role="progressbar" style="width: 50%"
-                                    aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50 %</div>
+                        <div id="language_fluent" class="text-right lang-desc"></div>
+                        <li>
+                            <div class="language-entry">
+                                <span id="language_3"></span>
+                                <div class="progress level-bar-lan">
+                                    <div class="progress-bar theme-progress-bar-lan" role="progressbar"
+                                        style="width: 50%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">50
+                                        %</div>
+                                </div>
                             </div>
                         </li>
-                        <div class="text-right lang-desc">Intermediate</div>
+                        <div id="language_inter" class="text-right lang-desc"></div>
                     </ul>
                 </div>
             </div>
             <!-- End languages container-->
-
             <!-- Start Fair-->
             <div class="interests-container container-block">
-                <h2 class="container-block-title"><i class="fa fa-globe whitecolor" aria-hidden="true"></i> International Fairs
-                </h2>
+                <h2 id="inter_fair_txt" class="container-block-title"></h2>
                 <ul class="list-unstyled interests-list">
-                    <li><a data-toggle="popover" data-html="true" class="allsides"
-                            title="<h5>Warehouses Logistic Tour</h5>"
-                            data-content="<b>2014</b><br>• <b>England:</b> Sainsbury´s, John Lewis.<br>• <b>Spain:</b> ZARA, Desigual, Logisfashion.<br>• <b>France:</b> Celio.<br>• <b>Switzerland:</b> JCL Logistics, Migros.<br>• <b>Netherlands:</b> V&D.<br>• <b>Austria:</b> KNAPP AG Headquarters.<br>• <b>Germany:</b> SSI SCHAEFER, Witt.">Warehouses
-                            Logistic Tour</a></li>
-                    <li><a data-toggle="popover" data-html="true" class="allsides" title="<h5>Momentum Manhattan</h5>"
-                            data-content="<b>• 2017/2013</b><br>Las Vegas, NV.<br><b>• 2008/2006</b><br>Orlando, Fl.<br>"
-                            href="https://www.manh.com/events/momentum" target="_blank">Momentum Manhattan</a></li>
-                    <li><a data-toggle="popover" data-html="true" class="allsides" title="<h5>RFID Logistic Tour</h5>"
-                            data-content="<b>2012</b><br>• <b>USA:</b> Walmart, Macy's, Saks, University of Arkansas<br>">RFID
-                            Logistic Tour</a></li>
-                    <li><a data-toggle="popover" data-html="true" class="allsides" title="<h5>RFID Journal</h5>"
-                            data-content="<b> 2012/2009</b><br>• Orlando, Fl.<br>" href="https://www.rfidjournal.com/"
-                            target="_blank">RFID Journal</a></li>
-                    <li><a data-toggle="popover" data-html="true" class="allsides" title="<h5>Promat</h5>"
-                            data-content="<b> 2017/2015/2013/2009/2005</b><br><span>• Chicago, Il.</span>"
-                            href="https://www.promatshow.com/" target="_blank">Promat</a></li>
+                    <li><a data-toggle="popover" data-html="true" class="allsides" id="fair1" data-original-title=""
+                            data-content=""></a></li>
+                    <li><a data-toggle="popover" data-html="true" class="allsides" id="fair2" data-original-title=""
+                            data-content="" href="https://www.manh.com/events/momentum" target="_blank"></a></li>
+                    <li><a data-toggle="popover" data-html="true" class="allsides" id="fair3" data-original-title=""
+                            data-content=""></a></li>
+                    <li><a data-toggle="popover" data-html="true" class="allsides" id="fair4" data-original-title=""
+                            data-content="" href="https://www.rfidjournal.com/" target="_blank"></a></li>
+                    <li><a data-toggle="popover" data-html="true" class="allsides" id="fair5" data-original-title=""
+                            data-content="" href="https://www.promatshow.com/" target="_blank"></a></li>
                 </ul>
-
             </div>
             <!--End Fair-->
-
             <!-- Start interests-->
             <div class="interests-container container-block">
-                <h2 class="container-block-title"><i class="fa fa-list" aria-hidden="true"></i> Interests</h2>
+                <h2 id="interest_txt" class="container-block-title"></h2>
                 <ul class="list-unstyled interests-list">
-                    <li>Music</li>
-                    <li>Hiking</li>
-                    <li>Cooking</li>
-                    <li>Technology</li>
+                    <li id="interest1"></li>
+                    <li id="interest2"></li>
+                    <li id="interest3"></li>
+                    <li id="interest4"></li>
                 </ul>
-
             </div>
             <!--End interests-->
         </div>
         <!--End sidebar-wrapper-->
-
-
         <!-- Start main-wrapper-->
         <div class="main-wrapper">
-
-
-
             <!--Start section-->
             <section class="section summary-section">
-                <h2 class="section-title"><span class="icon-holder"><i class="fas fa-user" ></i></span>SUMMARY OF
-                    QUALIFICATIONS</h2>
+                <div class="len lang-container">
+                    <select id="language-select" onchange="changeLanguage(this.value)" class="select_lenguage">
+                        <option id="language-select-1" value="cv_en"> </option>
+                        <option id="language-select-2" value="cv_fr"> </option>
+                        <option id="language-select-3" value="cv_sp"> </option>
+                    </select>
+                </div>
+                <h2 id="summary_qualifications_txt" class="section-title"></h2>
                 <!--Start summary-->
                 <div class="summary details">
                     <ul>
-                        <li>Highly motivated, energetic and self-driven engineer with thorough understanding of business
-                            environment, cross-cultural management and business potential. </li>
-                        <li>Experienced professional with demonstrated skills in distribution, logistics, warehouse
-                            management, transportation and planning. </li>
-                        <li>Strategic, analytic, results oriented, responsible and efficient. Strong negotiation skills.
-                        </li>
-                        <li>Ability to successfully drive initiatives and lead initiatives within a cross functional
-                            teams. </li>
-                        <li>Effective supporting and contributing to the development of processes and systems to manage
-                            distribution transactions.</li>
-                        <li>Proficient identifying opportunities to lower costs and increase productivity. Able to set
-                            targets and budgets plans to achieve specific goals.</li>
+                        <li id="summary_q1"></li>
+                        <li id="summary_q2"></li>
+                        <li id="summary_q3"></li>
+                        <li id="summary_q4"></li>
+                        <li id="summary_q5"></li>
+                        <li id="summary_q6"></li>
                     </ul>
                 </div>
                 <!--End summary-->
             </section>
             <!--End section-->
-
             <section class="section experiences-section">
-                <h2 class="section-title"><span class="icon-holder"><i class="fas fa-briefcase"></i></span>Experiences
-                </h2>
-
+                <h2 id="experience_txt" class="section-title"></h2>
                 <!-- Start item - Codeboxx -->
                 <div class="item">
                     <div class="meta">
                         <div class="upper-row">
-                            <h3 class="job-title">Junior Developer</h3>
-                            <div class="time">2020-Jun • Present</div>
-                        </div><!--//upper-row-->
-                        <div class="company"><a href="https://codeboxx.dev/" target="_blank" class="allsides">CodeBoxx
-                                Digital Solutions • Canada</a></div>
-                    </div><!--//meta-->
+                            <h3 id="job_title4" class="job-title"></h3>
+                            <div id="job_time4" class="time"></div>
+                        </div>
+                        <div id="company4" class="allsides"></div>
+                    </div>
                     <div class="details">
                         <ul>
-                            <li>Responsible for the development in "Go" of a connector between a vendor and their
-                                suppliers. This connector was in charge of receiving the purchase orders from the seller
-                                and mapping them to the supplier's data structure.</li>
-                            <li>Responsible for the development in c # of the implementation of a financial report that
-                                was previously done in excel. Now in a dashboard on the web the report is executed that
-                                is in charge of crossing the existing information in the database (Snowflake) and
-                                generating the report. The report previously took between 4 to 6 hours of work, now in
-                                less than a minute you get the same report.</li>
-                            <li>In charge of documenting some critical processes and finding opportunities for
-                                improvement. Critical processes with repetitive failures were detected, which were
-                                corrected with a 95% decrease.</li>
+                            <li id="job4_li1"></li>
+                            <li id="job4_li2"></li>
+                            <li id="job4_li3"></li>
                         </ul>
                     </div>
-                    <!--//details-->
                 </div>
                 <!--End item-->
-
                 <!-- Start item - SSENSE -->
                 <div class="item">
                     <div class="meta">
                         <div class="upper-row">
-                            <h3 class="job-title">Warehouse Clerk</h3>
-                            <div class="time">2019-Oct • 2020-Jan</div>
-                        </div><!--//upper-row-->
-                        <div class="company"><a href="https://www.ssense.com/" target="_blank" class="allsides">Ssense •
-                                Canada</a></div>
-                    </div><!--//meta-->
-                    <div class="details">
-                        <ul>
-                            <li>Responsible for picking in the warehouse to supply the daily orders of the store.</li>
-                            <li>Responsible for carrying out the quality process on the garments returned by customers.
-                            </li>
-                        </ul>
-                    </div><!--//details-->
-                </div>
-                <!--End item - SSENSE-->
-
-                <!--Start item - Crystal 1/2-->
-                <div class="item">
-                    <div class="meta">
-                        <div class="upper-row">
-                            <h3 class="job-title">Logistic and Distribution Manager</h3>
-                            <div class="time">2004 • 2018</div>
-                        </div><!--//upper-row-->
-                        <div class="company"><a href="http://www.crystal.com.co/en/" target="_blank"
-                                class="allsides">Crystal SAS • Colombia</a></div>
-                    </div><!--//meta-->
-                    <div class="details">
-                        <ul>
-                            <li>Led national and International logistic distribution operations.</li>
-                            <li>Responsible for the elaboration and budget execution of CAD $ 3.5 million.</li>
-                            <li>Led the expansion of the main distribution center increasing the capacity by 37% with an
-                                end result of 5% of
-                                annual savings due to the consolidation of warehouses.</li>
-                            <li>Generated 19% of annual savings in the contracts for freight ground transportation
-                                through the
-                                standardization of the bidding process.</li>
-                            <li>Led the implementation of satellite operations for packing, returns and distribution,
-                                resulting in a 9% annual cost reduction from 2008 to 2015.</li>
-                            <li>Participated Project Scoping to implement ERP SAP AFS, and relevant interfaces with the
-                                WMS
-                                Manhattan Associates, and Warehouse control system.</li>
-                            <li>Project manager of the WMS Manhattan Associates` upgrade from 2004 Release 1 to 2012
-                                Release
-                                1 customized to the business requirements.</li>
-                            <li>Define distribution strategy and successfully executed to completion.</li>
-                            <li>Ensured the fulfillment of service policies within cross functional teams, and external
-                                clients.</li>
-                            <li>Negotiated best agreements with logistic distribution suppliers to improve service and
-                                reduce
-                                cost.</li>
-                            <li>Defined and deployed strategic enhancements to increase productivity and improve
-                                financial
-                                results.</li>
-                            <li>Led the design and implementation of processes and systems required to manage the
-                                production
-                                plants and the distribution centers of textiles, trims and finished goods.</li>
-                            <li>Analyzed, defined and coordinated the relocation of production plants.</li>
-                            <li>Led the mechatronics` team to develop the warehouse control system to manage the
-                                distribution center.</li>
-                            <li>Led the pilot of Radio-Frequency Identification (RFID) including processes and systems
-                                from
-                                the distribution center up to the point of sale.</li>
-                            <li>Project manager for build and start-up of distribution centers of e-commerce and point
-                                of purchase (POP) in Colombia and distribution centers in
-                                Mexico and Costa Rica running under WMS of SAP AFS.</li>
-                        </ul>
-                    </div><!--//details-->
-                </div>
-                <!--End item - Crystal 1/2-->
-
-                <!--Start item - Crystal 2/2-->
-                <div class="item">
-                    <div class="meta">
-                        <div class="upper-row">
-                            <h3 class="job-title">Raw Materials Manager</h3>
-                            <div class="time">1999 • 2004</div>
-                        </div><!--//upper-row-->
-                        <div class="company"><a href="http://www.crystal.com.co/en/" target="_blank"
-                                class="allsides">Crystal SAS • Colombia</a></div>
-                    </div><!--//meta-->
-                    <div class="details">
-                        <ul>
-                            <li>Led the design and implementation of processes and systems required to manage the new
-                                raw
-                                materials distribution center.</li>
-                            <li>Planned, Implemented and executed reengineering process to the distribution center of
-                                raw
-                                materials, reducing delivery times by 12%.</li>
-                            <li>Participated and led with GS1-Colombia the definition and standardization of the advance
-                                ship notice for row materials in Colombian market; as a result, the reception times
-                                decrease
-                                in 22%.</li>
-                            <li>Managed resources and operational materials agreed with planning management.</li>
-                            <li>Planning and execution new operations, ensuring time, cost and quality of service.</li>
-                        </ul>
-                    </div><!--//details-->
-                </div>
-                <!--End item - Crystal 2/2-->
-
-            </section><!--//section-->
-
-            <!-- <section class="section projects-section">
-                <h2 class="section-title"><span class="icon-holder"><i class="fas fa-archive"></i></span>Projects</h2>
-                <div class="intro">
-                    <p>You can list your side projects or open source libraries in this section. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et ligula in nunc bibendum fringilla a eu lectus.</p>
-                </div>
-                <div class="item">
-                    <span class="project-title"><a href="https://themes.3rdwavemedia.com/bootstrap-templates/startup/coderpro-bootstrap-4-startup-template-for-software-projects/" target="_blank">CoderPro</a></span> - <span class="project-tagline">A responsive website template designed to help developers launch their software projects. </span>
-                    
-                </div>
-                <div class="item">
-                    <span class="project-title"><a href="https://themes.3rdwavemedia.com/bootstrap-templates/startup/launch-bootstrap-4-template-for-saas-businesses/" target="_blank">Launch</a></span> - <span class="project-tagline">A responsive website template designed to help startups promote their products or services.</span>
-                </div>
-                <div class="item">
-                    <span class="project-title"><a href="https://themes.3rdwavemedia.com/bootstrap-templates/resume/devcard-bootstrap-4-vcard-portfolio-template-for-software-developers/" target="_blank">DevCard</a></span> - <span class="project-tagline">A portfolio website template designed for software developers.</span>
-                </div>
-                <div class="item">
-                    <span class="project-title"><a href="https://themes.3rdwavemedia.com/bootstrap-templates/startup/bootstrap-template-for-mobile-apps-nova-pro/" target="_blank">Nova Pro</a></span> - <span class="project-tagline">A responsive Bootstrap theme designed to help app developers promote their mobile apps</span>
-                </div>
-                <div class="item">
-                    <span class="project-title"><a href="http://themes.3rdwavemedia.com/website-templates/responsive-bootstrap-theme-web-development-agencies-devstudio/" target="_blank">DevStudio</a></span> - 
-                    <span class="project-tagline">A responsive website template designed to help web developers/designers market their services. </span>
-                </div>
-            </section> -->
+                            <h3 id="job_title3" class="job-title"></h3>
+                            <div id="job_time3" class="time"></div>
+                        </div>
+                        <div id="company3" class="allsides"></div>
+                        <div class="details">
+                            <ul>
+                                <li id="job3_li1"></li>
+                                <li id="job3_li2"></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--End item - SSENSE-->
+                    <!--Start item - Crystal 1/2-->
+                    <div class="item">
+                        <div class="meta">
+                            <div class="upper-row">
+                                <h3 id="job_title2" class="job-title"></h3>
+                                <div id="job_time2" class="time"></div>
+                            </div><!--//upper-row-->
+                            <div id="company2" class="allsides"></div>
+                        </div><!--//meta-->
+                        <div class="details">
+                            <ul>
+                                <li id="job2_li1"></li>
+                                <li id="job2_li2"></li>
+                                <li id="job2_li3"></li>
+                                <li id="job2_li4"></li>
+                                <li id="job2_li5"></li>
+                                <li id="job2_li6"></li>
+                                <li id="job2_li7"></li>
+                                <li id="job2_li8"></li>
+                                <li id="job2_li9"></li>
+                                <li id="job2_li10"></li>
+                                <li id="job2_li11"></li>
+                                <li id="job2_li12"></li>
+                                <li id="job2_li13"></li>
+                                <li id="job2_li14"></li>
+                                <li id="job2_li15"></li>
+                                <li id="job2_li16"></li>
+                            </ul>
+                        </div><!--//details-->
+                    </div>
+                    <!--End item - Crystal 1/2-->
+                    <!--Start item - Crystal 2/2-->
+                    <div class="item">
+                        <div class="meta">
+                            <div class="upper-row">
+                                <h3 id="job_title1" class="job-title"></h3>
+                                <div id="job_time1" class="time"></div>
+                            </div>
+                            <div id="company1" class="allsides"></div>
+                        </div>
+                        <div class="details">
+                            <ul>
+                                <li id="job1_li1"></li>
+                                <li id="job1_li2"></li>
+                                <li id="job1_li3"></li>
+                                <li id="job1_li4"></li>
+                                <li id="job1_li5"></li>
+                            </ul>
+                        </div><!--//details-->
+                    </div>
+                    <!--End item - Crystal 2/2-->
+            </section>
             <section class="skills-section section">
-                <h2 class="section-title"><span class="icon-holder"><i class="fas fa-rocket"></i></span>Skills &amp;
-                    Proficiency</h2>
+                <h2 id="skills_txt" class="section-title"></h2>
                 <div class="table-responsive">
                     <table class="table skillset">
                         <thead>
                             <tr>
-                                <th scope="col">Full Stack Developer</th>
+                                <th id="skill_hd1" scope="col"></th>
                                 <th></th>
-                                <th scope="col">Logistic Manager</th>
+                                <th id="skill_hd2" scope="col"></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -456,7 +355,7 @@
                                 </td>
                                 <td></td>
                                 <td>
-                                    Supply Chain Management
+                                    <span id="skill_dt2-1"></span>
                                     <div class="progress level-bar">
                                         <div class="progress-bar theme-progress-bar" role="progressbar"
                                             style="width: 85%" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100">
@@ -472,7 +371,7 @@
                                 </td>
                                 <td></td>
                                 <td>
-                                    Operations Management
+                                    <span id="skill_dt2-2"></span>
                                     <div class="progress level-bar">
                                         <div class="progress-bar theme-progress-bar" role="progressbar"
                                             style="width: 80%" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100">
@@ -487,7 +386,8 @@
                                             60 %</div>
                                 </td>
                                 <td></td>
-                                <td>Inventory Management
+                                <td>
+                                    <span id="skill_dt2-3"></span>
                                     <div class="progress level-bar">
                                         <div class="progress-bar theme-progress-bar" role="progressbar"
                                             style="width: 90%" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100">
@@ -503,7 +403,7 @@
                                 </td>
                                 <td></td>
                                 <td>
-                                    Distribution Center Operations
+                                    <span id="skill_dt2-4"></span>
                                     <div class="progress level-bar">
                                         <div class="progress-bar theme-progress-bar" role="progressbar"
                                             style="width: 90%" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100">
@@ -519,7 +419,7 @@
                                 </td>
                                 <td></td>
                                 <td>
-                                    Business Analysis
+                                    <span id="skill_dt2-5"></span>
                                     <div class="progress level-bar">
                                         <div class="progress-bar theme-progress-bar" role="progressbar"
                                             style="width: 80%" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100">
@@ -535,7 +435,7 @@
                                 </td>
                                 <td></td>
                                 <td>
-                                    Warehouse Management
+                                    <span id="skill_dt2-6"></span>
                                     <div class="progress level-bar">
                                         <div class="progress-bar theme-progress-bar" role="progressbar"
                                             style="width: 90%" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100">
@@ -551,7 +451,7 @@
                                 </td>
                                 <td></td>
                                 <td>
-                                    Project Management
+                                    <span id="skill_dt2-7"></span>
                                     <div class="progress level-bar">
                                         <div class="progress-bar theme-progress-bar" role="progressbar"
                                             style="width: 80%" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100">
@@ -566,7 +466,8 @@
                                             55 %</div>
                                 </td>
                                 <td></td>
-                                <td>Strategic Planning
+                                <td>
+                                    <span id="skill_dt2-8"></span>
                                     <div class="progress level-bar">
                                         <div class="progress-bar theme-progress-bar" role="progressbar"
                                             style="width: 80%" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100">
@@ -576,23 +477,21 @@
                         </tbody>
                     </table>
                 </div>
-            </section><!--//skills-section-->
-
-        </div><!--//main-body-->
+            </section>
+        </div>
     </div>
-    <footer class="footer">
+    <!-- <footer class="footer">
         <div class="text-center">
             <small class="copyright"></small>
-        </div><!--//container-->
-        <!-- <section>
+        </div>
+        <section>
             <div class="text-center">
                 <a id="test" class="btn  btn-lg my_animated_button" style="color: #fff" href="https://www.chavazystem.tech/attacks.html">
                     ... Some projects
                 </a>
             </div>
-        </section> -->
-    </footer><!--//footer-->
-
+        </section>
+    </footer> -->
 </body>
 
 </html>
