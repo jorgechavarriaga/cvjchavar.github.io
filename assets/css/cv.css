@@ -18,10 +18,7 @@ a {
 a:hover {
   text-decoration: underline;
   color: #10171a;
-  -webkit-transition: all 0.4s ease-in-out;
-  -moz-transition: all 0.4s ease-in-out;
-  -ms-transition: all 0.4s ease-in-out;
-  -o-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
 
 a:focus {
@@ -415,6 +412,14 @@ a.my_animated_button::before{
   color: white
 }
 
+.select_lenguage {
+  display: flex;
+  margin-top: -3em;
+  margin-right: 0.22em;
+  border: 1px solid white;
+  background-color: white;
+}
+
 .icon_txt{
   padding-left: .75em;
 }
@@ -574,6 +579,11 @@ transition:0.5s;
   --d: 100%;
 }
 
+.len .languages-container{
+  background-color: red;
+  display: flex;
+  margin-top: -3em;
+}
 
 @media (max-width: 767.98px) {
   .modal-content {
@@ -601,6 +611,14 @@ transition:0.5s;
     float: right;
     position: relative;
     margin-top: -1.5rem;
+  }
+
+  .select_lenguage {
+    display: flex;
+    margin-top: -.8em;
+    margin-right: -.3em;
+    border: 1px solid white;
+    background-color: white;
   }
 }
 
