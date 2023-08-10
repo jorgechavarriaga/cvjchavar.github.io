@@ -15,7 +15,7 @@ function changeLanguage(language) {
             document.getElementById("language-select-2").textContent = translations["language-select-2"];
             document.getElementById("language-select-3").textContent = translations["language-select-3"];
             document.getElementById("education_txt").innerHTML = translations["education_txt"];
-            document.getElementById("education_degree_title6").textContent = translations["education_degree_title6"];
+            document.getElementById("education_degree_title6").innerHTML = translations["education_degree_title6"];
             document.getElementById("education_degree_univ6").textContent = translations["education_degree_univ6"];
             document.getElementById("education_degree_time6").textContent = translations["education_degree_time6"];
             document.getElementById("education_degree_place6").textContent = translations["education_degree_place6"];
@@ -34,21 +34,25 @@ function changeLanguage(language) {
             document.getElementById("education_degree_univ2").textContent = translations["education_degree_univ2"];
             document.getElementById("education_degree_time2").textContent = translations["education_degree_time2"];
             document.getElementById("education_degree_place2").textContent = translations["education_degree_place2"];
+
+            var diplomaElement1 = document.getElementById("diploma-link1");
+            var diplomaTitleTranslation1 = translations["diploma_title1"];
+            var diplomaContentTranslation1 = translations["diploma_content1"];
+            diplomaElement1.setAttribute("data-original-title", diplomaTitleTranslation1);
+            diplomaElement1.setAttribute("data-content", diplomaContentTranslation1);
             document.getElementById("diploma-link1").innerHTML = translations["diploma-link1"];
-            var diplomaElement = document.getElementById("diploma-link2");
-            var diplomaTitleTranslation = translations["diploma_title2"];
-            var diplomaContentTranslation = translations["diploma_content2"];
-            diplomaElement.setAttribute("data-original-title", diplomaTitleTranslation);
-            diplomaElement.setAttribute("data-content", diplomaContentTranslation);
+            
+            var diplomaElement2 = document.getElementById("diploma-link2");
+            var diplomaTitleTranslation2 = translations["diploma_title2"];
+            var diplomaContentTranslation2 = translations["diploma_content2"];
+            diplomaElement2.setAttribute("data-original-title", diplomaTitleTranslation2);
+            diplomaElement2.setAttribute("data-content", diplomaContentTranslation2);
             document.getElementById("diploma-link2").innerHTML = translations["diploma-link2"];
+
+
             document.getElementById("education_degree_univ1").textContent = translations["education_degree_univ1"];
             document.getElementById("education_degree_time1").textContent = translations["education_degree_time1"];
             document.getElementById("education_degree_place1").textContent = translations["education_degree_place1"];
-            var diplomaElement = document.getElementById("diploma-link1");
-            var diplomaTitleTranslation = translations["diploma_title1"];
-            var diplomaContentTranslation = translations["diploma_content1"];
-            diplomaElement.setAttribute("data-original-title", diplomaTitleTranslation);
-            diplomaElement.setAttribute("data-content", diplomaContentTranslation);
             document.getElementById("language_txt").innerHTML = translations["language_txt"];
             document.getElementById("language_native").textContent = translations["language_native"];
             document.getElementById("language_fluent").textContent = translations["language_fluent"];

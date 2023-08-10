@@ -55,6 +55,13 @@
         <div class="sidebar-wrapper">
             <!--Start profile-container-->
             <div class="profile-container">
+                <div class="len lang-container">
+                    <select id="language-select" onchange="changeLanguage(this.value)" class="select_lenguage">
+                        <option id="language-select-1" value="cv_en"> </option>
+                        <option id="language-select-2" value="cv_fr"> </option>
+                        <option id="language-select-3" value="cv_sp"> </option>
+                    </select>
+                </div>
                 <img class="avatar" src="assets/images/jorgechavarriaga.jpg" alt="Jorge Chavarriaga" />
                 <h1 class="name">Jorge Chavarriaga</h1>
                 <h3 id="profile-container-3" class="tagline"></h3>
@@ -96,17 +103,26 @@
             <!--End contact-container-->
             <!--Start education-container-->
             <div class="education-container container-block">
-                <h2 id="education_txt" class="container-block-title"></h2>
+                <h2 id="education_txt" class="container-block-title"></h2>                   
                 <div class="item">
-                    <h4 id="education_degree_title6" class="degree"></h4>
-                    <h5 class="meta"><a
-                            href="https://www.coursera.org/programs/rac-google-project-manager-program-tbrgt/professional-certificates/google-it-automation?collectionId=eYy6e"
-                            target="_blank" class="allsides" id="education_degree_univ6"></a></h5>
+                    <h4 class="degree"> 
+                        <a href="https://www.coursera.org/account/accomplishments/professional-cert/ULGXGD3TXCEV" 
+                            target="_blank" class="allsides" id="education_degree_title6">
+                        </a>
+                    </h4>
+                    <h5 class="meta">
+                        <a href="https://alberta.college/courses/rac-google-it-automation-with-python/"
+                            target="_blank" class="allsides" id="education_degree_univ6">
+                        </a>
+                    </h5>
                     <div id="education_degree_time6" class="time"></div>
                     <div id="education_degree_place6" class="time"></div>
                 </div>
                 <div class="item">
-                    <h4 id="education_degree_title5" class="degree"></h4>
+                    <h4 class="degree">
+                        <a href="https://graduation.udacity.com/confirm/J6SQEKF6"
+                            target="_blank" id="education_degree_title5" class="degree"></a>
+                    </h4>
                     <h5 class="meta"><a href="https://www.udacity.com/course/security-engineer-nanodegree--nd698"
                             target="_blank" class="allsides" id="education_degree_univ5"></a></h5>
                     <div id="education_degree_time5" class="time"></div>
@@ -224,13 +240,13 @@
         <div class="main-wrapper">
             <!--Start section-->
             <section class="section summary-section">
-                <div class="len lang-container">
+                <!-- <div class="len lang-container">
                     <select id="language-select" onchange="changeLanguage(this.value)" class="select_lenguage">
                         <option id="language-select-1" value="cv_en"> </option>
                         <option id="language-select-2" value="cv_fr"> </option>
                         <option id="language-select-3" value="cv_sp"> </option>
                     </select>
-                </div>
+                </div> -->
                 <h2 id="summary_qualifications_txt" class="section-title"></h2>
                 <!--Start summary-->
                 <div class="summary details">
