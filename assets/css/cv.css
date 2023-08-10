@@ -72,6 +72,11 @@ a.my_animated_button::before{
   border-radius: 50%;
   }
 
+.certificate {
+  vertical-align: middle;
+  width: 640px;
+  }
+
 
 .navbar{
   padding: 0;
@@ -403,12 +408,13 @@ a.my_animated_button::before{
   padding: 5px;
   float: right;
   position: relative;
-  margin-top: -1.5rem;
-  margin-right: -1.75rem;
+  margin-top: .44rem;
+  margin-right: -2.4rem;
 }
 
 .select_leng {
-  background-color: #003da5;
+  /* background-color: #4B6A78; */
+  /* background: rgba(0, 0, 0, 0.2); */
   color: white
 }
 
@@ -416,8 +422,13 @@ a.my_animated_button::before{
   display: flex;
   margin-top: -3em;
   margin-right: 0.22em;
-  border: 1px solid white;
-  background-color: white;
+  border-width: 0px;
+  background-color: #3d5561;
+  color: white;
+}
+
+.select_lenguage:focus {
+  outline: none;
 }
 
 .icon_txt{
@@ -611,15 +622,25 @@ transition:0.5s;
     float: right;
     position: relative;
     margin-top: -1.5rem;
+    margin-right: -2.5rem;
   }
 
   .select_lenguage {
     display: flex;
     margin-top: -.8em;
-    margin-right: -.3em;
-    border: 1px solid white;
-    background-color: white;
+    margin-right: 0.322em;
+    /* border: 1px solid white; */
+    background-color: #3d5561;
+    border-width: 0px;
+    /* background: rgba(0, 0, 0, 0.2); */
+    color: white;
   }
+
+  .certificate {
+    vertical-align: middle;
+    width: 380px;
+    }
+  
 }
 
 @media (min-width: 992px) {
@@ -630,3 +651,4 @@ transition:0.5s;
     margin-bottom: 0;
   }
 }
+
