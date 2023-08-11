@@ -23,7 +23,7 @@ function changeLanguage(language) {
             document.getElementById("education_degree_univ5").textContent = translations["education_degree_univ5"];
             document.getElementById("education_degree_time5").textContent = translations["education_degree_time5"];
             document.getElementById("education_degree_place5").textContent = translations["education_degree_place5"];
-            document.getElementById("education_degree_title4").textContent = translations["education_degree_title4"];
+            document.getElementById("education_degree_title4").innerHTML = translations["education_degree_title4"];
             document.getElementById("education_degree_univ4").textContent = translations["education_degree_univ4"];
             document.getElementById("education_degree_time4").textContent = translations["education_degree_time4"];
             document.getElementById("education_degree_place4").textContent = translations["education_degree_place4"];

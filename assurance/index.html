@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <!-- <title id="title">Paula Alvarez - Stagiaire en assurance de personnes</title> -->
     <title id="title"></title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,14 +16,14 @@
         rel='stylesheet' type='text/css'>
     <script src="https://kit.fontawesome.com/ff32f15468.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link id="theme-style" rel="stylesheet" href="../assets/css/cv.css">
+    <link id="theme-style" rel="stylesheet" href="../assets/css/assurance.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css"
         integrity="sha512-Cv93isQdFwaKBV+Z4X8kaVBYWHST58Xb/jVOcV9aRsGSArZsgAnFIhMpDoMDcFNoUtday1hdjn0nGp3+KZyyFw=="
         crossorigin="anonymous" />
-    <script src="/assets/js/changeLanguage_assurance.js"></script>        
+    <script src="/assets/js/changeLanguage_assurance.js"></script>
 </head>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-HSGW69E28V"></script>
 <script>
@@ -41,26 +41,62 @@
         });
     });
 </script>
+
 <body>
     <div class="wrapper">
         <!--Start sidebar-wrapper-->
-        <div class="sidebar-wrapper" style="background-color: #003da5;">
+        <div class="sidebar-wrapper">
             <!--Start profile-container-->
-            <div class="profile-container">
+            <div class="profile-container profile-container-with-bg">
+                <!-- <select id="language-select" onchange="changeLanguage(this.value)" class="select_leng">
+                    <option value="es">ES 🇨🇴 </option>
+                    <option value="fr">FR 🇨🇦 </option>
+                    <option value="en">EN 🇺🇸 </option>
+                </select> -->
                 <div class="len lang-container">
-                    <select id="language-select" onchange="changeLanguage(this.value)" class="select_leng">
-                        <option value="es">ES 🇨🇴 </option>
-                        <option value="fr">FR 🇨🇦 </option>
-                        <option value="en">EN 🇺🇸 </option>
-                    </select>
                 </div>
                 <img class="avatar" src="../assets/images/paula_alvarez.png" alt="Paula Álvarez" />
-                <h1 class="name">Paula Álvarez</h1>
-                <h3 id="tagline" class="tagline"></h3>
             </div>
-            <div id="openModal" style="display: flex; align-items: center; justify-content: flex-end;">
-                <h5 class="whoami" >Quien soy</h5>
-                <img class="avatar" style="width:2.5em; height: 2.5em; margin-left: -1.3em;"src="../assets/images/question.gif" alt="question" />
+            <h1 class="name">Paula Álvarez</h1>
+            <h3 id="tagline" class="tagline"></h3>
+            <h3 id="company" class="tagline1"></h3>
+            <div class="container">
+                <div id="accordion">
+                    <div class="card custom-card">
+                        <div id="headingOne" class="text-right">
+                            <h5 class="about_me">
+                                <button class="btn custom-btn" data-toggle="collapse"
+                                    data-target="#collapseOne_about_me" aria-expanded="true"
+                                    aria-controls="collapseOne_about_me">Sobre mí
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseOne_about_me" class="collapse" aria-labelledby="headingOne"
+                            data-parent="#accordion">
+                            <div class="about_me_desc" >
+                                <p>Durante casi dos décadas, trabajé alineando los objetivos de las compañías con las
+                                    necesidades de las personas y sus familias.</p>
+                                <p>Creo firmemente en que escuchar a los demás, me permite comprender sus necesidades
+                                    particulares y ofrecer soluciones integrales que perduran en el tiempo.</p>
+                                <p>Soy ingeniera, especialista en Mercadeo internacional, lo que, sumado a mi
+                                    experiencia profesional, me ha permitido desarrollar un amplio pensamiento
+                                    analítico, así como comprender diferentes herramientas administrativas y financieras
+                                    orientadas a planear el futuro de manera dinámica y efectiva.</p>
+                                <p>Los últimos 7 años me he dedicado a invertir en la bolsa, y gerenciar mi propia
+                                    empresa, además, de superar los obstáculos y retos que ha traído para mí y mi
+                                    familia, ser inmigrantes, adaptarnos a un nuevo país y a un sistema totalmente
+                                    diferente.</p>
+                                <p>Recomenzar la vida desde cero es todo un desafío, encontrar retos en situaciones tan
+                                    sencillas como tomar un seguro de auto o en otras tan significativas como comprar mi
+                                    propia casa, o planear mi ahorro para el retiro, me ha motivado a aplicar mi
+                                    experiencia y conocimientos en apoyar a personas y familias en la construcción de un
+                                    plan y la toma de decisiones acertadas para su presente y su futuro.</p>
+                                <p>Soy <strong><i>Paula Álvarez</i></strong> y los invito a seguirme y escucharme.</p>
+                                <p>¡Por eso hoy estoy aquí!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <!-- Modal -->
             <div id="myModal" class="modal" style="font-size: .90em;">
@@ -88,9 +124,25 @@
                                 paulaandrea.alvarez@agc.ia.ca</a>
                         </span>
                     </li>
-                    <li class="phone"><i class="fas fa-phone" aria-hidden="true"></i>
+                    <li class="phone"><i class="fas fa-mobile-alt" aria-hidden="true"></i>
                         <span class="icon_txt1">
                             <a href="tel:+14386300780" class="allsides"> +1 438 630 0780</a>
+                        </span>
+                    </li>
+                    <li class="facebook"><i class="fab fa-facebook" aria-hidden="true"></i>
+                        <span class="icon_txt1">
+                            <a href="https://www.facebook.com/paulaandrea.alvarez.ia" target="_blank" class="allsides">
+                                Facebook</a>
+                        </span>
+                    </li>
+                    <li class="instagram"><i class="fab fa-instagram" aria-hidden="true"></i>
+                        <span class="icon_txt1">
+                            <a href="https://t.me/+14386300780" target="_blank" class="allsides"> Instagram</a>
+                        </span>
+                    </li>
+                    <li class="tiktok"><i class="fab fa-tiktok" aria-hidden="true"></i>
+                        <span class="icon_txt1">
+                            <a href="https://t.me/+14386300780" target="_blank" class="allsides"> TikTok</a>
                         </span>
                     </li>
                     <li class="linkedin"><i class="fab fa-linkedin-in" aria-hidden="true"></i>
@@ -118,14 +170,14 @@
         <div class="main-wrapper" style="color: #003da5;">
             <!--Start section-->
             <section class="section summary-section">
-                <h2 id="seguro_personas" class="section-title" style="color: #003da5;"><span class="icon-holder"
-                        style="background-color: #003da5;"><i class="fas fa-shield-alt"></i></span>
-                </h2>
-                <!--Start summary-->
+                <h2 id="seguro_txt" class="section-title" style="color: #003da5;"></h2>
+                <h2 id="seguro_desc" class="section-desc" style="color: black; font-size: 14px;"></h2>
+                <!--Start SEGUROS-->
                 <div class="summary details">
                     <div class="section section-tabs">
-                        <div class="container">
+                        <div class="container" style="padding: 0;">
                             <div id="accordion">
+                                <!-- Start Card Seguro Carro -->
                                 <div class="card">
                                     <div class="card-header" id="headingOne">
                                         <h5 class="mb-0"><i class="fas fa-car"></i>
@@ -145,6 +197,26 @@
                                                 <li id="auto_li4"></li>
                                             </ul>
                                             <div>
+                                                <h5 id="mas_ahorro_txt" class="mas_ahorro">
+                                                </h5>
+                                                <div class="card">
+                                                    <div class="card-header">
+                                                        <h5 class="mb-1">
+                                                            <ul class="list-assurance" style="color:#97AAC3;">
+                                                                <li id="mas_ahorro_l1"></li>
+                                                                <li id="mas_ahorro_l2"></li>
+                                                                <li id="mas_ahorro_l3"></li>
+                                                                <li id="mas_ahorro_l4"></li>
+                                                            </ul>
+                                                        </h5>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <h5 id="condiciones_txt" style="padding-top: 5px;font-size: 10px">
+                                                    </h5>
+                                                </div>
+                                            </div>
+                                            <div>
                                                 <a id="btnSoumissionOne"
                                                     href="https://ia.ca/campagne-iaah/reseau-carriere?uid=B5089C"
                                                     target="_blank" class="btn btn-primary btn-icon btn-block"
@@ -160,163 +232,334 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="card">
-                                        <div class="card-header" id="headingTwo">
-                                            <h5 class="mb-0"><i class="fas fa-building"></i>
-                                                <button id="inquilinos_txt" class="btn btn-link collapsed"
-                                                    data-toggle="collapse" data-target="#collapseTwo"
-                                                    aria-expanded="false" aria-controls="collapseTwo">
-                                                </button>
-                                            </h5>
-                                        </div>
-                                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
-                                            data-parent="#accordion">
-                                            <div class="card-body">
-                                                <ul>
-                                                    <li id="inquilinos_l1"></li>
-                                                </ul>
-                                            </div>
-                                            <div>
-                                                <a id="btnSoumissionOne_inquilinos"
-                                                    href="https://ia.ca/campagne-iaah/reseau-carriere?uid=B5089C"
-                                                    target="_blank" class="btn btn-primary btn-icon btn-block"
-                                                    style="color: white">
-                                                    <i class="fas fa-paper-plane"></i>
-                                                </a>
-                                                <a id="btnWhatsappOne_inquilinos"
-                                                    href="https://api.whatsapp.com/send?phone=+14386300780&text=Bonjour%2C%20je%20souhaite%20plus%20d%27informations%20sur%20l%27assurance%20*logement*.%20Merci%20de%20bien%20vouloir%20me%20contacter."
-                                                    target="_blank" class="btn btn-success btn-icon btn-block"
-                                                    style="color: white">
-                                                    <i class="fab fa-whatsapp"></i>
-                                                </a>
-                                            </div>
-                                        </div>
+                                </div>
+                                <!-- End Cad Seguro Carro -->
+                                <!-- Start Card Seguro Habitacion -->
+                                <div class="card">
+                                    <div class="card-header" id="headingTwo">
+                                        <h5 class="mb-0"><i class="fas fa-building"></i>
+                                            <button id="inquilinos_txt" class="btn btn-link collapsed"
+                                                data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
+                                                aria-controls="collapseTwo">
+                                            </button>
+                                        </h5>
                                     </div>
-                                    <div class="card">
-                                        <div class="card-header" id="headingThree">
-                                            <h5 class="mb-0"><i class="fas fa-home"></i>
-                                                <button id="propietarios_hogar_txt" class="btn btn-link collapsed"
-                                                    data-toggle="collapse" data-target="#collapseThree"
-                                                    aria-expanded="false" aria-controls="collapseThree">
-                                                </button>
-                                            </h5>
+                                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                        data-parent="#accordion">
+                                        <div class="card-body">
+                                            <ul>
+                                                <li id="inquilinos_l1"></li>
+                                            </ul>
                                         </div>
-                                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
-                                            data-parent="#accordion">
-                                            <div class="card-body">
-                                                <ul>
-                                                    <li id="propietarios_hogar_l1">
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div>
-                                                <a id="btnSoumissionOne_propietarios_hogar"
-                                                    href="https://ia.ca/campagne-iaah/reseau-carriere?uid=B5089C"
-                                                    target="_blank" class="btn btn-primary btn-icon btn-block"
-                                                    style="color: white">
-                                                    <i class="fas fa-paper-plane"></i>
-                                                </a>
-                                                <a id="btnWhatsappOne_propietarios_hogar"
-                                                    href="https://api.whatsapp.com/send?phone=+14386300780&text=Bonjour%2C%20je%20souhaite%20plus%20d%27informations%20sur%20l%27assurance%20*maison*.%20Merci%20de%20bien%20vouloir%20me%20contacter."
-                                                    target="_blank" class="btn btn-success btn-icon btn-block"
-                                                    style="color: white">
-                                                    <i class="fab fa-whatsapp"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card">
-                                        <div class="card-header" id="headingFour">
-                                            <h5 class="mb-0"><i class="fas fa-city"></i>
-                                                <button id="propietarios_condo_txt" class="btn btn-link collapsed"
-                                                    data-toggle="collapse" data-target="#collapseFour"
-                                                    aria-expanded="false" aria-controls="collapseFour">
-                                                </button>
-                                            </h5>
-                                        </div>
-                                        <div id="collapseFour" class="collapse" aria-labelledby="headingFour"
-                                            data-parent="#accordion">
-                                            <div class="card-body">
-                                                <ul>
-                                                    <li id="propietarios_condo_l1">
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div>
-                                                <a id="btnSoumissionOne_propietarios_condo"
-                                                    href="https://ia.ca/campagne-iaah/reseau-carriere?uid=B5089C"
-                                                    target="_blank" class="btn btn-primary btn-icon btn-block"
-                                                    style="color: white">
-                                                    <i class="fas fa-paper-plane"></i>
-                                                </a>
-                                                <a id="btnWhatsappOne_propietarios_condo"
-                                                    href="https://api.whatsapp.com/send?phone=+14386300780&text=Bonjour%2C%20je%20souhaite%20plus%20d%27informations%20sur%20l%27assurance%20*condo*.%20Merci%20de%20bien%20vouloir%20me%20contacter."
-                                                    target="_blank" class="btn btn-success btn-icon btn-block"
-                                                    style="color: white">
-                                                    <i class="fab fa-whatsapp"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card">
-                                        <div class="card-header" id="headingFive">
-                                            <h5 class="mb-0"><i class="fas fa-caravan"></i>
-                                                <button id="auto_recreativo_txt" class="btn btn-link collapsed"
-                                                    data-toggle="collapse" data-target="#collapseFive"
-                                                    aria-expanded="false" aria-controls="collapseFive">
-                                                </button>
-                                            </h5>
-                                        </div>
-                                        <div id="collapseFive" class="collapse" aria-labelledby="headingFive"
-                                            data-parent="#accordion">
-                                            <div class="card-body">
-                                                <ul>
-                                                    <li id="auto_recreativo_l1"></li>
-                                                </ul>
-                                            </div>
-                                            <div>
-                                                <a id="btnSoumissionOne_auto_recreativo"
-                                                    href="https://ia.ca/campagne-iaah/reseau-carriere?uid=B5089C"
-                                                    target="_blank" class="btn btn-primary btn-icon btn-block"
-                                                    style="color: white">
-                                                    <i class="fas fa-paper-plane"></i>
-                                                </a>
-                                                <a id="btnWhatsappOne_auto_recreativo"
-                                                    href="https://api.whatsapp.com/send?phone=+14386300780&text=Bonjour%2C%20je%20souhaite%20plus%20d%27informations%20sur%20l%27assurance%20*véhicule%20récréatif*.%20Merci%20de%20bien%20vouloir%20me%20contacter."
-                                                    target="_blank" class="btn btn-success btn-icon btn-block"
-                                                    style="color: white">
-                                                    <i class="fab fa-whatsapp"></i>
-                                                </a>
-                                            </div>
+                                        <div>
+                                            <a id="btnSoumissionOne_inquilinos"
+                                                href="https://ia.ca/campagne-iaah/reseau-carriere?uid=B5089C"
+                                                target="_blank" class="btn btn-primary btn-icon btn-block"
+                                                style="color: white">
+                                                <i class="fas fa-paper-plane"></i>
+                                            </a>
+                                            <a id="btnWhatsappOne_inquilinos"
+                                                href="https://api.whatsapp.com/send?phone=+14386300780&text=Bonjour%2C%20je%20souhaite%20plus%20d%27informations%20sur%20l%27assurance%20*logement*.%20Merci%20de%20bien%20vouloir%20me%20contacter."
+                                                target="_blank" class="btn btn-success btn-icon btn-block"
+                                                style="color: white">
+                                                <i class="fab fa-whatsapp"></i>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
-                                <br>
-                            </div>
-                        </div>
-                        <div>
-                            <h5 id="mas_ahorro_txt" class="section-title" style="color: #003da5;"><span
-                                    class="icon-holder" style="background-color: #003da5;"><i
-                                        class="fas fa-dollar-sign"></i></span>
-                            </h5>
-                            <div class="card">
-                                <div class="card-header">
-                                    <h5 class="mb-1">
-                                        <ul class="list-assurance" style="color:#97AAC3;">
-                                            <li id="mas_ahorro_l1"></li>
-                                            <li id="mas_ahorro_l2"></li>
-                                            <li id="mas_ahorro_l3"></li>
-                                            <li id="mas_ahorro_l4"></li>
-                                        </ul>
-                                    </h5>
+                                <!-- End Card Seguro Habitacion -->
+                                <!-- Start Seguro Vida -->
+                                <div class="card">
+                                    <div class="card-header" id="headingThree">
+                                        <h5 class="mb-0"><i class="fas fa-heartbeat"></i>
+                                            <button id="vida_txt" class="btn btn-link collapsed" data-toggle="collapse"
+                                                data-target="#collapseThree" aria-expanded="false"
+                                                aria-controls="collapseThree">
+                                            </button>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                                        data-parent="#accordion">
+                                        <div class="card-body">
+                                            <ul>
+                                                <li id="vida_l1">
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <a id="btnSoumissionOne_vida"
+                                                href="https://ia.ca/campagne-iaah/reseau-carriere?uid=B5089C"
+                                                target="_blank" class="btn btn-primary btn-icon btn-block"
+                                                style="color: white">
+                                                <i class="fas fa-paper-plane"></i>
+                                            </a>
+                                            <a id="btnWhatsappOne_vida"
+                                                href="https://api.whatsapp.com/send?phone=+14386300780&text=Bonjour%2C%20je%20souhaite%20plus%20d%27informations%20sur%20l%27assurance%20*maison*.%20Merci%20de%20bien%20vouloir%20me%20contacter."
+                                                target="_blank" class="btn btn-success btn-icon btn-block"
+                                                style="color: white">
+                                                <i class="fab fa-whatsapp"></i>
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
+                                <!-- End Card Seguro Vida -->
+                                <!-- Start Card Seguro Viaje -->
+                                <div class="card">
+                                    <div class="card-header" id="headingFour">
+                                        <h5 class="mb-0"><i class="fas fa-plane"></i>
+                                            <button id="viaje_txt" class="btn btn-link collapsed" data-toggle="collapse"
+                                                data-target="#collapseFour" aria-expanded="false"
+                                                aria-controls="collapseFour">
+                                            </button>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseFour" class="collapse" aria-labelledby="headingFour"
+                                        data-parent="#accordion">
+                                        <div class="card-body">
+                                            <ul>
+                                                <li id="viaje_l1">
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <a id="btnSoumissionOne_viaje"
+                                                href="https://ia.ca/campagne-iaah/reseau-carriere?uid=B5089C"
+                                                target="_blank" class="btn btn-primary btn-icon btn-block"
+                                                style="color: white">
+                                                <i class="fas fa-paper-plane"></i>
+                                            </a>
+                                            <a id="btnWhatsappOne_viaje"
+                                                href="https://api.whatsapp.com/send?phone=+14386300780&text=Bonjour%2C%20je%20souhaite%20plus%20d%27informations%20sur%20l%27assurance%20*condo*.%20Merci%20de%20bien%20vouloir%20me%20contacter."
+                                                target="_blank" class="btn btn-success btn-icon btn-block"
+                                                style="color: white">
+                                                <i class="fab fa-whatsapp"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Card Seguro Viaje -->
+                                <!-- Start Card Seguro Hipotecario -->
+                                <div class="card">
+                                    <div class="card-header" id="headingFive">
+                                        <h5 class="mb-0"><i class="fas fa-shield-alt"></i>
+                                            <button id="hipotec_txt" class="btn btn-link collapsed"
+                                                data-toggle="collapse" data-target="#collapseFive" aria-expanded="false"
+                                                aria-controls="collapseFive">
+                                            </button>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseFive" class="collapse" aria-labelledby="headingFive"
+                                        data-parent="#accordion">
+                                        <div class="card-body">
+                                            <ul>
+                                                <li id="hipotec_l1"></li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <a id="btnSoumissionOne_hipotec"
+                                                href="https://ia.ca/campagne-iaah/reseau-carriere?uid=B5089C"
+                                                target="_blank" class="btn btn-primary btn-icon btn-block"
+                                                style="color: white">
+                                                <i class="fas fa-paper-plane"></i>
+                                            </a>
+                                            <a id="btnWhatsappOne_hipotec"
+                                                href="https://api.whatsapp.com/send?phone=+14386300780&text=Bonjour%2C%20je%20souhaite%20plus%20d%27informations%20sur%20l%27assurance%20*véhicule%20récréatif*.%20Merci%20de%20bien%20vouloir%20me%20contacter."
+                                                target="_blank" class="btn btn-success btn-icon btn-block"
+                                                style="color: white">
+                                                <i class="fab fa-whatsapp"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Card Seguro Hipotecario -->
+                                <!-- Start Card Responsabilidad Civil -->
+                                <div class="card">
+                                    <div class="card-header" id="headingSix">
+                                        <h5 class="mb-0"><i class="fas fa-balance-scale"></i>
+                                            <button id="res_civil_txt" class="btn btn-link collapsed"
+                                                data-toggle="collapse" data-target="#collapseSix" aria-expanded="false"
+                                                aria-controls="collapseSix">
+                                            </button>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseSix" class="collapse" aria-labelledby="headingSix"
+                                        data-parent="#accordion">
+                                        <div class="card-body">
+                                            <ul>
+                                                <li id="res_civil_l1"></li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <a id="btnSoumissionOne_res_civil"
+                                                href="https://ia.ca/campagne-iaah/reseau-carriere?uid=B5089C"
+                                                target="_blank" class="btn btn-primary btn-icon btn-block"
+                                                style="color: white">
+                                                <i class="fas fa-paper-plane"></i>
+                                            </a>
+                                            <a id="btnWhatsappOne_res_civil"
+                                                href="https://api.whatsapp.com/send?phone=+14386300780&text=Bonjour%2C%20je%20souhaite%20plus%20d%27informations%20sur%20l%27assurance%20*véhicule%20récréatif*.%20Merci%20de%20bien%20vouloir%20me%20contacter."
+                                                target="_blank" class="btn btn-success btn-icon btn-block"
+                                                style="color: white">
+                                                <i class="fab fa-whatsapp"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Card Responsabilidad Civil -->
+                                <!-- Start Card Seguro Accidentes -->
+                                <div class="card">
+                                    <div class="card-header" id="headingSeven">
+                                        <h5 class="mb-0"><i class="fas fa-exclamation-triangle"></i>
+                                            <button id="seg_accidentes_txt" class="btn btn-link collapsed"
+                                                data-toggle="collapse" data-target="#collapseSeven"
+                                                aria-expanded="false" aria-controls="collapseSeven">
+                                            </button>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven"
+                                        data-parent="#accordion">
+                                        <div class="card-body">
+                                            <ul>
+                                                <li id="seg_accidentes_l1"></li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <a id="btnSoumissionOne_seg_accidentes"
+                                                href="https://ia.ca/campagne-iaah/reseau-carriere?uid=B5089C"
+                                                target="_blank" class="btn btn-primary btn-icon btn-block"
+                                                style="color: white">
+                                                <i class="fas fa-paper-plane"></i>
+                                            </a>
+                                            <a id="btnWhatsappOne_seg_accidentes"
+                                                href="https://api.whatsapp.com/send?phone=+14386300780&text=Bonjour%2C%20je%20souhaite%20plus%20d%27informations%20sur%20l%27assurance%20*véhicule%20récréatif*.%20Merci%20de%20bien%20vouloir%20me%20contacter."
+                                                target="_blank" class="btn btn-success btn-icon btn-block"
+                                                style="color: white">
+                                                <i class="fab fa-whatsapp"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Card Seguro Accidentes -->
+                                <!-- Start Card Seguro Enfermedades gravez e invalidez -->
+                                <div class="card">
+                                    <div class="card-header" id="headingEight">
+                                        <h5 class="mb-0">
+                                            <div class="button-container" style="display: flex; ">
+                                                <i class="fas fa-procedures"></i>
+                                                <button id="seg_graves_txt" class="btn btn-link collapsed seg_graves"
+                                                    data-toggle="collapse" data-target="#collapseEight"
+                                                    aria-expanded="false" aria-controls="collapseEight">
+                                                </button>
+                                            </div>
+                                        </h5>
+                                    </div>
+
+                                    <div id="collapseEight" class="collapse" aria-labelledby="headingEight"
+                                        data-parent="#accordion">
+                                        <div class="card-body">
+                                            <ul>
+                                                <li id="seg_graves_l1"></li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <a id="btnSoumissionOne_seg_graves"
+                                                href="https://ia.ca/campagne-iaah/reseau-carriere?uid=B5089C"
+                                                target="_blank" class="btn btn-primary btn-icon btn-block"
+                                                style="color: white">
+                                                <i class="fas fa-paper-plane"></i>
+                                            </a>
+                                            <a id="btnWhatsappOne_seg_graves"
+                                                href="https://api.whatsapp.com/send?phone=+14386300780&text=Bonjour%2C%20je%20souhaite%20plus%20d%27informations%20sur%20l%27assurance%20*véhicule%20récréatif*.%20Merci%20de%20bien%20vouloir%20me%20contacter."
+                                                target="_blank" class="btn btn-success btn-icon btn-block"
+                                                style="color: white">
+                                                <i class="fab fa-whatsapp"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Card Seguro Enfermedades gravez e invalidez -->
                             </div>
-                        </div>
-                        <br>
-                        <div>
-                            <h5 id="condiciones_txt" style="font-size: 10px"></h5>
+                            <br>
                         </div>
                     </div>
+                </div>
+                <!-- END SEGUROS -->
+                <h2 id="ahorro_retiro_txt" class="section-title" style="color: #003da5;"></h2>
+                <h2 id="ahorro_retiro_desc" class="section-desc" style="color: black; font-size: 14px;"></h2>
+                
+                <!--Start AHORRO Y RETIRO -->
+                <div class="summary details">
+                    <div class="section section-tabs">
+                        <div class="container" style="padding: 0;">
+                            <div id="accordion">
+                                <!-- Start Card Productos Revenue -->
+                                <div class="card">
+                                    <div class="card-header" id="headingNine">
+                                        <h5 class="mb-0"><i class="fas fa-piggy-bank"></i>
+                                            <button id="pdt_revenue_txt" class="btn btn-link" data-toggle="collapse"
+                                                data-target="#collapseNine" aria-expanded="true"
+                                                aria-controls="collapseNine">
+                                            </button>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseNine" class="collapse" aria-labelledby="headingNine"
+                                        data-parent="#accordion">
+                                        <div class="card-body">
+                                            <ul class="list_assurance">
+                                                <li id="pdt_revenue_l1"></li>
+                                                <li id="pdt_revenue_l2"></li>
+                                                <li id="pdt_revenue_l3"></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Cad Productos Revenue -->
+                            </div>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+                <!-- END AHORRO Y RETIRO -->
+                
+                
+                
+                <!-- <br>
+                <div><br></div>
+                <div><br></div>
+                <div><br></div>
+                <div><br></div>
+                <div><br></div>
+                <div><br></div>
+                <div><br></div>
+                <div><br></div>
+                <div><br></div>
+                <div><br></div>
+                <div><br></div>
+                <div><br></div>
+                <div><br></div>
+                <div><br></div>
+                <div><br></div>
+                <div><br></div>
+                <div><br></div>
+                <div><br></div>
+                <div><br></div>
+                <div><br></div>
+                <div><br></div>
+                <div><br></div>
+                <div><br></div>
+                <div><br></div>
+                <div><br></div>
+                <div><br></div>
+                <div><br></div>
+                <div><br></div>
+                <div><br></div>
+                <div><br></div>
+                <div><br></div>
+                <div><br></div>
+                <div><br></div>
+                <div><br></div>
+                <div><br></div>
+                <div><br></div> -->
             </section>
         </div>
         <!--//main-body-->
@@ -372,4 +615,5 @@
         };
     </script>
 </body>
+
 </html>
