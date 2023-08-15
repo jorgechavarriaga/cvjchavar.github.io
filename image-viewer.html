@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Jorge Chavarriaga - CV">
+    <meta name="author" content="Jorge Chavarriaga">
+    <link rel="shortcut icon" href="assets//images/favicon-jch-32x32.png">
+    <link id="theme-style" rel="stylesheet" href="assets/css/image-viewer.css">
+</head>
+<body>
+    <div class="image-container">
+        <img id="image" src="" alt="">
+        <div class="loader-container">
+            <div class="dots-2"></div>
+        </div>
+    </div>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const imageName = urlParams.get("image");
+        const imageElement = document.getElementById("image");
+        const loaderContainer = document.querySelector(".loader-container");
+        
+        if (imageName) {
+            loaderContainer.style.display = "block";
+            document.title = imageName;
+            setTimeout(() => {
+                imageElement.onload = () => {
+                    loaderContainer.style.display = "none";
+                    imageElement.alt = imageName;
+                };
+                imageElement.src = `/assets/images/${imageName}`;
+            }, 3000); // 3 segundos en milisegundos
+        }
+    </script>
+</body>
+</html>

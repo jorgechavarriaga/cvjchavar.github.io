@@ -153,6 +153,7 @@ function changeLanguage(language) {
             document.getElementById("skill_dt2-6").textContent = translations["skill_dt2-6"];
             document.getElementById("skill_dt2-7").textContent = translations["skill_dt2-7"];
             document.getElementById("skill_dt2-8").textContent = translations["skill_dt2-8"];
+            document.getElementById("footer_txt").innerHTML = translations["footer_txt"];
         }
     };
     xhr.send(null);

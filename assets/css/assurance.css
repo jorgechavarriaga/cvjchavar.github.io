@@ -48,6 +48,16 @@ a.my_animated_button {
     border-radius: 12px;
 }
 
+
+.toggle-button {
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+
 a.my_animated_button::before {
     content: "";
     position: absolute;
@@ -143,6 +153,27 @@ a.my_animated_button::before {
     top: 0;
 }
 
+.ver_mas {
+    text-align: right !important;
+    margin: 0 !important;
+    padding: 0 !important;    
+    font-size: 10px;
+}
+
+.ver_menos{
+    text-align: right !important;
+    margin: 0 !important;
+    padding: 0 !important;    
+    font-size: 10px;
+}
+
+.about_me {
+    padding-top: .5em;   
+    color: black;
+    font-size: 18px;
+    font-weight: 700;
+}
+
 .about_me_desc {
     color: black;
     padding: .25em;
@@ -151,7 +182,7 @@ a.my_animated_button::before {
 }
 
 .about_me_desc p {
-    margin-bottom: 1em;
+    margin-bottom: .5em;
 }
 
 
@@ -419,7 +450,7 @@ a.my_animated_button::before {
 
 
 .sidebar-wrapper .container-block {
-    padding: 0 20px 5px 20px;
+    padding: 10px 20px 5px 20px;
 }
 
 .sidebar-wrapper .container-block-title {

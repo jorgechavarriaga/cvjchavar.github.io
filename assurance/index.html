@@ -61,40 +61,36 @@
             <h3 id="tagline" class="tagline"></h3>
             <h3 id="company" class="tagline1"></h3>
             <div class="container">
-                <div id="accordion">
-                    <div class="card custom-card">
-                        <div id="headingOne" class="text-right">
-                            <h5 class="about_me">
-                                <button class="btn custom-btn" data-toggle="collapse"
-                                    data-target="#collapseOne_about_me" aria-expanded="true"
-                                    aria-controls="collapseOne_about_me">Sobre mí
-                                </button>
-                            </h5>
-                        </div>
-                        <div id="collapseOne_about_me" class="collapse" aria-labelledby="headingOne"
-                            data-parent="#accordion">
-                            <div class="about_me_desc" >
-                                <p>Durante casi dos décadas, trabajé alineando los objetivos de las compañías con las
-                                    necesidades de las personas y sus familias.</p>
-                                <p>Creo firmemente en que escuchar a los demás, me permite comprender sus necesidades
-                                    particulares y ofrecer soluciones integrales que perduran en el tiempo.</p>
-                                <p>Soy ingeniera, especialista en Mercadeo internacional, lo que, sumado a mi
-                                    experiencia profesional, me ha permitido desarrollar un amplio pensamiento
-                                    analítico, así como comprender diferentes herramientas administrativas y financieras
-                                    orientadas a planear el futuro de manera dinámica y efectiva.</p>
-                                <p>Los últimos 7 años me he dedicado a invertir en la bolsa, y gerenciar mi propia
-                                    empresa, además, de superar los obstáculos y retos que ha traído para mí y mi
-                                    familia, ser inmigrantes, adaptarnos a un nuevo país y a un sistema totalmente
-                                    diferente.</p>
-                                <p>Recomenzar la vida desde cero es todo un desafío, encontrar retos en situaciones tan
-                                    sencillas como tomar un seguro de auto o en otras tan significativas como comprar mi
-                                    propia casa, o planear mi ahorro para el retiro, me ha motivado a aplicar mi
-                                    experiencia y conocimientos en apoyar a personas y familias en la construcción de un
-                                    plan y la toma de decisiones acertadas para su presente y su futuro.</p>
-                                <p>Soy <strong><i>Paula Álvarez</i></strong> y los invito a seguirme y escucharme.</p>
-                                <p>¡Por eso hoy estoy aquí!</p>
-                            </div>
-                        </div>
+                <div class="card custom-card">
+                    <p class="about_me">Sobre mí</p>
+                    <div class="about_me_desc">
+                        <p class="visible">Durante casi dos décadas, trabajé alineando los objetivos de las compañías
+                            con las
+                            necesidades de las personas y sus familias.
+                        </p>
+                        <p class="hidden">Creo firmemente en que escuchar a los demás, me permite comprender sus
+                            necesidades
+                            particulares y ofrecer soluciones integrales que perduran en el tiempo.</p>
+                        <p class="hidden">Soy ingeniera, especialista en Mercadeo internacional, lo que, sumado a mi
+                            experiencia
+                            profesional, me ha permitido desarrollar un amplio pensamiento analítico, así como
+                            comprender diferentes herramientas administrativas y financieras orientadas a planear el
+                            futuro de manera dinámica y efectiva.</p>
+                        <p class="hidden">Los últimos 7 años me he dedicado a invertir en la bolsa, y gerenciar mi
+                            propia empresa,
+                            además, de superar los obstáculos y retos que ha traído para mí y mi familia, ser
+                            inmigrantes, adaptarnos a un nuevo país y a un sistema totalmente diferente.</p>
+                        <p class="hidden">Recomenzar la vida desde cero es todo un desafío, encontrar retos en
+                            situaciones tan
+                            sencillas como tomar un seguro de auto o en otras tan significativas como comprar mi propia
+                            casa, o planear mi ahorro para el retiro, me ha motivado a aplicar mi experiencia y
+                            conocimientos en apoyar a personas y familias en la construcción de un plan y la toma de
+                            decisiones acertadas para su presente y su futuro.</p>
+                        <p class="hidden">Soy <strong><i>Paula Álvarez</i></strong> y los invito a seguirme y
+                            escucharme.</p>
+                        <p class="hidden">¡Por eso hoy estoy aquí!</p>
+                        <p class="ver_mas "><span id="toggle-description" class="toggle-button">Ver más <i
+                                    class="fas fa-chevron-down"></i></span></p>
                     </div>
                 </div>
             </div>
@@ -486,7 +482,7 @@
                 <!-- END SEGUROS -->
                 <h2 id="ahorro_retiro_txt" class="section-title" style="color: #003da5;"></h2>
                 <h2 id="ahorro_retiro_desc" class="section-desc" style="color: black; font-size: 14px;"></h2>
-                
+
                 <!--Start AHORRO Y RETIRO -->
                 <div class="summary details">
                     <div class="section section-tabs">
@@ -520,46 +516,6 @@
                     </div>
                 </div>
                 <!-- END AHORRO Y RETIRO -->
-                
-                
-                
-                <!-- <br>
-                <div><br></div>
-                <div><br></div>
-                <div><br></div>
-                <div><br></div>
-                <div><br></div>
-                <div><br></div>
-                <div><br></div>
-                <div><br></div>
-                <div><br></div>
-                <div><br></div>
-                <div><br></div>
-                <div><br></div>
-                <div><br></div>
-                <div><br></div>
-                <div><br></div>
-                <div><br></div>
-                <div><br></div>
-                <div><br></div>
-                <div><br></div>
-                <div><br></div>
-                <div><br></div>
-                <div><br></div>
-                <div><br></div>
-                <div><br></div>
-                <div><br></div>
-                <div><br></div>
-                <div><br></div>
-                <div><br></div>
-                <div><br></div>
-                <div><br></div>
-                <div><br></div>
-                <div><br></div>
-                <div><br></div>
-                <div><br></div>
-                <div><br></div>
-                <div><br></div> -->
             </section>
         </div>
         <!--//main-body-->
@@ -613,6 +569,23 @@
                 modal.style.display = 'none';
             }
         };
+    </script>
+    <script>
+        const toggleButton = document.getElementById('toggle-description');
+        const paragraphs = document.querySelectorAll('.custom-card p.hidden');
+        let expanded = false;
+
+        toggleButton.addEventListener('click', () => {
+            expanded = !expanded;
+            if (expanded) {
+                toggleButton.innerHTML = 'Ver menos <i class="fas fa-chevron-up"></i>';
+            } else {
+                toggleButton.innerHTML = 'Ver más <i class="fas fa-chevron-down"></i>';
+            }
+            paragraphs.forEach(p => {
+                p.classList.toggle('hidden');
+            });
+        });
     </script>
 </body>
 

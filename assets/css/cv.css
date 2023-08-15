@@ -25,9 +25,13 @@ a:focus {
   text-decoration: none;
 }
 
+
+
 p {
   line-height: 1.5;
 }
+
+
 
 
 a.my_animated_button{
@@ -476,14 +480,16 @@ a.my_animated_button::before{
   
 }
 
+
+
 .main-wrapper .section-title .icon-holder .svg-inline--fa {
   font-size: 14px;
   margin-top: 16px;
 }
 
-.main-wrapper .section {
+/* .main-wrapper .section {
   margin-bottom: 40px;
-}
+} */
 
 .main-wrapper .experiences-section .item {
   margin-bottom: 30px;
@@ -566,9 +572,10 @@ a.my_animated_button::before{
 .level-bar-lan{
   background:rgb(241, 237, 237);
 }
-.footer {
-  padding: 30px;
-  padding-top: 60px;
+.footer p {
+  padding: 1em;
+  text-align: right;
+  margin-bottom: 0 !important;
 }
 
 .footer .copyright {
@@ -609,9 +616,11 @@ transition:0.5s;
     position: static;
     width: inherit;
   }
+
   .main-wrapper {
     padding: 30px;
   }
+  
   .main-wrapper .time {
     position: static;
     display: block;
