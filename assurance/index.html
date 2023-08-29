@@ -17,6 +17,7 @@
     <script src="https://kit.fontawesome.com/ff32f15468.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link id="theme-style" rel="stylesheet" href="../assets/css/assurance.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/IA_icons.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -62,7 +63,7 @@
             <h3 id="company" class="tagline1"></h3>
             <div class="container">
                 <div class="card custom-card">
-                    <p class="about_me">Sobre mí</p>
+                    <p class="about_me">SOBRE MÍ</p>
                     <div class="about_me_desc">
                         <p class="visible">Durante casi dos décadas, trabajé alineando los objetivos de las compañías
                             con las
@@ -89,7 +90,7 @@
                         <p class="hidden">Soy <strong><i>Paula Álvarez</i></strong> y los invito a seguirme y
                             escucharme.</p>
                         <p class="hidden">¡Por eso hoy estoy aquí!</p>
-                        <p class="ver_mas "><span id="toggle-description" class="toggle-button">Ver más <i
+                        <p class="ver_mas "><span id="toggle-description" class="toggle-button" style="color: #2062d4; font-weight: 700;">Ver más <i
                                     class="fas fa-chevron-down"></i></span></p>
                     </div>
                 </div>
@@ -111,7 +112,7 @@
             <!--Start contact-container-->
             <div class="contact-container container-block">
                 <h2 id="contacto" class="container-block-title"><i class="fas fa-user" aria-hidden="true"></i><span
-                        class="icon_txt">
+                        class="icon_txt"></i>
                         Contact</span></span></h2>
                 <ul class="list-unstyled contact-list">
                     <li class="email"><i class="fas fa-envelope" aria-hidden="true"></i>
@@ -136,11 +137,11 @@
                             <a href="https://t.me/+14386300780" target="_blank" class="allsides"> Instagram</a>
                         </span>
                     </li>
-                    <li class="tiktok"><i class="fab fa-tiktok" aria-hidden="true"></i>
+                    <!-- <li class="tiktok"><i class="fab fa-tiktok" aria-hidden="true"></i>
                         <span class="icon_txt1">
                             <a href="https://t.me/+14386300780" target="_blank" class="allsides"> TikTok</a>
                         </span>
-                    </li>
+                    </li> -->
                     <li class="linkedin"><i class="fab fa-linkedin-in" aria-hidden="true"></i>
                         <span class="icon_txt1">
                             <a href="https://www.linkedin.com/in/palvar/?locale=en_US" target="_blank" class="allsides">
@@ -152,11 +153,11 @@
                             <a href="http://wa.me/+14386300780" target="_blank" class="allsides"> Whatsapp</a>
                         </span>
                     </li>
-                    <li class="telegram"><i class="fab fa-telegram" aria-hidden="true"></i>
+                    <!-- <li class="telegram"><i class="fab fa-telegram" aria-hidden="true"></i>
                         <span class="icon_txt1">
                             <a href="https://t.me/+14386300780" target="_blank" class="allsides"> Telegram</a>
                         </span>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
             <!--End contact-container-->
@@ -165,8 +166,10 @@
         <!-- Start main-wrapper-->
         <div class="main-wrapper" style="color: #003da5;">
             <!--Start section-->
-            <section class="section summary-section">
-                <h2 id="seguro_txt" class="section-title" style="color: #003da5;"></h2>
+            <section class="section summary-section">            
+                <h2 id="seguro_txt" class="section-title" style="color: black">
+                    
+                </h2>
                 <h2 id="seguro_desc" class="section-desc" style="color: black; font-size: 14px;"></h2>
                 <!--Start SEGUROS-->
                 <div class="summary details">
@@ -185,6 +188,23 @@
                                     </div>
                                     <div id="collapseOne" class="collapse" aria-labelledby="headingOne"
                                         data-parent="#accordion">
+                                        <div class="card">
+                                            <div class="card-header" style="background-color:#eff1f4 !important ">
+                                                <h5 class="mb-1">
+                                                    <p class="ahorrar_facil">Ahorrar en tu seguro de auto es fácil! *</p>
+                                                    <ul class="list-assurance" style="color:#1b1b1b !important;">
+                                                        <li id="mas_ahorro_l1"></li>
+                                                        <li id="mas_ahorro_l2"></li>
+                                                        <li id="mas_ahorro_l3"></li>
+                                                        <li id="mas_ahorro_l4"></li>
+                                                    </ul>
+                                                </h5>
+                                                <div>
+                                                    <h5 id="condiciones_txt" style="padding-top: 5px;font-size: 10px">
+                                                    </h5>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div class="card-body">
                                             <ul class="list_assurance">
                                                 <li id="auto_li1"></li>
@@ -195,32 +215,16 @@
                                             <div>
                                                 <h5 id="mas_ahorro_txt" class="mas_ahorro">
                                                 </h5>
-                                                <div class="card">
-                                                    <div class="card-header">
-                                                        <h5 class="mb-1">
-                                                            <ul class="list-assurance" style="color:#97AAC3;">
-                                                                <li id="mas_ahorro_l1"></li>
-                                                                <li id="mas_ahorro_l2"></li>
-                                                                <li id="mas_ahorro_l3"></li>
-                                                                <li id="mas_ahorro_l4"></li>
-                                                            </ul>
-                                                        </h5>
-                                                    </div>
-                                                </div>
-                                                <div>
-                                                    <h5 id="condiciones_txt" style="padding-top: 5px;font-size: 10px">
-                                                    </h5>
-                                                </div>
                                             </div>
                                             <div>
                                                 <a id="btnSoumissionOne"
-                                                    href="https://ia.ca/campagne-iaah/reseau-carriere?uid=B5089C"
+                                                    href="https://auto.ia.ca/fr-CA/chat/auto-vip?uid=B5089C"
                                                     target="_blank" class="btn btn-primary btn-icon btn-block"
                                                     style="color: white">
                                                     <i class="fas fa-paper-plane"></i>
                                                 </a>
                                                 <a id="btnWhatsappOne"
-                                                    href="https://api.whatsapp.com/send?phone=+14386300780&text=Bonjour%2C%20je%20souhaite%20plus%20d%27informations%20sur%20l%27assurance%20*auto*.%20Merci%20de%20bien%20vouloir%20me%20contacter."
+                                                    href="https://api.whatsapp.com/send?phone=+14386300780&text=Hola%20Paula%2C%20me%20gustaría%20tener%20más%20información%20sobre%20el%20seguro%20de%20*auto*."
                                                     target="_blank" class="btn btn-success btn-icon btn-block"
                                                     style="color: white">
                                                     <i class="fab fa-whatsapp"></i>
@@ -242,20 +246,41 @@
                                     </div>
                                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
                                         data-parent="#accordion">
-                                        <div class="card-body">
-                                            <ul>
-                                                <li id="inquilinos_l1"></li>
-                                            </ul>
+                                        <div class="card">
+                                            <div class="card-header" style="background-color:#eff1f4 !important ">
+                                                <h5 class="mb-1">
+                                                    <p class="ahorrar_facil">Nuestras protecciones</p>
+                                                    
+                                                </h5>
+                                                <div>
+                                                    <h5 id="condiciones_txt" style="padding-top: 5px;font-size: 10px">
+                                                    </h5>
+                                                </div>
+                                                <div class="card-body" style="background-color:white !important; ">
+                                                    <!-- <ul>
+                                                        <li id="inquilinos_l1"></li>
+                                                    </ul> -->
+                                                    <p style="color: black; font-weight: 600; font-size: 1.1em">Seguro de habitación para inquilinos</p>
+                                                    <p style="color: black; font-size: 0.9em">Es importante saber que el seguro de vivienda que tiene el propietario de tu vivienda no cubre tus pertenencias personales. De hecho, con el fin de estar bien cubierto en caso de reclamación, como inquilino, es recomendable asegurar tus pertenencias personales contra el fuego, el robo y el vandalismo.</p>
+                                                    <p style="color: black; font-size: 0.9em">También es importante tener un seguro para estar bien protegido si se causa daños al edificio o a los bienes de otros inquilinos del edificio en que habitas. Un seguro de vivienda evitará perder todo lo que poseemos o tener que compensar a otros inquilinos del inmueble en el momento de una reclamación.</p>
+                                                    <p style="color: black; font-size: 0.9em">Para estar protegido en todo momento, también puedes suscribir una protección contra todo riesgo. Esta protección te permitirá proteger tus pertenencias incluso cuando no estás dentro de tu apartamento.</p>
+                                                    <p style="color: black; font-weight: 600;">Seguro de habitación para los propietarios</p>
+                                                    <p style="color: black; font-size: 0.9em">Como propietario, es importante elegir cuidadosamente el seguro de su casa o condominio para estar bien protegido y evitar sorpresas desagradables en una reclamación.</p>
+                                                    <p style="color: black; font-size: 0.9em">Su seguro de vivienda le ofrecerá una protección contra daños a su hogar, además de ofrecerle protección civil. Esta protección le protegerá de los daños causados involuntariamente a otra persona, ya sea corporal o material.</p>
+                                                    <p style="color: black; font-size: 0.9em">Le ofrecemos diferentes protecciones que satisfarán sus necesidades, ya sea propietario de una casa, una segunda residencia o un edificio o copropietario.</p>
+                                                        
+                                                </div>
+                                            </div>
                                         </div>
                                         <div>
                                             <a id="btnSoumissionOne_inquilinos"
-                                                href="https://ia.ca/campagne-iaah/reseau-carriere?uid=B5089C"
+                                                href="https://auto.ia.ca/fr-CA/chat/maison-vip?uid=B5089C"
                                                 target="_blank" class="btn btn-primary btn-icon btn-block"
                                                 style="color: white">
                                                 <i class="fas fa-paper-plane"></i>
                                             </a>
                                             <a id="btnWhatsappOne_inquilinos"
-                                                href="https://api.whatsapp.com/send?phone=+14386300780&text=Bonjour%2C%20je%20souhaite%20plus%20d%27informations%20sur%20l%27assurance%20*logement*.%20Merci%20de%20bien%20vouloir%20me%20contacter."
+                                                href="https://api.whatsapp.com/send?phone=+14386300780&text=Hola%20Paula%2C%20me%20gustaría%20tener%20más%20información%20sobre%20el%20seguro%20de%20*habitación*."
                                                 target="_blank" class="btn btn-success btn-icon btn-block"
                                                 style="color: white">
                                                 <i class="fab fa-whatsapp"></i>
@@ -276,11 +301,93 @@
                                     </div>
                                     <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
                                         data-parent="#accordion">
-                                        <div class="card-body">
-                                            <ul>
-                                                <li id="vida_l1">
-                                                </li>
-                                            </ul>
+                                        <div class="card">
+                                            <div class="card-header" style="background-color:#eff1f4 !important ">
+                                                <h5 class="mb-1">
+                                                    <p class="ahorrar_facil">La importancia de un seguro de vida</p>
+                                                    <ul class="list-assurance" style="color:#1b1b1b !important;">
+                                                        <li><i class="fas fa-check-circle" style="color: #003da5"></i> Cubrir sus compromisos financieros</li>
+                                                        <li><i class="fas fa-check-circle" style="color: #003da5"></i> Ayuda a su familia a mantener su nivel de vida</li>
+                                                        <li><i class="fas fa-check-circle" style="color: #003da5"></i> Cubre diversos gastos relacionados con la muerte</li>
+                                                        <li><i class="fas fa-check-circle" style="color: #003da5"></i> Permite dejar una herencia como legado</li>
+                                                        <li><i class="fas fa-check-circle" style="color: #003da5"></i> Asegura la continuidad de su negocio</li>
+                                                        <li><i class="fas fa-check-circle" style="color: #003da5"></i> Completa el seguro de vida ofrecido por su empleador</li>
+                                                    </ul>
+                                                </h5>
+                                            </div>
+                                        </div>
+                                        <div class="card">
+                                            <div class="card-header" style="background-color:#003da5 !important ">
+                                                <p style="color: white">¿Sabía usted?</p>
+                                                <ul class="list-assurance" style="color:#1b1b1b !important;">
+                                                    <li style="color:white; display: flex; align-items: top; padding-left: 20px;">
+                                                        <i class="fa-solid fa-caret-up" style="color: white; transform: rotate(-45deg);"></i>
+                                                        Nunca se es demasiado joven para tener un seguro de vida. Cuanto más joven seamos, más bajo será el costo de la prima, independientemente del tipo de protección.
+                                                    </li>
+                                                    <li style="color:white; display: flex; align-items: top; padding-left: 20px;">
+                                                        <i class="fa-solid fa-caret-up" style="color: white; transform: rotate(-45deg);"></i>
+                                                        Siempre habrá tiempo para reevaluar el tipo de seguro adecuado para usted, para asegurarse de que esté adecuadamente cubierto.
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="card">
+                                            <div class="card-header" style="background-color:white !important ">
+                                                <p style="color: black; font-weight: 600; font-size: 1.5em; text-align: center;">5 tipos de seguros de vida para responder a nuestras necesidades</p>
+                                                <p style="color: black; font-weight: 600;font-size: 1em">Seguro de vida temporal</p>
+                                                <p style="color: black; font-size: 0.9em">Una protección económica para tus necesidades temporales</p>
+                                                <p style="color: black; font-size: 0.9em">Protege tu familia por el tiempo necesario para cubrir las obligaciones financieras.</p>
+                                                <p style="color: black; font-size: 0.9em">Es la solución ideal si:</p>
+                                                <ul class="list-assurance" style="color:#1b1b1b !important;">
+                                                    <li><i class="fas fa-check-circle" style="color: #003da5"></i> Tienes niños a cargo y tienes un presupuesto limitado.</li>
+                                                    <li><i class="fas fa-check-circle" style="color: #003da5"></i> Tienes préstamos a reembolsar en corto y mediano plazo.</li>
+                                                </ul>
+
+                                                <p style="color: black; font-weight: 600;font-size: 1em">Seguro de vida permanente</p>
+                                                <p style="color: black; font-size: 0.9em">Un seguro para toda la vida</p>
+                                                <p style="color: black; font-size: 0.9em">Protege tu familia y tu patrimonio de forma permanente.</p>
+                                                <p style="color: black; font-size: 0.9em">Es la solución ideal si:</p>
+                                                <ul class="list-assurance" style="color:#1b1b1b !important;">
+                                                    <li><i class="fas fa-check-circle" style="color: #003da5"></i> Deseas dejar una herencia</li>
+                                                    <li><i class="fas fa-check-circle" style="color: #003da5"></i> Quieres permanecer asegurado incluso si tu estado de salud se deteriora.</li>
+                                                    <li><i class="fas fa-check-circle" style="color: #003da5"></i> Deseas asegurar la continuidad de tu empresa.</li>
+                                                </ul>
+
+                                                
+                                                <p style="color: black; font-weight: 600;font-size: 1em">Seguro de vida con participación</p>
+                                                <p style="color: black; font-size: 0.9em">Un seguro permanente que va a favorecer el crecimiento de tu patrimonio</p>
+                                                <p style="color: black; font-size: 0.9em">Protege tu familia y al mismo tiempo accede a participaciones anuales de la compañía <sup>1</sup>.</p>
+                                                <p style="color: black; font-size: 0.7em"><sup>1</sup> Las participaciones anuales no están garantizadas y varían anualmente</p>
+                                                <p style="color: black; font-size: 0.9em">Es la solución ideal si:</p>
+                                                <ul class="list-assurance" style="color:#1b1b1b !important;">
+                                                    <li><i class="fas fa-check-circle" style="color: #003da5"></i> Deseas legar un patrimonio mayor a tus seres queridos y, si es necesario, recibir ingresos adicionales para complementar tu jubilación.</li>
+                                                    <li><i class="fas fa-check-circle" style="color: #003da5"></i> Quieres ofrecer a tu hijo o nieto una base financiera sólida.</li>
+                                                    <li><i class="fas fa-check-circle" style="color: #003da5"></i> Eres propietario de un negocio y buscas una protección de seguro de vida que genere crecimiento en el tiempo.</li>
+                                                </ul>
+                                                
+                                                <p style="color: black; font-weight: 600;font-size: 1em">Seguro de vida Universal</p>
+                                                <p style="color: black; font-size: 0.9em">Una combinación de seguro de vida permanente y de ahorro</p>
+                                                <p style="color: black; font-size: 0.9em">Ofrece protección durante toda tu vida y la oportunidad de ahorrar disfrutando ciertos beneficios fiscales. </p>
+                                                <p style="color: black; font-size: 0.9em">Es la solución ideal si:</p>
+                                                <ul class="list-assurance" style="color:#1b1b1b !important;">
+                                                    <li><i class="fas fa-check-circle" style="color: #003da5"></i> Deseas dejar una herencia importante</li>
+                                                    <li><i class="fas fa-check-circle" style="color: #003da5"></i> Has cotizado la cantidad máxima a tu REER y a tu CELI</li>
+                                                    <li><i class="fas fa-check-circle" style="color: #003da5"></i> Deseas proteger el valor de tu empresa</li>
+                                                </ul>
+
+                                                <p style="color: black; font-weight: 600;font-size: 1em">Seguro de vida especializado</p>
+                                                <p style="color: black; font-size: 0.9em">Un seguro de vida especializado para constituir y proteger tu patrimonio</p>
+                                                <p style="color: black; font-size: 0.9em">iA te ofrece una protección de seguro de vida permanente garantizada con altos valores de rescate a corto plazo, una bonificación anual que permite aumentar el valor de rescate total y el capital de vida, así como varias opciones de inversión. </p>
+                                                <p style="color: black; font-size: 0.9em">Es la solución ideal si:</p>
+                                                <ul class="list-assurance" style="color:#1b1b1b !important;">
+                                                    <li><i class="fas fa-check-circle" style="color: #003da5"></i> Quieres maximizar el patrimonio que será transmitido a tus seres queridos.</li>
+                                                    <li><i class="fas fa-check-circle" style="color: #003da5"></i> Quieres aprovechar el valor de rescate a corto plazo como fuente de liquidez.</li>
+                                                    <li><i class="fas fa-check-circle" style="color: #003da5"></i> Eres propietario de un negocio y buscas una protección de seguro de vida que genere crecimiento.</li>
+                                                    <li><i class="fas fa-check-circle" style="color: #003da5"></i> Deseas diversificar tus activos y tener acceso a clases de activos normalmente reservados al mercado institucional.</li>
+                                                </ul>
+
+
+                                            </div>
                                         </div>
                                         <div>
                                             <a id="btnSoumissionOne_vida"
@@ -290,7 +397,7 @@
                                                 <i class="fas fa-paper-plane"></i>
                                             </a>
                                             <a id="btnWhatsappOne_vida"
-                                                href="https://api.whatsapp.com/send?phone=+14386300780&text=Bonjour%2C%20je%20souhaite%20plus%20d%27informations%20sur%20l%27assurance%20*maison*.%20Merci%20de%20bien%20vouloir%20me%20contacter."
+                                                href="https://api.whatsapp.com/send?phone=+14386300780&text=Hola%20Paula%2C%20me%20gustaría%20tener%20más%20información%20sobre%20el%20seguro%20de%20*vida*."
                                                 target="_blank" class="btn btn-success btn-icon btn-block"
                                                 style="color: white">
                                                 <i class="fab fa-whatsapp"></i>

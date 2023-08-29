@@ -6,10 +6,10 @@ function changeLanguage(language) {
         if (xhr.readyState === 4 && xhr.status === 200) {
             var translations = JSON.parse(xhr.responseText);
             document.getElementById("title").textContent = translations.title;
-            document.getElementById("contacto").textContent = translations.contacto;
+            document.getElementById("contacto").innerHTML = translations.contacto;
             document.getElementById("tagline").textContent = translations.tagline;
             document.getElementById("company").textContent = translations.company;
-            document.getElementById("seguro_txt").textContent = translations.seguro_txt;
+            document.getElementById("seguro_txt").innerHTML = translations.seguro_txt;
             document.getElementById("seguro_desc").textContent = translations.seguro_desc;
             document.getElementById("ahorro_retiro_txt").textContent = translations.ahorro_retiro_txt;
             document.getElementById("ahorro_retiro_desc").textContent = translations.ahorro_retiro_desc;
@@ -23,9 +23,9 @@ function changeLanguage(language) {
             document.getElementById("btnSoumissionOne_inquilinos").textContent = translations.btnSoumissionOne_inquilinos;
             document.getElementById("btnWhatsappOne_inquilinos").textContent = translations.btnWhatsappOne_inquilinos;
             document.getElementById("inquilinos_txt").textContent = translations.inquilinos_txt;
-            document.getElementById("inquilinos_l1").textContent = translations.inquilinos_l1;
+            // document.getElementById("inquilinos_l1").textContent = translations.inquilinos_l1;
             document.getElementById("vida_txt").textContent = translations.vida_txt;
-            document.getElementById("vida_l1").textContent = translations.vida_l1;
+            // document.getElementById("vida_l1").textContent = translations.vida_l1;
             document.getElementById("btnSoumissionOne_vida").textContent = translations.btnSoumissionOne_vida;
             document.getElementById("btnWhatsappOne_vida").textContent = translations.btnWhatsappOne_vida;
             document.getElementById("viaje_txt").textContent = translations.viaje_txt;
@@ -48,11 +48,11 @@ function changeLanguage(language) {
             document.getElementById("seg_graves_l1").textContent = translations.seg_graves_l1;
             document.getElementById("btnSoumissionOne_seg_graves").textContent = translations.btnSoumissionOne_seg_graves;
             document.getElementById("btnWhatsappOne_seg_graves").textContent = translations.btnWhatsappOne_seg_graves;
-            document.getElementById("mas_ahorro_txt").textContent = translations.mas_ahorro_txt;
-            document.getElementById("mas_ahorro_l1").textContent = translations.mas_ahorro_l1;
-            document.getElementById("mas_ahorro_l2").textContent = translations.mas_ahorro_l2;
-            document.getElementById("mas_ahorro_l3").textContent = translations.mas_ahorro_l3;
-            document.getElementById("mas_ahorro_l4").textContent = translations.mas_ahorro_l4;
+            // document.getElementById("mas_ahorro_txt").textContent = translations.mas_ahorro_txt;
+            document.getElementById("mas_ahorro_l1").innerHTML = translations.mas_ahorro_l1;
+            document.getElementById("mas_ahorro_l2").innerHTML = translations.mas_ahorro_l2;
+            document.getElementById("mas_ahorro_l3").innerHTML = translations.mas_ahorro_l3;
+            document.getElementById("mas_ahorro_l4").innerHTML = translations.mas_ahorro_l4;
             document.getElementById("condiciones_txt").textContent = translations.condiciones_txt;
             document.getElementById("modal_p1").textContent = translations.modal_p1;
             document.getElementById("modal_p2").textContent = translations.modal_p2;
