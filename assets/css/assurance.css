@@ -139,13 +139,13 @@ a.my_animated_button::before {
 }
 
 .list-assurance li {
-    padding-left: 20px;
+    padding-left: .75em;
     position: relative;
     margin-bottom: 10px;
 }
 
 .list-assurance li::before {
-    content: "\f00c";
+    /* content: "\f00c"; */
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     position: absolute;
@@ -158,20 +158,16 @@ a.my_animated_button::before {
     margin: 0 !important;
     padding: 0 !important;    
     font-size: 10px;
+    font-style: italic;
 }
 
-.ver_menos{
-    text-align: right !important;
-    margin: 0 !important;
-    padding: 0 !important;    
-    font-size: 10px;
-}
 
 .about_me {
     padding-top: .5em;   
     color: black;
     font-size: 18px;
     font-weight: 700;
+    margin-bottom: 0px !important;
 }
 
 .about_me_desc {
@@ -406,6 +402,10 @@ a.my_animated_button::before {
     font-size: 14px;
 }
 
+.fa-check-circle::before {
+    padding-right: .5em
+}
+
 .fa-phone {
     color: black;
 }
@@ -455,10 +455,11 @@ a.my_animated_button::before {
 
 .sidebar-wrapper .container-block-title {
     text-transform: uppercase;
-    font-size: 18px;
+    font-size: 1.3em;
     font-weight: 700;
     margin-top: 0;
     margin-bottom: 5px;
+
 }
 
 .sidebar-wrapper .degree {
@@ -526,10 +527,14 @@ a.my_animated_button::before {
 
 }
 
+.custom-icon {
+    font-family: "IA_icons";
+}
+
 .main-wrapper .section-title {
     text-transform: uppercase;
     font-size: 1.3em;
-    font-weight: 500;
+    font-weight: 700;
     color: #2e4049;
     position: relative;
     margin-top: 0;
@@ -596,6 +601,10 @@ a.my_animated_button::before {
     font-size: 16px;
 }
 
+.ahorrar_facil{
+    color: black;
+    font-size: .86em;
+}
 
 .main-wrapper .section-title .icon-holder {
     width: 30px;
@@ -755,7 +764,7 @@ a.my_animated_button::before {
     }
 
     .main-wrapper {
-        padding: 30px;
+        padding: 20px;
     }
 
     .main-wrapper .time {

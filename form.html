@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página con Formulario de Contacto</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <!-- <script>
+        function showModalAndRedirect(isSuccess) {
+            const modalId = isSuccess ? 'successModal' : 'errorModal';
+            const modal = document.getElementById(modalId);
+
+            modal.style.display = 'block';
+
+            setTimeout(function () {
+                modal.style.display = 'none';
+                window.location.href = '/form.html'; // Redireccionar al formulario después de 5 segundos
+            }, 5000); // Esperar 5 segundos
+        }
+    </script> -->
+    <style>
+        /* Estilos para el modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .success {
+            background-color: #00cc00;
+            color: white;
+        }
+
+        .error {
+            background-color: #cc0000;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container mt-5">
+        <h1>Contacto</h1>
+        <!-- <form action="https://9f3d-69-157-126-140.ngrok-free.app/cgi-bin/procesar_formulario.py" method="post" enctype="multipart/form-data"> -->
+        <form id="formulario" action="https://9f3d-69-157-126-140.ngrok-free.app/cgi-bin/procesar_formulario.py" method="post" enctype="multipart/form-data">
+
+            <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre:</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email:</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="mb-3">
+                <label for="descripcion" class="form-label">Descripción:</label>
+                <textarea class="form-control" id="descripcion" name="descripcion" rows="4" required></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="archivo" class="form-label">Adjuntar Archivo:</label>
+                <input type="file" class="form-control" id="archivo" name="archivo">
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+        <!-- Modal de éxito -->
+        <div id="successModal" class="modal success">
+            Formulario enviado satisfactoriamente<br>
+            Espere 5 segundos...
+        </div>
+    
+        <!-- Modal de error -->
+        <div id="errorModal" class="modal error">
+            Fallo al enviar el formulario<br>
+            Espere 5 segundos...
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/script.js"></script>
+
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const form = document.querySelector('#formulario');
+
+        const successModal = document.getElementById('successModal');
+        const errorModal = document.getElementById('errorModal');
+
+        form.addEventListener('submit', async function (event) {
+            event.preventDefault(); // Evitar el envío normal del formulario
+
+            const formData = new FormData(form);
+            const response = await fetch('https://9f3d-69-157-126-140.ngrok-free.app/cgi-bin/procesar_formulario.py', {
+                method: 'POST',
+                body: formData,
+            });
+
+            if (response.ok) {
+                successModal.style.display = 'block';
+                setTimeout(function () {
+                    successModal.style.display = 'none';
+                    window.location.href = '/form.html'; // Redireccionar después de 5 segundos
+                }, 5000);
+            } else {
+                errorModal.style.display = 'block';
+                setTimeout(function () {
+                    errorModal.style.display = 'none';
+                }, 5000);
+            }
+        });
+    });
+</script>
+
+</html>
