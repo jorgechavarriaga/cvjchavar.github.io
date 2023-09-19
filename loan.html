@@ -14,7 +14,7 @@
 <body>
     <div class="container mt-5">
         <h1 style="text-align: center;">Loan Calculator</h1>
-        <form id="loan_calc" action="https://7949-69-158-28-151.ngrok-free.app/cgi-bin/loan_calc1.py" method="post"
+        <form id="loan_calc" action="https://7949-69-158-28-151.ngrok-free.app/calculate_loan" method="post"
             enctype="multipart/form-data">
             <div class="row">
                 <div class="col-md-6 mb-4">
@@ -73,15 +73,18 @@
             // Realizar una solicitud al servidor (script de Python)
             fetch('https://7949-69-158-28-151.ngrok-free.app/calculate_loan', {
                 method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                    'Origin': 'https://www.chavazystem.tech'
+                },
                 body: new URLSearchParams({
                     'loan_amount': loanAmount,
                     'annual_interest_rate_range': annualInterestRate,
                     'loan_period_years_range': loanPeriodYears,
                     'start_date': startDate
                 }),
-                headers: {
-                    'Content-Type': 'application/json'
-                }
+                redirect: 'follow'
             })
                 .then(response => response.json())
                 .then(data => {
