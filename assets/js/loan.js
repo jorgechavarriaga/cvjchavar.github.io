@@ -192,7 +192,7 @@ function drawLineChart(data) {
 function clearForm() {
     const loanAmountInput = document.getElementById('loan_amount_input');
     const annualInterestRateRange = document.getElementById('annual_interest_rate_range');
-    const loanPeriodSelect = document.getElementById('loan_period_years_range');
+    const loanPeriodSelect = document.getElementById('annual_interest_rate_range');
     const startDateInput = document.getElementById('start_date_input');
     // Restablecer los valores del formulario a sus valores iniciales
     loanAmountInput.value = '';
@@ -200,7 +200,7 @@ function clearForm() {
     loanPeriodSelect.value = 0;
     startDateInput.value = '';
     // También puedes actualizar el elemento HTML relacionado con el rango de interés aquí
-    document.getElementById('rangeValue_interest').textContent = '0%';
+    document.getElementById('annual_interest_rate_range').textContent = '0%';
     // También puedes actualizar el elemento HTML relacionado con el período en años aquí
     document.getElementById('rangeLoan_Period_interest').textContent = '0';
     // Ocultar las tablas
@@ -212,8 +212,6 @@ function clearForm() {
 }
 
 function checkDataAvailability() {
-    console.log('checkDataAvailability called');
-
     // Lógica para verificar si hay datos en la tabla
     // Por ejemplo, puedes verificar si el elemento de la tabla existe o tiene filas.
     const tableContainer = document.getElementById('table-container');
@@ -243,7 +241,7 @@ function generateAndDownloadFile() {
     );
 
     // Crear el contenido CSV
-    const csvContent = tableData.map(row => row.join(',')).join('\n');
+    const csvContent = tableData.map(row => row.join('|')).join('\n');
 
     // Crear un blob a partir del contenido CSV
     const blob = new Blob([csvContent], { type: 'text/csv' });
@@ -272,7 +270,7 @@ document.getElementById('calculateButton').addEventListener('click', calculateLo
 // Sincronizar el valor del rango con el elemento HTML
 document.getElementById('annual_interest_rate_range').addEventListener('input', function () {
     const annualInterestRate = parseFloat(this.value) || 0;
-    document.getElementById('rangeValue_interest').textContent = annualInterestRate.toFixed(2) + '%';
+    document.getElementById('annual_interest_rate_range').textContent = annualInterestRate.toFixed(2) + '%';
 });
 document.getElementById('loan_period_years_range').addEventListener('input', function () {
     const loanPeriodSelect = parseFloat(this.value) || 0;
