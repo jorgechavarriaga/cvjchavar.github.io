@@ -1,0 +1,244 @@
+<table border="1" cellspacing="0" cellpadding="8">
+  <thead>
+    <tr>
+      <th>Variable</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Source/Engineering</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ADR</td>
+      <td>Numeric</td>
+      <td>Average Daily Rate</td>
+      <td>
+        BOOKINGS, BOOKINGS CHANGE LOG and TRANSACTIONS / Calculated by dividing
+        the sum of all lodging transactions by the total number of staying
+        nights
+      </td>
+    </tr>
+    <tr>
+      <td>Adults</td>
+      <td>Integer</td>
+      <td>Number of adults</td>
+      <td>Bookings and BOOKINGS CHANGE LOG</td>
+    </tr>
+    <tr>
+      <td>Agent</td>
+      <td>Categorical</td>
+      <td>ID of the travel agency that made the booking</td>
+      <td>Bookings and BOOKINGS CHANGE LOG</td>
+    </tr>
+    <tr>
+      <td>ArrivalDateDayOfMonth</td>
+      <td>Integer</td>
+      <td>Day of the month of the arrival date</td>
+      <td>Bookings and BOOKINGS CHANGE LOG</td>
+    </tr>
+    <tr>
+      <td>ArrivalDateMonth</td>
+      <td>Categorical</td>
+      <td>Month of arrival date with 12 categories: “January” to “December”</td>
+      <td>Bookings and BOOKINGS CHANGE LOG</td>
+    </tr>
+    <tr>
+      <td>ArrivalDateWeekNumber</td>
+      <td>Integer</td>
+      <td>Week number of the arrival date</td>
+      <td>Bookings and BOOKINGS CHANGE LOG</td>
+    </tr>
+    <tr>
+      <td>ArrivalDateYear</td>
+      <td>Integer</td>
+      <td>Year of arrival date</td>
+      <td>Bookings and BOOKINGS CHANGE LOG</td>
+    </tr>
+    <tr>
+      <td>AssignedRoomType</td>
+      <td>Categorical</td>
+      <td>Code for the type of room assigned to the booking</td>
+      <td>Bookings and BOOKINGS CHANGE LOG</td>
+    </tr>
+    <tr>
+      <td>Babies</td>
+      <td>Integer</td>
+      <td>Number of babies</td>
+      <td>Bookings and BOOKINGS CHANGE LOG</td>
+    </tr>
+    <tr>
+      <td>BookingChanges</td>
+      <td>Integer</td>
+      <td>Number of changes/amendments made to the booking</td>
+      <td>
+        Bookings and BOOKINGS CHANGE LOG / Calculated by adding the number of
+        unique iterations that change some booking attributes
+      </td>
+    </tr>
+    <tr>
+      <td>Children</td>
+      <td>Integer</td>
+      <td>Number of children</td>
+      <td>
+        Bookings and BOOKINGS CHANGE LOG / Sum of both payable and non-payable
+        children
+      </td>
+    </tr>
+    <tr>
+      <td>Company</td>
+      <td>Categorical</td>
+      <td>
+        ID of the company/entity that made the booking or responsible for paying
+        the booking
+      </td>
+      <td>Bookings and BOOKINGS CHANGE LOG</td>
+    </tr>
+    <tr>
+      <td>Country</td>
+      <td>Categorical</td>
+      <td>Country of origin in ISO 3155–3:2013 format</td>
+      <td>BOOKINGS, BOOKINGS CHANGE LOG and NATIONALITIES</td>
+    </tr>
+    <tr>
+      <td>CustomerType</td>
+      <td>Categorical</td>
+      <td>Type of booking: Contract, Group, Transient, Transient-party</td>
+      <td>Bookings and BOOKINGS CHANGE LOG</td>
+    </tr>
+    <tr>
+      <td>DaysInWaitingList</td>
+      <td>Integer</td>
+      <td>
+        Number of days the booking was in the waiting list before confirmed
+      </td>
+      <td>
+        Bookings / Calculated by subtracting the date the booking was confirmed
+        from the date it entered the PMS
+      </td>
+    </tr>
+    <tr>
+      <td>DepositType</td>
+      <td>Categorical</td>
+      <td>Indication if customer made a deposit to guarantee booking</td>
+      <td>Bookings and TRANSACTIONS</td>
+    </tr>
+    <tr>
+      <td>DistributionChannel</td>
+      <td>Categorical</td>
+      <td>
+        Booking distribution channel: TA (Travel Agents), TO (Tour Operators)
+      </td>
+      <td>BOOKINGS, BOOKINGS CHANGE LOG and DISTRIBUTION CHANNELS</td>
+    </tr>
+    <tr>
+      <td>IsCanceled</td>
+      <td>Categorical</td>
+      <td>Value indicating if booking was canceled (1) or not (0)</td>
+      <td>BOOKINGS</td>
+    </tr>
+    <tr>
+      <td>IsRepeatedGuest</td>
+      <td>Categorical</td>
+      <td>
+        Value indicating if booking name was from a repeated guest (1) or not
+        (0)
+      </td>
+      <td>
+        BOOKINGS, BOOKINGS CHANGE LOG and C / Created by verifying if a profile
+        was associated with the booking customer
+      </td>
+    </tr>
+    <tr>
+      <td>LeadTime</td>
+      <td>Integer</td>
+      <td>Number of days between booking entry and arrival date</td>
+      <td>
+        Bookings and BOOKINGS CHANGE LOG / Subtraction of the entering date from
+        the arrival date
+      </td>
+    </tr>
+    <tr>
+      <td>MarketSegment</td>
+      <td>Categorical</td>
+      <td>
+        Market segment designation: TA (Travel Agents), TO (Tour Operators)
+      </td>
+      <td>BOOKINGS, BOOKINGS CHANGE LOG and MARKET SEGMENTS</td>
+    </tr>
+    <tr>
+      <td>Meal</td>
+      <td>Categorical</td>
+      <td>
+        Type of meal booked: Undefined/SC, BB (Bed & Breakfast), HB (Half
+        Board), FB (Full Board)
+      </td>
+      <td>BOOKINGS, BOOKINGS CHANGE LOG and MEALS</td>
+    </tr>
+    <tr>
+      <td>PreviousBookingsNotCanceled</td>
+      <td>Integer</td>
+      <td>Number of previous bookings not canceled by customer</td>
+      <td>
+        Bookings and BOOKINGS CHANGE LOG / In case no customer profile was
+        associated, set to 0
+      </td>
+    </tr>
+    <tr>
+      <td>PreviousCancellations</td>
+      <td>Integer</td>
+      <td>Number of previous bookings canceled by customer</td>
+      <td>
+        Bookings and BOOKINGS CHANGE LOG / In case no customer profile was
+        associated, set to 0
+      </td>
+    </tr>
+    <tr>
+      <td>RequiredCarParkingSpaces</td>
+      <td>Integer</td>
+      <td>Number of car parking spaces required by customer</td>
+      <td>Bookings and BOOKINGS CHANGE LOG</td>
+    </tr>
+    <tr>
+      <td>ReservationStatus</td>
+      <td>Categorical</td>
+      <td>Reservation status: Canceled, Check-Out, No-Show</td>
+      <td>BOOKINGS</td>
+    </tr>
+    <tr>
+      <td>ReservationStatusDate</td>
+      <td>Date</td>
+      <td>Date when last status was set</td>
+      <td>BOOKINGS</td>
+    </tr>
+    <tr>
+      <td>ReservedRoomType</td>
+      <td>Categorical</td>
+      <td>Code of room type reserved</td>
+      <td>Bookings and BOOKINGS CHANGE LOG</td>
+    </tr>
+    <tr>
+      <td>StaysInWeekendNights</td>
+      <td>Integer</td>
+      <td>Number of weekend nights guest stayed</td>
+      <td>
+        Bookings and BOOKINGS CHANGE LOG / Count of weekend nights from total
+        nights
+      </td>
+    </tr>
+    <tr>
+      <td>StaysInWeekNights</td>
+      <td>Integer</td>
+      <td>Number of week nights guest stayed</td>
+      <td>
+        Bookings and BOOKINGS CHANGE LOG / Count of week nights from total
+        nights
+      </td>
+    </tr>
+    <tr>
+      <td>TotalOfSpecialRequests</td>
+      <td>Integer</td>
+      <td>Number of special requests made by customer</td>
+      <td>Bookings and BOOKINGS CHANGE LOG / Sum of all special requests</td>
+    </tr>
+  </tbody>
+</table>
