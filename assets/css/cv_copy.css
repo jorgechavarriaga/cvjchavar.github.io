@@ -1,6 +1,6 @@
 body {
   font-family: 'Roboto', sans-serif;
-  color: #302d2b;
+  color: #545E6C;
   background: #f5f5f5;
   font-size: 14px;
   -webkit-font-smoothing: antialiased;
@@ -186,8 +186,7 @@ a.my_animated_button::before{
 }
 
 .sidebar-wrapper {
-  /* background: #4B6A78; */
-  background: #4f4a47;
+  background: #4B6A78;
   position: absolute;
   right: 0;
   width: 280px;
@@ -202,8 +201,7 @@ a.my_animated_button::before{
 
 .sidebar-wrapper .profile-container {
   padding: 30px;
-  /* background: rgba(0, 0, 0, 0.2); */
-  background: #302d2b;
+  background: rgba(0, 0, 0, 0.2);
   text-align: center;
   color: #fff;
 }
@@ -404,7 +402,7 @@ a.my_animated_button::before{
   text-transform: uppercase;
   font-size: 1.3em;
   font-weight: 500;
-  color: #302d2b;
+  color: #2e4049;
   position: relative;
   margin-top: 0;
   margin-bottom: 20px;
@@ -429,7 +427,7 @@ a.my_animated_button::before{
   margin-top: -3em;
   margin-right: 0.22em;
   border-width: 0px;
-  background-color: #302d2b;
+  background-color: #3d5561;
   color: white;
 }
 
@@ -475,7 +473,7 @@ a.my_animated_button::before{
   -moz-background-clip: padding;
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
-  background: #302d2b;
+  background: #2e4049;
   text-align: center;
   font-size: 22px;
   position: relative;
@@ -515,8 +513,7 @@ a.my_animated_button::before{
   position: absolute;
   right: 0;
   top: 0;
-  /* color: #97AAC3; */
-  color: #4f4a47;
+  color: #97AAC3;
 }
 
 .main-wrapper .company {
@@ -564,11 +561,11 @@ a.my_animated_button::before{
 }
 
 .skillset .theme-progress-bar {
-  background: #302d2b;
+  background: #5f8697;
 }
 
 .theme-progress-bar-lan{
-  background: #302d2b;
+  background: #3c5560;
   
 }
 
@@ -576,15 +573,14 @@ a.my_animated_button::before{
   background:rgb(241, 237, 237);
 }
 .footer p {
-  /* padding: 1em; */
+  padding: 1em;
   text-align: right;
   margin-bottom: 0 !important;
-  color: #302d2b;
 }
 
 .footer .copyright {
   line-height: 1.6;
-  color: #302d2b;
+  color: #545E6C;
   font-size: 13px;
 }
 
@@ -647,8 +643,7 @@ transition:0.5s;
     margin-top: -.8em;
     margin-right: 0.322em;
     /* border: 1px solid white; */
-    background-color: #302d2b;
-    /* background-color: red; */
+    background-color: #3d5561;
     border-width: 0px;
     /* background: rgba(0, 0, 0, 0.2); */
     color: white;
