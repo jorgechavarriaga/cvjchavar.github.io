@@ -15,6 +15,18 @@ function changeLanguage(language) {
             document.getElementById("language-select-2").textContent = translations["language-select-2"];
             document.getElementById("language-select-3").textContent = translations["language-select-3"];
             document.getElementById("education_txt").innerHTML = translations["education_txt"];
+            document.getElementById("education_degree_title9").innerHTML = translations["education_degree_title9"];
+            document.getElementById("education_degree_univ9").textContent = translations["education_degree_univ9"];
+            document.getElementById("education_degree_place9").textContent = translations["education_degree_place9"];
+            document.getElementById("education_degree_time9").textContent = translations["education_degree_time9"];
+            document.getElementById("education_degree_title7").innerHTML = translations["education_degree_title7"];
+            document.getElementById("education_degree_univ8").textContent = translations["education_degree_univ8"];
+            document.getElementById("education_degree_place8").textContent = translations["education_degree_place8"];
+            document.getElementById("education_degree_time8").textContent = translations["education_degree_time8"];
+            document.getElementById("education_degree_title8").innerHTML = translations["education_degree_title8"];
+            document.getElementById("education_degree_univ7").textContent = translations["education_degree_univ7"];
+            document.getElementById("education_degree_place7").textContent = translations["education_degree_place7"];
+            document.getElementById("education_degree_time7").textContent = translations["education_degree_time7"];
             document.getElementById("education_degree_title6").innerHTML = translations["education_degree_title6"];
             document.getElementById("education_degree_univ6").textContent = translations["education_degree_univ6"];
             document.getElementById("education_degree_time6").textContent = translations["education_degree_time6"];
@@ -41,7 +53,7 @@ function changeLanguage(language) {
             diplomaElement1.setAttribute("data-original-title", diplomaTitleTranslation1);
             diplomaElement1.setAttribute("data-content", diplomaContentTranslation1);
             document.getElementById("diploma-link1").innerHTML = translations["diploma-link1"];
-            
+
             var diplomaElement2 = document.getElementById("diploma-link2");
             var diplomaTitleTranslation2 = translations["diploma_title2"];
             var diplomaContentTranslation2 = translations["diploma_content2"];
