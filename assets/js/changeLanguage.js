@@ -122,6 +122,8 @@ function changeLanguage(language) {
             document.getElementById("job4_li1").textContent = translations["job4_li1"];
             document.getElementById("job4_li2").textContent = translations["job4_li2"];
             document.getElementById("job4_li3").textContent = translations["job4_li3"];
+            document.getElementById("job4_li4").textContent = translations["job4_li4"];
+            document.getElementById("job4_li5").textContent = translations["job4_li5"];
             document.getElementById("job_title3").textContent = translations["job_title3"];
             document.getElementById("job_time3").textContent = translations["job_time3"];
             document.getElementById("company3").innerHTML = translations["company3"];
