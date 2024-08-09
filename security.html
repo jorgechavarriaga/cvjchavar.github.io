@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title id="title"></title>
+    <!-- Meta -->
+    <meta charset="utf-8" />
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="Jorge Chavarriaga - CV" name="description" />
+    <meta content="Jorge Chavarriaga" name="author" />
+    <link href="assets/images/favicon-jch-32x32.png" rel="shortcout icon" />
+
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,500,400italic,300italic,300,500italic,700,700italic,900,900italic"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- FontAwesome JS-->
+    <script
+      src="https://kit.fontawesome.com/ff32f15468.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Global CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <!-- Theme CSS -->
+    <link href="assets/css/cv_clean.css" id="theme-style" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css"
+      integrity="sha512-Cv93isQdFwaKBV+Z4X8kaVBYWHST58Xb/jVOcV9aRsGSArZsgAnFIhMpDoMDcFNoUtday1hdjn0nGp3+KZyyFw=="
+      crossorigin="anonymous"
+    />
+    <link rel="prefetch" href="assets/language/cv_en.json" />
+    <script src="/assets/js/changeLanguage.js"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-HSGW69E28V"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-HSGW69E28V");
+    </script>
+    <script>
+      $(document).ready(function () {
+        $('[data-toggle="popover"]').popover({
+          placement: "top",
+          trigger: "hover",
+          template:
+            '<div class="popover"><div class="arrow"></div><h3 class="popover-header"></h3><div class="popover-body"></div><div class="popover-footer"></a></div></div>',
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <!--Start dropdown language -->
+    <!-- End dropdown language -->
+    <div class="wrapper">
+      <!--Start sidebar-wrapper-->
+      <div class="sidebar-wrapper">
+        <!--Start profile-container-->
+        <div class="profile-container">
+          <div class="len lang-container">
+            <select
+              id="language-select"
+              onchange="changeLanguage(this.value)"
+              class="select_lenguage"
+            >
+              <option id="language-select-1" value="cv_en"></option>
+              <option id="language-select-2" value="cv_fr"></option>
+              <option id="language-select-3" value="cv_sp"></option>
+            </select>
+          </div>
+          <div id="svg-container">
+            <div id="svg-content"></div>
+            <img
+              id="profile-photo"
+              src="assets/images/jorgechavarriaga.jpeg"
+              alt="Jorge Chavarriaga"
+            />
+          </div>
+          <h1 class="name">Jorge Chavarriaga</h1>
+          <h3 id="profile-container-3" class="tagline"></h3>
+          <h3 id="profile-container-2" class="tagline"></h3>
+          <h3 id="profile-container-1" class="tagline"></h3>
+          <h3 id="profile-container-4" class="tagline"></h3>
+        </div>
+        <!--End profile-container-->
+        <!--Start contact-container-->
+        <div class="contact-container container-block">
+          <h2 id="contact" class="container-block-title"></h2>
+          <ul class="list-unstyled contact-list">
+            <li class="email">
+              <i class="fas fa-envelope" aria-hidden="true"></i>
+              <a
+                href="mailto: jorge.chavarriaga@gmail.com; jorge.chavarriaga@chavazystem.tech"
+                class="allsides"
+              >
+                jorge.chavarriaga@gmail.com</a
+              >
+            </li>
+            <li class="phone">
+              <i class="fas fa-phone" aria-hidden="true"></i>
+              <a href="tel:+14183211335" class="allsides"> +1 418 321 1335</a>
+            </li>
+            <li class="website">
+              <i class="fas fa-globe" aria-hidden="true"></i>
+              <a
+                href="https://www.chavazystem.tech/"
+                target="_blank"
+                class="allsides"
+                >https://www.chavazystem.tech</a
+              >
+            </li>
+            <li class="linkedin">
+              <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+              <a
+                href="https://www.linkedin.com/in/jorge-chava/?locale=en_US"
+                target="_blank"
+                class="allsides"
+              >
+                linkedin.com/in/jorge-chava</a
+              >
+            </li>
+            <li class="github">
+              <i class="fab fa-github" aria-hidden="true"></i>
+              <a
+                href="https://github.com/jorgechavarriaga/"
+                target="_blank"
+                class="allsides"
+                >github.com/jorgechavarriaga</a
+              >
+            </li>
+            <li class="whatsapp">
+              <i class="fab fa-whatsapp" aria-hidden="true"></i>
+              <a
+                href="http://wa.me/+14183211335"
+                target="_blank"
+                class="allsides"
+              >
+                Whatsapp</a
+              >
+            </li>
+            <li class="whatsapp">
+              <i class="fab fa-telegram-plane" aria-hidden="true"></i>
+              <a
+                href="https://t.me/+14183211335"
+                target="_blank"
+                class="allsides"
+              >
+                Telegram</a
+              >
+            </li>
+          </ul>
+        </div>
+        <!--End contact-container-->
+        <!--Start education-container-->
+        <!-- <div class="education-container container-block">
+          <h2 id="" class="container-block-title">1</h2>
+          <div class="item">
+            <h4 class="degree">
+              1a
+              <a
+                href="https://www.coursera.org/account/accomplishments/specialization/certificate/R54HPT7TPCLK"
+                target="_blank"
+                class="allsides"
+                id="education_degree_title7"
+              >
+              </a>
+              <a
+                class="certificate"
+                href="image-viewer.html?image=Google_Business_Intelligence.png"
+                target="_blank"
+              >
+                <i class="fa-solid fa-certificate"></i>
+              </a>
+            </h4>
+            <h5 class="meta">
+              <a
+                href="https://alberta.college/courses/rac-google-bussiness-intelligence/"
+                target="_blank"
+                id="education_degree_univ7"
+              >
+              </a>
+            </h5>
+            <div id="education_degree_time7" class="time"></div>
+            <div id="education_degree_place7" class="time"></div>
+          </div>
+          <div class="item">
+            <h4 class="degree">
+              2b
+              <a
+                href="https://www.coursera.org/account/accomplishments/professional-cert/587FYLUL3USD"
+                target="_blank"
+                class="allsides"
+                id="education_degree_title8"
+              >
+              </a>
+              <a
+                class="certificate"
+                href="image-viewer.html?image=Google_Advanced_Data_Analytics.png"
+                target="_blank"
+              >
+                <i class="fa-solid fa-certificate"></i>
+              </a>
+            </h4>
+            <h5 class="meta">
+              <a
+                href="https://alberta.college/courses/rac-google-advanced-data-analytics/"
+                target="_blank"
+                id="education_degree_univ8"
+              >
+              </a>
+            </h5>
+            <div id="education_degree_time8" class="time"></div>
+            <div id="education_degree_place8" class="time"></div>
+          </div>
+          <div class="item">
+            <h4 class="degree">
+              3c
+              <a
+                href="https://www.coursera.org/account/accomplishments/specialization/certificate/7TS8EZ5LNQQR"
+                target="_blank"
+                class="allsides"
+                id="education_degree_title9"
+              >
+              </a>
+              <a
+                class="certificate"
+                href="image-viewer.html?image=Google_Data_Analytics.png"
+                target="_blank"
+              >
+                <i class="fa-solid fa-certificate"></i>
+              </a>
+            </h4>
+            <h5 class="meta">
+              <a
+                href="https://alberta.college/courses/rac-google-data-analyst-program/"
+                target="_blank"
+                id="education_degree_univ9"
+              >
+              </a>
+            </h5>
+            <div id="education_degree_time9" class="time"></div>
+            <div id="education_degree_place9" class="time"></div>
+          </div>
+          <div class="item">
+            <h4 class="degree">
+              4d
+              <a
+                href="https://www.coursera.org/account/accomplishments/professional-cert/ULGXGD3TXCEV"
+                target="_blank"
+                class="allsides"
+                id="education_degree_title6"
+              >
+              </a>
+              <a
+                class="certificate"
+                href="image-viewer.html?image=Google_IT_Aautomation_With_Python.jpg"
+                target="_blank"
+              >
+                <i class="fa-solid fa-certificate"></i>
+              </a>
+            </h4>
+            <h5 class="meta">
+              <a
+                href="https://alberta.college/courses/rac-google-it-automation-with-python/"
+                target="_blank"
+                id="education_degree_univ6"
+              >
+              </a>
+            </h5>
+            <div id="education_degree_time6" class="time"></div>
+            <div id="education_degree_place6" class="time"></div>
+          </div>
+          <div class="item">
+            <h4 class="degree">
+              5e
+              <a
+                href="https://graduation.udacity.com/confirm/J6SQEKF6"
+                target="_blank"
+                id="education_degree_title5"
+                class="degree"
+              >
+              </a>
+              <a
+                class="certificate"
+                href="image-viewer.html?image=UDACITY Secutiry Engineer Nanodegree.jpg"
+                target="_blank"
+              >
+                <i class="fa-solid fa-certificate"></i>
+              </a>
+            </h4>
+            <h5 class="meta">
+              <a
+                href="https://www.udacity.com/course/security-engineer-nanodegree--nd698"
+                target="_blank"
+                id="education_degree_univ5"
+              >
+              </a>
+            </h5>
+            <div id="education_degree_time5" class="time"></div>
+            <div id="education_degree_place5" class="time"></div>
+          </div>
+          <div class="item">
+            <h4 class="degree">
+              6f
+              <a
+                href="image-viewer.html?image=CODEBOXX FullStackDeveloper.jpg"
+                target="_blank"
+                id="education_degree_title4"
+                class="degree"
+              >
+              </a>
+              <a
+                class="certificate"
+                href="image-viewer.html?image=CODEBOXX FullStackDeveloper.jpg"
+                target="_blank"
+              >
+                <i class="fa-solid fa-certificate"></i>
+              </a>
+            </h4>
+            <h5 class="meta">
+              <a
+                href="https://www.codeboxx.biz/"
+                target="_blank"
+                class="allsides"
+                id="education_degree_univ4"
+              >
+              </a>
+            </h5>
+            <div id="education_degree_time4" class="time"></div>
+            <div id="education_degree_place4" class="time"></div>
+          </div>
+          <div class="item">
+            <h4 class="degree">
+              7g
+              <a id="education_degree_title3" class="degree"></a>
+              <a
+                class="certificate"
+                href="image-viewer.html?image=GeorgeWashingtonUniveristyManagementSkills.jpeg"
+                target="_blank"
+              >
+                <i class="fa-solid fa-certificate"></i>
+              </a>
+            </h4>
+            <h5 class="meta">
+              <a
+                href="https://business.gwu.edu/"
+                target="_blank"
+                class="allsides"
+                id="education_degree_univ3"
+              >
+              </a>
+            </h5>
+            <div id="education_degree_time3" class="time"></div>
+            <div id="education_degree_place3" class="time"></div>
+          </div>
+          <div class="item">
+            <h4 class="degree">
+              8h
+              <a
+                data-toggle="popover"
+                data-html="true"
+                class="allsides"
+                id="diploma-link2"
+                data-original-title=""
+                data-content=""
+              ></a>
+              <a
+                class="certificate"
+                href="image-viewer.html?image=UdMLogistic.jpeg"
+                target="_blank"
+              >
+                <i class="fa-solid fa-certificate"></i>
+              </a>
+            </h4>
+            <h5 class="meta">
+              <a
+                href="https://udem.edu.co/index.php/en/"
+                target="_blank"
+                class="allsides"
+                id="education_degree_univ2"
+              >
+              </a>
+            </h5>
+            <div id="education_degree_time2" class="time"></div>
+            <div id="education_degree_place2" class="time"></div>
+          </div>
+          <div class="item">
+            <h4 class="degree">
+              9i
+              <a
+                data-toggle="popover"
+                data-html="true"
+                class="allsides"
+                id="diploma-link1"
+                data-original-title=""
+                data-content=""
+              >
+              </a>
+              <a
+                class="certificate"
+                href="image-viewer.html?image=EafitMechanicalEngineer.jpeg"
+                target="_blank"
+              >
+                <i class="fa-solid fa-certificate"></i>
+              </a>
+            </h4>
+            <h5 class="meta">
+              <a
+                href="https://www.eafit.edu.co/international/eng/Paginas/eng.aspx"
+                target="_blank"
+                class="allsides"
+                id="education_degree_univ1"
+              ></a>
+            </h5>
+            <div id="education_degree_time1" class="time"></div>
+            <div id="education_degree_place1" class="time"></div>
+          </div>
+        </div> -->
+        <!--End education-container-->
+        <!-- Start languages container-->
+        <!-- <div class="languages-container container-block">
+          <div class="skillset">
+            <h2 id="language_txt" class="container-block-title">11</h2>
+            <ul class="list-unstyled interests-list">
+              <li>
+                <div class="language-entry">
+                  <span id="language_1"></span>11a
+                  <div class="progress level-bar-lan">
+                    <div
+                      class="progress-bar theme-progress-bar-lan"
+                      role="progressbar"
+                      style="width: 100%"
+                      aria-valuenow="100"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    >
+                      100 %
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <div id="language_native" class="text-right lang-desc"></div>
+              <li>
+                <div class="language-entry">
+                  <span id="language_2"></span>22b
+                  <div class="progress level-bar-lan">
+                    <div
+                      class="progress-bar theme-progress-bar-lan"
+                      role="progressbar"
+                      style="width: 80%"
+                      aria-valuenow="100"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    >
+                      80 %
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <div id="language_fluent" class="text-right lang-desc"></div>
+              <li>
+                <div class="language-entry">
+                  <span id="language_3"></span>33c
+                  <div class="progress level-bar-lan">
+                    <div
+                      class="progress-bar theme-progress-bar-lan"
+                      role="progressbar"
+                      style="width: 50%"
+                      aria-valuenow="100"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    >
+                      50 %
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <div id="language_inter" class="text-right lang-desc"></div>
+            </ul>
+          </div>
+        </div> -->
+        <!-- End languages container
+            <!-- Start Fair-->
+        <!-- <div class="interests-container container-block">
+          <h2 id="inter_fair_txt" class="container-block-title">111</h2>
+          <ul class="list-unstyled interests-list">
+            <li>
+              111a<a
+                data-toggle="popover"
+                data-html="true"
+                class="allsides"
+                id="fair1"
+                data-original-title=""
+                data-content=""
+              ></a>
+            </li>
+            <li>
+              111b<a
+                data-toggle="popover"
+                data-html="true"
+                class="allsides"
+                id="fair2"
+                data-original-title=""
+                data-content=""
+                href="https://www.manh.com/events/momentum"
+                target="_blank"
+              ></a>
+            </li>
+            <li>
+              111c<a
+                data-toggle="popover"
+                data-html="true"
+                class="allsides"
+                id="fair3"
+                data-original-title=""
+                data-content=""
+              ></a>
+            </li>
+            <li>
+              111d<a
+                data-toggle="popover"
+                data-html="true"
+                class="allsides"
+                id="fair4"
+                data-original-title=""
+                data-content=""
+                href="https://www.rfidjournal.com/"
+                target="_blank"
+              ></a>
+            </li>
+            <li>
+              111e<a
+                data-toggle="popover"
+                data-html="true"
+                class="allsides"
+                id="fair5"
+                data-original-title=""
+                data-content=""
+                href="https://www.promatshow.com/"
+                target="_blank"
+              ></a>
+            </li>
+          </ul>
+        </div> -->
+        <!--End Fair-->
+        <!-- Start interests-->
+        <!-- <div class="interests-container container-block">
+          <h2 id="interest_txt" class="container-block-title">1111</h2>
+          <ul class="list-unstyled interests-list">
+            <li id="interest1">1111a</li>
+            <li id="interest2">1111b</li>
+            <li id="interest3">1111c</li>
+            <li id="interest4">1111d</li>
+          </ul>
+        </div> -->
+        <!--End interests-->
+      </div>
+      <!--End sidebar-wrapper-->
+      <!-- Start main-wrapper-->
+      <!-- <table class="table table-dark"> -->
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">CYBER ATTACKS IN REAL TIME</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="headerFormat Fortinet">
+              <h2>Fortinet Threat Map</h2>
+              <iframe
+                width="640"
+                height="640"
+                src="https://threatmap.fortiguard.com/"
+                frameborder="0"
+              ></iframe>
+            </td>
+          </tr>
+          <tr>
+            <td class="headerFormat CheckPoint">
+              <h2>Check Point Threat Map</h2>
+              <iframe
+                width="640"
+                height="640"
+                src="https://threatmap.checkpoint.com/"
+                frameborder="0"
+              ></iframe>
+            </td>
+          </tr>
+          <tr>
+            <td class="headerFormat Bitdefender">
+              <h2>Bitdefender Threat Map</h2>
+              <iframe
+                width="640"
+                height="640"
+                src="https://threatmap.bitdefender.com/"
+                frameborder="0"
+              ></iframe>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="main-wrapper">
+        <!--Start section-->
+
+        <section class="section summary-section">
+          <!-- <div class="len lang-container">
+                    <select id="language-select" onchange="changeLanguage(this.value)" class="select_lenguage">
+                        <option id="language-select-1" value="cv_en"> </option>
+                        <option id="language-select-2" value="cv_fr"> </option>
+                        <option id="language-select-3" value="cv_sp"> </option>
+                    </select>
+                </div> -->
+          <!-- <h2 id="summary_qualifications_txt" class="section-title">
+            CYBER ATTACKS IN REAL TIME
+          </h2> -->
+          <!--Start summary-->
+
+          <!--End summary-->
+        </section>
+        <!--End section-->
+        <footer class="footer">
+          <div>
+            <p id="footer_txt"></p>
+            <p id="year_txt"></p>
+          </div>
+        </footer>
+      </div>
+    </div>
+    <script>
+      const year = new Date().getFullYear();
+      document.getElementById("year_txt").textContent = year;
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        fetch("/assets/images/icon_name.svg")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("svg-content").innerHTML = data;
+          });
+      });
+    </script>
+  </body>
+</html>
