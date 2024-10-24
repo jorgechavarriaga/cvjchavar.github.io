@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title id="title"></title>
+    <!-- Meta -->
+    <meta charset="utf-8" />
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="Jorge Chavarriaga - CV" name="description" />
+    <meta content="Jorge Chavarriaga" name="author" />
+    <link href="assets/images/favicon-jch-32x32.png" rel="shortcout icon" />
+
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,500,400italic,300italic,300,500italic,700,700italic,900,900italic"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- FontAwesome JS-->
+    <script
+      src="https://kit.fontawesome.com/ff32f15468.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Global CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <!-- Theme CSS -->
+    <link href="assets/css/cv_clean.css" id="theme-style" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css"
+      integrity="sha512-Cv93isQdFwaKBV+Z4X8kaVBYWHST58Xb/jVOcV9aRsGSArZsgAnFIhMpDoMDcFNoUtday1hdjn0nGp3+KZyyFw=="
+      crossorigin="anonymous"
+    />
+    <link rel="prefetch" href="assets/language/cv_en.json" />
+    <script src="/assets/js/changeLanguage.js"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-HSGW69E28V"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-HSGW69E28V");
+    </script>
+    <script>
+      $(document).ready(function () {
+        $('[data-toggle="popover"]').popover({
+          placement: "top",
+          trigger: "hover",
+          template:
+            '<div class="popover"><div class="arrow"></div><h3 class="popover-header"></h3><div class="popover-body"></div><div class="popover-footer"></a></div></div>',
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <!--Start dropdown language -->
+    <!-- End dropdown language -->
+    <div class="wrapper">
+      <!--Start sidebar-wrapper-->
+      <div class="sidebar-wrapper">
+        <!--Start profile-container-->
+        <div class="profile-container">
+          <div class="len lang-container">
+            <select
+              id="language-select"
+              onchange="changeLanguage(this.value)"
+              class="select_lenguage"
+            >
+              <option id="language-select-1" value="cv_en"></option>
+              <option id="language-select-2" value="cv_fr"></option>
+              <option id="language-select-3" value="cv_sp"></option>
+            </select>
+          </div>
+          <div id="svg-container">
+            <div id="svg-content"></div>
+            <img
+              id="profile-photo"
+              src="assets/images/jorgechavarriaga.jpeg"
+              alt="Jorge Chavarriaga"
+            />
+          </div>
+          <h1 class="name">Jorge Chavarriaga</h1>
+          <h3 id="profile-container-3" class="tagline"></h3>
+          <h3 id="profile-container-2" class="tagline"></h3>
+          <h3 id="profile-container-1" class="tagline"></h3>
+          <h3 id="profile-container-4" class="tagline"></h3>
+        </div>
+        <!--End profile-container-->
+        <!--Start contact-container-->
+        <div class="contact-container container-block">
+          <h2 id="contact" class="container-block-title"></h2>
+          <ul class="list-unstyled contact-list">
+            <li class="email">
+              <i class="fas fa-envelope" aria-hidden="true"></i>
+              <a
+                href="mailto: jorge.chavarriaga@gmail.com; jorge.chavarriaga@chavazystem.tech"
+                class="allsides"
+              >
+                jorge.chavarriaga@gmail.com</a
+              >
+            </li>
+            <li class="phone">
+              <i class="fas fa-phone" aria-hidden="true"></i>
+              <a href="tel:+14183211335" class="allsides"> +1 418 321 1335</a>
+            </li>
+            <li class="website">
+              <i class="fas fa-globe" aria-hidden="true"></i>
+              <a
+                href="https://www.chavazystem.tech/"
+                target="_blank"
+                class="allsides"
+                >https://www.chavazystem.tech</a
+              >
+            </li>
+            <li class="linkedin">
+              <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+              <a
+                href="https://www.linkedin.com/in/jorge-chava/?locale=en_US"
+                target="_blank"
+                class="allsides"
+              >
+                linkedin.com/in/jorge-chava</a
+              >
+            </li>
+            <li class="github">
+              <i class="fab fa-github" aria-hidden="true"></i>
+              <a
+                href="https://github.com/jorgechavarriaga/"
+                target="_blank"
+                class="allsides"
+                >github.com/jorgechavarriaga</a
+              >
+            </li>
+            <li class="whatsapp">
+              <i class="fab fa-whatsapp" aria-hidden="true"></i>
+              <a
+                href="http://wa.me/+14183211335"
+                target="_blank"
+                class="allsides"
+              >
+                Whatsapp</a
+              >
+            </li>
+            <li class="whatsapp">
+              <i class="fab fa-telegram-plane" aria-hidden="true"></i>
+              <a
+                href="https://t.me/+14183211335"
+                target="_blank"
+                class="allsides"
+              >
+                Telegram</a
+              >
+            </li>
+          </ul>
+        </div>
+        <!--End contact-container-->
+        <!--Start education-container-->
+        <div class="education-container container-block">
+          <h2 id="" class="container-block-title">Data Analysis</h2>
+          <div class="item">
+            <h4 class="degree">
+              <a
+                data-toggle="popover"
+                data-html="true"
+                class="allsides"
+                id="diploma-link1"
+                data-original-title="Data Description"
+                data-content="This dataset describes <b>two hotel demand datasets.</b> Both hotels are located in Portugal. 
+                  One of the hotels is a <b>Resort Hotel</b> located at the resort region of Algarve and the other is a City Hotel located at the city of Lisbon.</br> </br>
+                  The dataset has 32 columns describing 40,060 room reservations for the <b>Resort Hotel</b> and 79,330 room reservations for the <b>City Hotel.</b> 
+                  Total of 119,390 room reservations (rows).</br></br>This dataset includes bookings due to arrive between July 1, 2015, and August 31, 2017, 
+                  including bookings that actually arrived and bookings that were canceled. Since these are real hotel data, all data elements that could 
+                  identify the hotel or customers were deleted."
+              >
+                <i class="fa-solid fa-table"></i> Hotel booking demand
+              </a>
+            </h4>
+            <div class="tools">
+              <div><i class="fas fa-database"></i> SQL</div>
+              <div><i class="fab fa-python"></i> Python</div>
+              <div><i class="fas fa-file-excel"></i> Excel</div>
+            </div>
+          </div>
+        </div>
+        <!--End education-container-->
+      </div>
+      <!--End sidebar-wrapper-->
+      <!-- Start main-wrapper-->
+      <!-- <table class="table table-dark"> -->
+      <div class="main-wrapper">
+                    <!-- Start Section Experiences -->
+                    <section class="section experiences-section" style="height: 1600px">
+                      <!-- Start item - Codeboxx -->
+                      <div class="item">
+                          <div class="meta">
+                              <div class="upper-row">SQL
+                                  <h3 id="job_title4" class="job-title"></h3>
+                                  <div id="job_time4" class="time"></div>
+                              </div>
+                              <div id="company4" class="allsides"></div>
+                          </div>
+                          <div class="details">
+                              <ul>
+                                  <li id="job4_li1"></li>
+                                  <li id="job4_li2"></li>
+                                  <li id="job4_li3"></li>
+                                  <li id="job4_li4"></li>
+                                  <li id="job4_li5"></li>
+                              </ul>
+                          </div>
+                      </div>
+                      <!--End item-->
+                      <!-- Start item - SSENSE -->
+                      <div class="item">
+                          <div class="meta">
+                              <div class="upper-row">Python
+                                  <h3 id="job_title3" class="job-title"></h3>
+                                  <div id="job_time3" class="time"></div>
+                              </div>
+                              <div id="company3" class="allsides"></div>
+                              <div class="details">
+                                  <ul>
+                                      <li id="job3_li1"></li>
+                                      <li id="job3_li2"></li>
+                                  </ul>
+                              </div>
+                          </div>
+                          <!--End item - SSENSE-->
+                          <!--Start item - Crystal 1/2-->
+                          <div class="item">
+                              <div class="meta">
+                                  <div class="upper-row">Excel
+                                      <h3 id="job_title2" class="job-title"></h3>
+                                      <div id="job_time2" class="time"></div>
+                                  </div><!--//upper-row-->
+                                  <div id="company2" class="allsides"></div>
+                              </div><!--//meta-->
+                              <div class="details">
+                                  <ul>
+                                      <li id="job2_li1"></li>
+                                      <li id="job2_li2"></li>
+                                      <li id="job2_li3"></li>
+                                      <li id="job2_li4"></li>
+                                      <li id="job2_li5"></li>
+                                  </ul>
+                              </div><!--//details-->
+                          </div>
+                          <!--End item - Crystal 1/2-->
+                          <!--Start item - Crystal 2/2-->
+                          <div class="item">
+                              <div class="meta">
+                                  <div class="upper-row">R
+                                      <h3 id="job_title1" class="job-title"></h3>
+                                      <div id="job_time1" class="time"></div>
+                                  </div>
+                                  <div id="company1" class="allsides"></div>
+                              </div>
+                              <div class="details">
+                                  <ul>
+                                      <li id="job1_li1"></li>
+                                      <li id="job1_li2"></li>
+                                      <li id="job1_li3"></li>
+                                      <li id="job1_li4"></li>
+                                      <li id="job1_li5"></li>
+                                  </ul>
+                              </div><!--//details-->
+                          </div>
+                          <!--End item - Crystal 2/2-->
+                  </section>
+                  <!-- End Section Experiences -->
+        <footer class="footer">
+          <div>
+            <p style="font-weight: bold">Developed By: ChavaZystem Tech ®</p>
+            <p id="year_txt"></p>
+          </div>
+        </footer>
+      </div>
+    </div>
+    <script>
+      const year = new Date().getFullYear();
+      document.getElementById("year_txt").textContent = year;
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        fetch("/assets/images/icon_name.svg")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("svg-content").innerHTML = data;
+          });
+      });
+    </script>
+  </body>
+</html>
