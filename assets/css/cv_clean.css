@@ -145,7 +145,8 @@ p {
 
 .wrapper {
     /* background: #4b6a78; */
-    max-width: 960px;
+    /* max-width: 960px; */
+    max-width: 1200px;
     margin: 0 auto;
     position: relative;
     -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
@@ -364,6 +365,12 @@ p {
     color: #4f4a47
 }
 
+.tools div {
+    font-size: .75rem;
+    padding-top: .5rem;
+    padding-left: 1rem;
+}
+
 .main-wrapper .company {
     margin-bottom: 10px;
     color: #97aac3
@@ -426,7 +433,13 @@ p {
     margin-top: -3em
 }
 
-@media (max-width:767.98px) {
+.table td,
+.table th {
+    padding-left: 3.5rem;
+}
+
+
+@media (max-width:639px) {
     .sidebar-wrapper {
         position: static;
         width: inherit
@@ -490,7 +503,7 @@ p {
 
 }
 
-@media (min-width:992px) {
+@media (min-width:1200px) {
     .skillset .level-title {
         display: inline-block;
         width: 30%;
