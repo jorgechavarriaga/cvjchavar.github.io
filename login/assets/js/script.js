@@ -31,7 +31,7 @@ tabRegister.addEventListener('click', () => showForm(false));
 showForm(true);
 
 function togglePassword(btn) {
-  const input = document.getElementById("password");
+  const input = document.getElementById("login-password");
   const isPassword = input.type === "password";
   input.type = isPassword ? "text" : "password";
   btn.textContent = isPassword ? "visibility_off" : "visibility";
