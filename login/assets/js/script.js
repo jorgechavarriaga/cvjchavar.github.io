@@ -43,3 +43,57 @@ function togglePasswordRegister(btn) {
   input.type = isPassword ? "text" : "password";
   btn.textContent = isPassword ? "visibility_off" : "visibility";
 }
+
+
+function registerUser() {
+    const username = document.getElementById('register-username').value;
+    const email = document.getElementById('register-email').value;
+    const password = document.getElementById('reg-password').value;
+  
+    fetch('https://api.chavazystem.tech/api/register', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ username, email, password })
+    })
+      .then(res => res.json())
+      .then(data => {
+        if (data.success) {
+          alert('Registration successful. Please check your email to verify your account.');
+          // Puedes redirigir al login después del registro si lo deseas
+          // window.location.href = '/login';
+        } else {
+          alert('Error: ' + (data.message || 'Registration failed'));
+        }
+      })
+      .catch(err => {
+        console.error(err);
+        alert('Network error');
+      });
+  }
+  
+  
+  // Login user
+  function loginUser() {
+    const username = document.getElementById('login-username').value;
+    const password = document.getElementById('login-password').value;
+  
+    fetch('https://api.chavazystem.tech/api/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ username, password })
+    })
+    .then(res => res.json())
+    .then(data => {
+      if (data.success) {
+        localStorage.setItem('auth_token', data.token);
+        alert('Login successful');
+      } else {
+        alert('Error: ' + (data.message || 'Login failed'));
+      }
+    })
+    .catch(err => {
+      console.error(err);
+      alert('Network error');
+    });
+  }
+  
