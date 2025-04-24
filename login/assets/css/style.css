@@ -1,0 +1,16 @@
+#form-login,
+#form-register {
+  transition: opacity 1s ease-in-out;
+}
+
+#form-login.opacity-0,
+#form-register.opacity-0 {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  visibility: hidden;
+}
+
+#form-container {
+  position: relative;
+}
