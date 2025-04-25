@@ -76,7 +76,7 @@ function registerUser() {
       if (data.success) {
         localStorage.setItem('auth_token', data.token);
         // alert('Login successful');
-        window.location.href = '/dashboard.html';
+        window.location.href = '/login/dashboard.html';
       } else {
         alert('Error: ' + (data.message || 'Login failed'));
       }
