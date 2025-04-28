@@ -76,7 +76,7 @@ function registerUser() {
       if (data.success) {
         localStorage.setItem('auth_token', data.token);
         localStorage.setItem('user_info', JSON.stringify({ username: data.username, email: data.email }));
-        window.location.href = '/dashboard.html';
+        window.location.href = 'dashboard.html';
       } else {
         alert('Error: ' + (data.message || 'Login failed'));
       }
