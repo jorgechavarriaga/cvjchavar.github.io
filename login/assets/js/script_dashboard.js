@@ -1,6 +1,6 @@
 function logout() {
     localStorage.removeItem('auth_token');
-    window.location.replace('/');
+    window.location.replace('/login/index.html');
   }
 
   document.addEventListener('DOMContentLoaded', () => {
@@ -12,7 +12,7 @@ function logout() {
 
     } else {
       // If no user info, redirect to login page
-      window.location.href = 'login';
+      window.location.href = '/login/index.html';
     }
   });
   
