@@ -75,7 +75,7 @@ function registerUser() {
     .then(data => {
       if (data.success) {
         localStorage.setItem('auth_token', data.token);
-        // alert('Login successful');
+        localStorage.setItem('user_info', JSON.stringify({ username: data.username, email: data.email }));
         window.location.href = '/dashboard.html';
       } else {
         alert('Error: ' + (data.message || 'Login failed'));
