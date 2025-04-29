@@ -125,6 +125,8 @@ async function loginUser() {
     const data = await res.json();
     if (data.success) {
       localStorage.setItem('auth_token', data.token);
+      localStorage.setItem('user_info', JSON.stringify({ username: data.username, email: data.email }));
+      console.log('*******************\m' + JSON.stringify({ username: data.username, email: data.email }))
       showToast('success','Login successful!');
       setTimeout(() => {
         window.location.href = '/login/dashboard.html';

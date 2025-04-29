@@ -1,5 +1,6 @@
 function logout() {
     localStorage.removeItem('auth_token');
+    localStorage.clear();
     window.location.replace('/login/index.html');
   }
 
