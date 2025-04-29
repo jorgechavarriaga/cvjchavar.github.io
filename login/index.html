@@ -62,7 +62,7 @@
               class="w-full p-3 pl-10 pr-10 rounded-md text-[#2F2D2B] bg-[#f5f5f5]" />
             <span class="absolute left-3 top-3 text-[#2F2D2B] material-icons" aria-hidden="true">lock</span>
             <button type="button" class="absolute right-3 top-2.5 text-[#2F2D2B] material-icons focus:outline-none"
-              aria-label="Toggle password visibility" onclick="togglePassword(this)">
+              aria-label="Toggle password visibility" onclick="togglePassword(this, 'login-password')">
               visibility
             </button>
           </div>
@@ -70,11 +70,11 @@
         <div>
           <label class="block text-sm mb-1"><span class="opacity-0">Placeholder</span></label>
           <div class="relative">
-            <button type="button"
+            <button type="button" id="btn-login"
               class="w-full py-3 rounded-md bg-[#f5f5f5] text-[#2F2D2B] hover:bg-white transition flex items-center justify-center gap-2"
               onclick="loginUser()">
-              <span class="material-icons" aria-hidden="true">login</span>
-              Login
+              <span id="login-spinner" class="material-icons animate-spin hidden">autorenew</span>
+              <span id="login-text">Login</span>
             </button>
           </div>
         </div>
@@ -116,24 +116,27 @@
               class="w-full p-3 pl-10 pr-10 rounded-md text-[#2F2D2B] bg-[#f5f5f5]" id="reg-password" />
             <span class="absolute left-3 top-3 text-[#2F2D2B] material-icons" aria-hidden="true">lock</span>
             <button type="button" class="absolute right-3 top-2.5 text-[#2F2D2B] material-icons focus:outline-none"
-              aria-label="Toggle password visibility" onclick="togglePasswordRegister(this)">
+              aria-label="Toggle password visibility" onclick="togglePassword(this, 'reg-password')">
               visibility
             </button>
           </div>
         </div>
-        <button type="button"
+        <button type="button" id="btn-register"
           class="w-full mt-2 py-2 rounded-md bg-[#2F2D2B] text-white hover:bg-[#1f1d1b] transition min-h-[48px] flex items-center justify-center gap-2"
           onclick="registerUser()">
-          <span class="material-icons" aria-hidden="true">person_add</span>
-          Register
+          <span id="register-spinner" class="material-icons animate-spin hidden">autorenew</span>
+          <span id="register-text">Register</span>
         </button>
+
       </form>
     </div>
   </div>
   <div class="fixed bottom-4 right-4 text-sm text-white opacity-70">
     Developed By: ChavaZystem Tech ® 2025
   </div>
+  
   <script src="assets/js/script_login.js"></script>
+  <div id="toast-container" class="fixed top-5 right-5 z-50"></div>
 </body>
 
 </html>
