@@ -126,7 +126,6 @@ async function loginUser() {
     if (data.success) {
       localStorage.setItem('auth_token', data.token);
       localStorage.setItem('user_info', JSON.stringify({ username: data.username, email: data.email }));
-      console.log('*******************\m' + JSON.stringify({ username: data.username, email: data.email }))
       showToast('success','Login successful!');
       setTimeout(() => {
         window.location.href = '/login/dashboard.html';
@@ -145,35 +144,6 @@ async function loginUser() {
 }
 
 
-/**
- * Display a toast notification.
- * @param {'success' | 'error' | 'warning'} type - The toast type.
- * @param {string} message - Message to display.
- * @param {number} [duration=3000] - Duration before fade-out (ms).
- */
-function showToast(type, message, duration = 3000) {
-  const toastContainer = document.getElementById('toast-container');
-  const toast = document.createElement('div');
-  const bgColor = {
-    success: 'bg-green-500',
-    error:   'bg-red-500',
-    warning: 'bg-yellow-500'
-  }[type] || 'bg-gray-500';
-
-  toast.classList.add(
-    bgColor, 'text-white', 'px-6', 'py-3', 'rounded-lg', 'shadow-lg',
-    'mb-4', 'text-lg', 'transition-opacity', 'duration-500', 'opacity-100'
-  );
-  toast.textContent = message;
-  toastContainer.appendChild(toast);
-
-  setTimeout(() => {
-    toast.classList.add('opacity-0');
-    setTimeout(() => toast.remove(), 500);
-  }, duration);
-}
-
-
 document.addEventListener('DOMContentLoaded', async function () {
   const queryParams = new URLSearchParams(window.location.search);
   const token = queryParams.get('token');
@@ -182,17 +152,17 @@ document.addEventListener('DOMContentLoaded', async function () {
     try {
       const res = await fetch(`https://api.chavazystem.tech/api/verify_session?token=${token}`);
       if (!res.ok) {
-        throw new Error('Token inválido');
+        showToast('error', 'Invalid Token.');
+        return;
       }
       const data = await res.json();
       if (data.success) {
-        showToast('success', '¡Email confirmado exitosamente! 🎉');
+        showToast('success', 'Email confirmed successfully! 🎉');
       } else {
-        showToast('error', '⚠️ Token inválido o expirado.');
+        showToast('error', data.message || 'Invalid or expired token.');
       }
     } catch (err) {
-      console.error(err);
-      showToast('error', '⚠️ Error verificando token.');
+      showToast('error', 'An error occurred while verifying the token.');
     }
   }
 });
