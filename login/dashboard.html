@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="h-full">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,6 +14,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
+
 <body class="m-0 p-0 min-h-screen flex flex-col items-center justify-start">
   <div class="fixed top-0 left-0 w-full text-black flex items-center justify-between p-1 shadow-md z-50">
     <div class="flex items-center space-x-4">
@@ -33,10 +35,22 @@
     <h1 class="text-3xl font-bold mb-2">3XL size</h1>
     <h1 class="text-4xl font-bold mb-2">4XL size</h1>
   </div>
-    <div class="fixed bottom-10 w-full max-w-xs mx-auto">
-    <button 
-      type="button" 
-      id="btn-documentation"
+  <div class="pt-10 w-full flex flex-col items-center">
+    <textarea id="speech-text" class="w-full max-w-lg p-2 border rounded-md resize-none" rows="4" maxlength="100"
+      placeholder="Enter up to 100 characters..." oninput="validateTextLength()"></textarea>
+    <p id="char-count" class="text-xs text-gray-500">0/100</p>
+  </div>
+  <div>
+    <button type="button" id="btn-send-text"
+      class="w-full py-2 px-4 rounded-md bg-[#6B645F] text-white hover:bg-[#5A534F] transition min-h-[48px] flex items-center justify-center gap-2 text-center"
+      onclick="textToSpeech()">
+      <span id="text-spinner" class="material-icons animate-spin hidden">autorenew</span>
+      <span id="send-text">Send Text to Raspberry</span>
+    </button>
+  </div>
+  </div>
+  <div class="fixed bottom-10 w-full max-w-xs mx-auto">
+    <button type="button" id="btn-documentation"
       class="w-full py-2 px-4 rounded-md bg-[#6B645F] text-white hover:bg-[#5A534F] transition min-h-[48px] flex items-center justify-center gap-2 text-center"
       onclick="swaggerDocumentation()">
       <span id="register-spinner" class="material-icons hidden">autorenew</span>
@@ -47,5 +61,58 @@
   <script src="assets/js/utils.js"></script>
   <script src="assets/js/script_dashboard.js" defer></script>
   <div id="toast-container" class="fixed top-5 right-5 z-50"></div>
+  <script>
+    // Función para validar la longitud del texto
+    function validateTextLength() {
+      const text = document.getElementById("speech-text").value;
+      const count = text.length;
+      document.getElementById("char-count").innerText = `${count}/100`;
+      const button = document.getElementById("btn-send-text");
+      button.disabled = count === 0 || count > 100;
+    }
+
+    // Función para llamar al endpoint de texto a voz
+    async function textToSpeech() {
+      // Mostrar el spinner y ocultar el texto del botón
+      document.getElementById("text-spinner").classList.remove("hidden");
+      document.getElementById("send-text").classList.add("hidden");
+
+      // Desactivar el botón para evitar múltiples clics
+      document.getElementById("btn-send-text").disabled = true;
+
+      const text = document.getElementById("speech-text").value;
+      const lan = 'es-la'; // Español (Latinoamérica)
+      const speed = 200; // Velocidad configurada
+
+      if (text.length > 0 && text.length <= 100) {
+        try {
+          const response = await fetch('https://api.chavazystem.tech/api/textSpeech', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `${localStorage.getItem('auth_token')}`,
+            },
+            body: JSON.stringify({ text, lan, speed }),
+          });
+
+          const data = await response.json();
+
+          if (response.ok) {
+            showToast('success', 'Text sent to Raspberry!');
+          } else {
+            showToast('error', 'Error: ' + data.error);
+          }
+        } catch (error) {
+          showToast('error', 'Error ... ');
+        }
+      }
+
+      // Ocultar el spinner y reactivar el botón
+      document.getElementById("text-spinner").classList.add("hidden");
+      document.getElementById("send-text").classList.remove("hidden");
+      document.getElementById("btn-send-text").disabled = false;
+    }
+  </script>
 </body>
+
 </html>
