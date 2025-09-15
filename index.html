@@ -9,7 +9,7 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Jorge Chavarriaga - CV" name="description">
     <meta content="Jorge Chavarriaga" name="author">
-    <link href="assets/images/favicon-jch-32x32.png" rel="shortcout icon" >
+    <link href="assets/images/favicon-jch-32x32.png" rel="shortcout icon">
 
     <!-- Google Font -->
     <link
@@ -65,7 +65,7 @@
                 <div id="svg-container">
                     <div id="svg-content"></div>
                     <img id="profile-photo" src="assets/images/jorgechavarriaga.jpeg" alt="Jorge Chavarriaga">
-                </div>                
+                </div>
                 <h1 class="name">Jorge Chavarriaga</h1>
                 <h3 id="profile-container-3" class="tagline"></h3>
                 <h3 id="profile-container-2" class="tagline"></h3>
@@ -658,15 +658,47 @@
         const year = new Date().getFullYear();
         document.getElementById('year_txt').textContent = year;
     </script>
-        <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                fetch('/assets/images/icon_name.svg')
-                    .then(response => response.text())
-                    .then(data => {
-                        document.getElementById('svg-content').innerHTML = data;
-                    });
-            });
-            </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch('/assets/images/icon_name.svg')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('svg-content').innerHTML = data;
+                });
+        });
+    </script>
+
+    <!-- Chatbot container -->
+    <div id="chatbot-container">
+        <div id="chatbot-button-wrapper">
+            <button id="chatbot-button" aria-label="Open Assistant">
+                <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-bot h-6 w-6" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 8V4H8"></path>
+                    <rect width="16" height="12" x="4" y="8" rx="2"></rect>
+                    <path d="M2 14h2"></path>
+                    <path d="M20 14h2"></path>
+                    <path d="M15 13v2"></path>
+                    <path d="M9 13v2"></path>
+                </svg>
+                <div class="chatbot-tooltip">Open Assistant</div>
+            </button>
+        </div>
+
+
+        <div id="chatbot-modal">
+            <div class="chatbot-header">
+                <span>Chat with Jorge’s AI About His Career & Skills</span>
+            </div>
+            <div class="chatbot-body">
+                <div id="chatbot-response" class="response-box"></div>
+                <textarea id="chatbot-question" placeholder="Send a message..."></textarea>
+                <button id="chatbot-send">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/assets/js/chatbot.js"></script>
 </body>
 
 </html>
