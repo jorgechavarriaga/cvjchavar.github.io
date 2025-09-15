@@ -6,6 +6,33 @@ document.addEventListener('DOMContentLoaded', function () {
   const sendButton = document.getElementById('chatbot-send');
   const chatbotResponse = document.getElementById('chatbot-response');
 
+
+// Session ID logic with 24h expiration
+function getOrCreateSessionId() {
+  const SESSION_KEY = 'session_id';
+  const SESSION_TS_KEY = 'session_id_timestamp';
+  const EXPIRATION_HOURS = 24;
+
+  const now = Date.now();
+  const storedSessionId = localStorage.getItem(SESSION_KEY);
+  const storedTimestamp = localStorage.getItem(SESSION_TS_KEY);
+
+  const isExpired = !storedTimestamp || (now - parseInt(storedTimestamp, 10)) > EXPIRATION_HOURS * 60 * 60 * 1000;
+
+  if (storedSessionId && !isExpired) {
+    return storedSessionId;
+  }
+
+  const newSessionId = crypto.randomUUID();
+  localStorage.setItem(SESSION_KEY, newSessionId);
+  localStorage.setItem(SESSION_TS_KEY, now.toString());
+
+  return newSessionId;
+}
+
+const sessionId = getOrCreateSessionId();
+
+
   function updateTooltipText() {
     const isOpen = chatbotModal.classList.contains('active');
     chatbotTooltip.textContent = isOpen ? 'Close Assistant' : 'Open Assistant';
@@ -46,8 +73,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const question = questionInput.value.trim();
     if (!question) return;
 
-    const sessionId = 'TEST'; // TODO: Replace with dynamic ID
-
     chatbotResponse.innerHTML += `<div><strong>You:</strong> ${question}</div>`;
     questionInput.value = '';
     questionInput.disabled = true;
@@ -66,7 +91,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 async function sendQuestionToBackend(sessionId, questionText) {
   try {
-    // const response = await fetch('http://127.0.0.1:8000/api/v1/ask', {
     const response = await fetch('https://ai.chavazystem.tech/api/v1/ask', {
       method: 'POST',
       headers: {
