@@ -1,3 +1,10 @@
+// Dynamically set API endpoint depending on local vs production environment
+const ENDPOINT = location.hostname === '127.0.0.1' || location.hostname === 'localhost'
+  ? 'http://localhost:8000/api/v1/ask'
+  : 'https://ai.chavazystem.tech/api/v1/ask';
+
+
+
 document.addEventListener('DOMContentLoaded', function () {
   const chatbotButton = document.getElementById('chatbot-button');
   const chatbotModal = document.getElementById('chatbot-modal');
@@ -73,14 +80,14 @@ const sessionId = getOrCreateSessionId();
     const question = questionInput.value.trim();
     if (!question) return;
 
-    chatbotResponse.innerHTML += `<div><strong>You:</strong> ${question}</div>`;
+    chatbotResponse.innerHTML += `<div><i class="fas fa-user" style="color:black" aria-hidden="true"></i><strong> You:</strong> ${question}</div><br>`;
     questionInput.value = '';
     questionInput.disabled = true;
     sendButton.disabled = true;
 
     const answer = await sendQuestionToBackend(sessionId, question);
 
-    chatbotResponse.innerHTML += `<div><strong>Assistant:</strong> ${answer}</div>`;
+    chatbotResponse.innerHTML += `<div><i class="fas fa-headset" style="color:black" aria-hidden="true"></i><strong> Assistant:</strong> ${answer}</div><br>`;
     chatbotResponse.scrollTop = chatbotResponse.scrollHeight;
 
     questionInput.disabled = false;
@@ -91,7 +98,7 @@ const sessionId = getOrCreateSessionId();
 
 async function sendQuestionToBackend(sessionId, questionText) {
   try {
-    const response = await fetch('https://ai.chavazystem.tech/api/v1/ask', {
+    const response = await fetch(ENDPOINT, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
