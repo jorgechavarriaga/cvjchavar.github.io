@@ -277,6 +277,10 @@ p {
   border-radius: 6px;
 }
 
+.chatbot-initial-message {
+  white-space: normal;
+}
+
 
 
 @keyframes glowing {
