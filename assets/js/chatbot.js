@@ -1,11 +1,72 @@
 // Dynamically set API endpoint depending on local vs production environment
-const ENDPOINT = location.hostname === '127.0.0.1' || location.hostname === 'localhost'
-  ? 'http://localhost:8000/api/v1/ask'
-  : 'https://ai.chavazystem.tech/api/v1/ask';
+const DEV_URL = 'http://localhost:8000';
+const PDN_URL = 'https://ai.chavazystem.tech';
+const BASE_URL = location.hostname === '127.0.0.1' || location.hostname === 'localhost'
+  ? `${DEV_URL}`
+  : `${PDN_URL}`;
+const ENDPOINT = `${BASE_URL}/api/v1/ask`;
+const HEALTH_ENDPOINT = `${BASE_URL}/api/v1/health/ai`;
 
+
+async function checkBackendStatusOnLoad() {
+  const statusElement = document.getElementById('chatbot-status');
+  const iconElement = document.getElementById('chatbot-icon');
+  const chatbotTooltip = document.querySelector('.chatbot-tooltip');
+  const chatbotButton = document.getElementById('chatbot-button');
+
+  let isOnline = false;
+
+  try {
+    const response = await fetch(HEALTH_ENDPOINT, { method: 'GET' });
+    if (response.ok) {
+      const result = await response.json();
+      if (result?.status === "success" && result?.data?.status === "online") {
+        statusElement?.classList.add('status-online');
+        iconElement?.classList.add('icon-online');
+        isOnline = true;
+      } else {
+        statusElement?.classList.add('status-offline');
+        iconElement?.classList.add('icon-offline');
+      }
+    } else {
+      statusElement?.classList.add('status-offline');
+      iconElement?.classList.add('icon-offline');
+    }
+  } catch (error) {
+    statusElement?.classList.add('status-offline');
+    iconElement?.classList.add('icon-offline');
+  }
+
+  const actionText = "Open Assistant"; 
+  chatbotTooltip.textContent = `${isOnline ? "Online" : "Offline"} - ${actionText}`;
+  chatbotButton.setAttribute('aria-label', `${isOnline ? "Online" : "Offline"} - ${actionText}`);
+}
+
+
+async function checkBackendStatus() {
+  const statusElement = document.getElementById('chatbot-status');
+  try {
+    const response = await fetch(HEALTH_ENDPOINT, { method: 'GET' });
+    if (response.ok) {
+      const result = await response.json();
+      if (result?.status === "success" && result?.data?.status === "online") {
+        statusElement.classList.remove('status-offline');
+        statusElement.classList.add('status-online');
+        return;
+      }
+    }
+    statusElement.classList.remove('status-online');
+    statusElement.classList.add('status-offline');
+  } catch (error) {
+    statusElement.classList.remove('status-online');
+    statusElement.classList.add('status-offline');
+  }
+}
 
 
 document.addEventListener('DOMContentLoaded', function () {
+  checkBackendStatusOnLoad();
+
   const chatbotButton = document.getElementById('chatbot-button');
   const chatbotModal = document.getElementById('chatbot-modal');
   const chatbotTooltip = document.querySelector('.chatbot-tooltip');
@@ -42,13 +103,21 @@ const sessionId = getOrCreateSessionId();
 
   function updateTooltipText() {
     const isOpen = chatbotModal.classList.contains('active');
-    chatbotTooltip.textContent = isOpen ? 'Close Assistant' : 'Open Assistant';
-    chatbotButton.setAttribute('aria-label', isOpen ? 'Close Assistant' : 'Open Assistant');
+    const statusElement = document.getElementById('chatbot-status');
+    const isOnline = statusElement?.classList.contains('status-online');
+
+    const statusText = isOnline ? "Online" : "Offline";
+    const actionText = isOpen ? "Close Assistant" : "Open Assistant";
+
+    chatbotTooltip.textContent = `${statusText} - ${actionText}`;
+    chatbotButton.setAttribute('aria-label', `${statusText} - ${actionText}`);
   }
+
 
   function openModal() {
     chatbotModal.classList.add('active');
     updateTooltipText();
+    checkBackendStatus();
   }
 
   function closeModal() {
@@ -76,24 +145,60 @@ const sessionId = getOrCreateSessionId();
     }
   });
 
-  sendButton.addEventListener('click', async function () {
-    const question = questionInput.value.trim();
-    if (!question) return;
+sendButton.addEventListener('click', async function () {
+  const question = questionInput.value.trim();
+  if (!question) return;
 
-    chatbotResponse.innerHTML += `<div><i class="fas fa-user" style="color:black" aria-hidden="true"></i><strong> You:</strong> ${question}</div><br>`;
-    questionInput.value = '';
-    questionInput.disabled = true;
-    sendButton.disabled = true;
+  function addMessage(role, content) {
+    const msg = document.createElement("div");
+    msg.className = `chat-message ${role}`;
+    msg.innerHTML = content;
+    chatbotResponse.appendChild(msg);
 
-    const answer = await sendQuestionToBackend(sessionId, question);
+    chatbotResponse.scrollTo({
+      top: chatbotResponse.scrollHeight,
+      behavior: "smooth"
+    });
+  }
 
-    chatbotResponse.innerHTML += `<div><i class="fas fa-headset" style="color:black" aria-hidden="true"></i><strong> Assistant:</strong> ${answer}</div><br>`;
-    chatbotResponse.scrollTop = chatbotResponse.scrollHeight;
+  addMessage("user", `<i class="fas fa-user" style="color:black"></i><strong> You:</strong> ${question}`);
 
-    questionInput.disabled = false;
-    sendButton.disabled = false;
-    questionInput.focus();
+  questionInput.value = '';
+  questionInput.disabled = true;
+  sendButton.disabled = true;
+
+  const loader = document.createElement("div");
+  loader.className = "typing-indicator";
+  loader.innerHTML = `
+    <span class="typing-dot"></span>
+    <span class="typing-dot"></span>
+    <span class="typing-dot"></span>
+  `;
+  chatbotResponse.appendChild(loader);
+  chatbotResponse.scrollTo({
+    top: chatbotResponse.scrollHeight,
+    behavior: "smooth"
   });
+
+  const answer = await sendQuestionToBackend(sessionId, question);
+
+  loader.remove();
+
+  addMessage("assistant", `<i class="fas fa-headset" style="color:black"></i><strong> Assistant:</strong> ${answer}`);
+
+  questionInput.disabled = false;
+  sendButton.disabled = false;
+  questionInput.focus();
+});
+
+
+  if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
+  const chatbotTooltip = document.querySelector('.chatbot-tooltip');
+  if (chatbotTooltip) {
+    chatbotTooltip.style.display = 'none';
+  }
+}
+
 });
 
 async function sendQuestionToBackend(sessionId, questionText) {
