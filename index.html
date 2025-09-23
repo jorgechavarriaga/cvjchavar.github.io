@@ -671,7 +671,7 @@
     <!-- Chatbot container -->
     <div id="chatbot-container">
         <div id="chatbot-button-wrapper">
-            <button id="chatbot-button" aria-label="Open Assistant">
+            <!-- <button id="chatbot-button" aria-label="Open Assistant">
                 <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-bot h-6 w-6" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M12 8V4H8"></path>
@@ -682,18 +682,33 @@
                     <path d="M9 13v2"></path>
                 </svg>
                 <div class="chatbot-tooltip">Open Assistant</div>
+            </button> -->
+            <button id="chatbot-button" aria-label="Open Assistant">
+                <svg id="chatbot-icon" xmlns="http://www.w3.org/2000/svg" class="lucide lucide-bot h-6 w-6" fill="none"
+                    stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 8V4H8"></path>
+                    <rect width="16" height="12" x="4" y="8" rx="2"></rect>
+                    <path d="M2 14h2"></path>
+                    <path d="M20 14h2"></path>
+                    <path d="M15 13v2"></path>
+                    <path d="M9 13v2"></path>
+                </svg>
+                <div class="chatbot-tooltip">Open Assistant</div>
             </button>
+
         </div>
 
 
         <div id="chatbot-modal">
             <div class="chatbot-header">
                 <span>Chat with Jorge’s AI About His Career & Skills</span>
+                <span id="chatbot-status" class="status-indicator"></span>
             </div>
             <div class="chatbot-body">
                 <div id="chatbot-response" class="response-box">
                     <div class="chatbot-initial-message">
-                        <i class="fas fa-headset" style="color:black" aria-hidden="true"></i><strong> Assistant:</strong> I'm Jorge's AI assistant. I'm here to help you answer any questions
+                        <i class="fas fa-headset" style="color:black" aria-hidden="true"></i><strong>
+                            Assistant:</strong> I'm Jorge's AI assistant. I'm here to help you answer any questions
                         you may have about Jorge's resume, work experience, strengths, and more.
                     </div>
                 </div>
