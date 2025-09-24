@@ -6,6 +6,9 @@ const BASE_URL = location.hostname === '127.0.0.1' || location.hostname === 'loc
   : `${PDN_URL}`;
 const ENDPOINT = `${BASE_URL}/api/v1/ask`;
 const HEALTH_ENDPOINT = `${BASE_URL}/api/v1/health/ai`;
+const langMap = { cv_en: "en", cv_fr: "fr", cv_sp: "es" };
+const selectedLang = localStorage.getItem("selectedLanguage") || "cv_en";
+
 
 
 async function checkBackendStatusOnLoad() {
@@ -37,9 +40,23 @@ async function checkBackendStatusOnLoad() {
     iconElement?.classList.add('icon-offline');
   }
 
-  const actionText = "Open Assistant"; 
-  chatbotTooltip.textContent = `${isOnline ? "Online" : "Offline"} - ${actionText}`;
-  chatbotButton.setAttribute('aria-label', `${isOnline ? "Online" : "Offline"} - ${actionText}`);
+  const fallbackText = {
+    online: "Online",
+    offline: "Offline",
+    open: "Open Assistant",
+    close: "Close Assistant"
+  };
+
+  const text = window.chatbotText || fallbackText;
+  const actionText = text.open;
+
+  chatbotTooltip.textContent = `${isOnline ? text.online : text.offline} - ${actionText}`;
+  chatbotButton.setAttribute('aria-label', `${isOnline ? text.online : text.offline} - ${actionText}`);
+  setTimeout(() => {
+    const event = new Event("mouseover");
+    chatbotButton.dispatchEvent(event);
+  }, 50);
+
 }
 
 
@@ -75,40 +92,38 @@ document.addEventListener('DOMContentLoaded', function () {
   const chatbotResponse = document.getElementById('chatbot-response');
 
 
-// Session ID logic with 24h expiration
-function getOrCreateSessionId() {
-  const SESSION_KEY = 'session_id';
-  const SESSION_TS_KEY = 'session_id_timestamp';
-  const EXPIRATION_HOURS = 24;
+  // Session ID logic with 24h expiration
+  function getOrCreateSessionId() {
+    const SESSION_KEY = 'session_id';
+    const SESSION_TS_KEY = 'session_id_timestamp';
+    const EXPIRATION_HOURS = 24;
 
-  const now = Date.now();
-  const storedSessionId = localStorage.getItem(SESSION_KEY);
-  const storedTimestamp = localStorage.getItem(SESSION_TS_KEY);
+    const now = Date.now();
+    const storedSessionId = localStorage.getItem(SESSION_KEY);
+    const storedTimestamp = localStorage.getItem(SESSION_TS_KEY);
 
-  const isExpired = !storedTimestamp || (now - parseInt(storedTimestamp, 10)) > EXPIRATION_HOURS * 60 * 60 * 1000;
+    const isExpired = !storedTimestamp || (now - parseInt(storedTimestamp, 10)) > EXPIRATION_HOURS * 60 * 60 * 1000;
 
-  if (storedSessionId && !isExpired) {
-    return storedSessionId;
+    if (storedSessionId && !isExpired) {
+      return storedSessionId;
+    }
+
+    const newSessionId = crypto.randomUUID();
+    localStorage.setItem(SESSION_KEY, newSessionId);
+    localStorage.setItem(SESSION_TS_KEY, now.toString());
+
+    return newSessionId;
   }
 
-  const newSessionId = crypto.randomUUID();
-  localStorage.setItem(SESSION_KEY, newSessionId);
-  localStorage.setItem(SESSION_TS_KEY, now.toString());
-
-  return newSessionId;
-}
-
-const sessionId = getOrCreateSessionId();
+  const sessionId = getOrCreateSessionId();
 
 
   function updateTooltipText() {
     const isOpen = chatbotModal.classList.contains('active');
     const statusElement = document.getElementById('chatbot-status');
     const isOnline = statusElement?.classList.contains('status-online');
-
-    const statusText = isOnline ? "Online" : "Offline";
-    const actionText = isOpen ? "Close Assistant" : "Open Assistant";
-
+    const statusText = isOnline ? window.chatbotText.online : window.chatbotText.offline;
+    const actionText = isOpen ? window.chatbotText.close : window.chatbotText.open;
     chatbotTooltip.textContent = `${statusText} - ${actionText}`;
     chatbotButton.setAttribute('aria-label', `${statusText} - ${actionText}`);
   }
@@ -145,59 +160,60 @@ const sessionId = getOrCreateSessionId();
     }
   });
 
-sendButton.addEventListener('click', async function () {
-  const question = questionInput.value.trim();
-  if (!question) return;
+  sendButton.addEventListener('click', async function () {
+    const question = questionInput.value.trim();
+    if (!question) return;
 
-  function addMessage(role, content) {
-    const msg = document.createElement("div");
-    msg.className = `chat-message ${role}`;
-    msg.innerHTML = content;
-    chatbotResponse.appendChild(msg);
+    function addMessage(role, content) {
+      const msg = document.createElement("div");
+      msg.className = `chat-message ${role}`;
+      msg.innerHTML = content;
+      chatbotResponse.appendChild(msg);
 
-    chatbotResponse.scrollTo({
-      top: chatbotResponse.scrollHeight,
-      behavior: "smooth"
-    });
-  }
+      chatbotResponse.scrollTo({
+        top: chatbotResponse.scrollHeight,
+        behavior: "smooth"
+      });
+    }
 
-  addMessage("user", `<i class="fas fa-user" style="color:black"></i><strong> You:</strong> ${question}`);
+    addMessage("user", `<i class="fas fa-user" style="color:black"></i><strong> ${window.chatbotText.user}:</strong> ${question}`);
 
-  questionInput.value = '';
-  questionInput.disabled = true;
-  sendButton.disabled = true;
+    questionInput.value = '';
+    questionInput.disabled = true;
+    sendButton.disabled = true;
 
-  const loader = document.createElement("div");
-  loader.className = "typing-indicator";
-  loader.innerHTML = `
+    const loader = document.createElement("div");
+    loader.className = "typing-indicator";
+    loader.innerHTML = `
     <span class="typing-dot"></span>
     <span class="typing-dot"></span>
     <span class="typing-dot"></span>
   `;
-  chatbotResponse.appendChild(loader);
-  chatbotResponse.scrollTo({
-    top: chatbotResponse.scrollHeight,
-    behavior: "smooth"
+    chatbotResponse.appendChild(loader);
+    chatbotResponse.scrollTo({
+      top: chatbotResponse.scrollHeight,
+      behavior: "smooth"
+    });
+
+    const answer = await sendQuestionToBackend(sessionId, question);
+
+    loader.remove();
+
+
+    addMessage("assistant", `<i class="fas fa-headset" style="color:black"></i><strong> ${window.chatbotText.assistant}:</strong> ${answer}`);
+
+    questionInput.disabled = false;
+    sendButton.disabled = false;
+    questionInput.focus();
   });
-
-  const answer = await sendQuestionToBackend(sessionId, question);
-
-  loader.remove();
-
-  addMessage("assistant", `<i class="fas fa-headset" style="color:black"></i><strong> Assistant:</strong> ${answer}`);
-
-  questionInput.disabled = false;
-  sendButton.disabled = false;
-  questionInput.focus();
-});
 
 
   if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
-  const chatbotTooltip = document.querySelector('.chatbot-tooltip');
-  if (chatbotTooltip) {
-    chatbotTooltip.style.display = 'none';
+    const chatbotTooltip = document.querySelector('.chatbot-tooltip');
+    if (chatbotTooltip) {
+      chatbotTooltip.style.display = 'none';
+    }
   }
-}
 
 });
 
@@ -210,16 +226,17 @@ async function sendQuestionToBackend(sessionId, questionText) {
       },
       body: JSON.stringify({
         session_id: sessionId,
-        question: questionText
+        question: questionText,
+        language: langMap(selectedLang)
       })
     });
-
+    console.log(body);
     if (!response.ok) throw new Error('Network response was not ok');
 
     const result = await response.json();
     return result.data.answer;
   } catch (error) {
     console.error('Error:', error);
-    return "Sorry, I couldn't get a response at the moment.";
+    return window.chatbotText?.error || "Sorry, I couldn't get a response at the moment.";
   }
 }

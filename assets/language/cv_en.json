@@ -7,7 +7,7 @@
   "profile-container-3": "Full Stack Developer",
   "profile-container-4": "Mechanical Engineer",
   "language-select-1": "English",
-  "language-select-2": "Franch",
+  "language-select-2": "French",
   "language-select-3": "Spanish",
   "education_degree_title9": "Google Data Analytics ",
   "education_degree_univ9": "Royal Alberta College",
@@ -136,5 +136,17 @@
   "skill_dt2-6": "Warehouse Management",
   "skill_dt2-7": "Project Management",
   "skill_dt2-8": "Strategic Planning",
-  "footer_txt": "Developed By: <cite style='font-weight: 700;'>ChavaZystem Tech ®</cite>"
+  "footer_txt": "Developed By: <cite style='font-weight: 700;'>ChavaZystem Tech ®</cite>",
+  "chatbot_title": "Chat with Jorge’s AI About His Career & Skills",
+  "chatbot_initial": "I'm Jorge's AI assistant. I'm here to help you answer any questions you may have about Jorge's resume, work experience, strengths, and more.",
+  "chatbot_placeholder": "Send a message...",
+  "chatbot_send": "Send",
+  "chatbot_tooltip": "Open Assistant",
+  "chatbot_online": "Online",
+  "chatbot_offline": "Offline",
+  "chatbot_user": "You",
+  "chatbot_assistant": "Assistant",
+  "chatbot_error": "Sorry, I couldn't get a response at the moment.",
+  "chatbot_open": "Open Assistant",
+  "chatbot_close": "Close Assistant"
 }

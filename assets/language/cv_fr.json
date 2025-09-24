@@ -136,5 +136,17 @@
   "skill_dt2-6": "Gestion d'entrepôt",
   "skill_dt2-7": "Gestion de projet",
   "skill_dt2-8": "Planification stratégique",
-  "footer_txt": "Développé par: <cite style='font-weight: 700;'>ChavaZystem Tech ®</cite>"
+  "footer_txt": "Développé par: <cite style='font-weight: 700;'>ChavaZystem Tech ®</cite>",
+  "chatbot_title": "Discutez avec l’IA de Jorge sur sa carrière et ses compétences",
+  "chatbot_initial": "Je suis l’assistant IA de Jorge. Je suis là pour vous aider à répondre à toutes vos questions concernant son CV, son expérience professionnelle, ses points forts et plus encore.",
+  "chatbot_placeholder": "Envoyer un message...",
+  "chatbot_send": "Envoyer",
+  "chatbot_tooltip": "Ouvrir l’assistant",
+  "chatbot_online": "En ligne",
+  "chatbot_offline": "Hors ligne",
+  "chatbot_user": "Vous",
+  "chatbot_assistant": "Assistant",
+  "chatbot_error": "Désolé, je n’ai pas pu obtenir de réponse pour le moment.",
+  "chatbot_open": "Ouvrir l’assistant",
+  "chatbot_close": "Fermer l’assistant"
 }

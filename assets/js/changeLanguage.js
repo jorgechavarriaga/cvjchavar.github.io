@@ -1,4 +1,5 @@
 function changeLanguage(language) {
+    localStorage.setItem("selectedLanguage", language);
     var xhr = new XMLHttpRequest();
     xhr.overrideMimeType("application/json");
     xhr.open("GET", "../assets/language/" + language + ".json", true);
@@ -168,11 +169,48 @@ function changeLanguage(language) {
             document.getElementById("skill_dt2-7").textContent = translations["skill_dt2-7"];
             document.getElementById("skill_dt2-8").textContent = translations["skill_dt2-8"];
             document.getElementById("footer_txt").innerHTML = translations["footer_txt"];
+
+            document.querySelector("#chatbot-modal .chatbot-header span").textContent = translations["chatbot_title"];
+            document.querySelector(".chatbot-initial-message").innerHTML = 
+                `<i class="fas fa-headset" style="color:black" aria-hidden="true"></i>
+                <strong>${translations["chatbot_assistant"]}:</strong> ${translations["chatbot_initial"]}`;
+
+            document.getElementById("chatbot-question").placeholder = translations["chatbot_placeholder"];
+            document.getElementById("chatbot-send").textContent = translations["chatbot_send"];
+            document.querySelector("#chatbot-button .chatbot-tooltip").textContent = translations["chatbot_tooltip"];
+            window.chatbotStatusText = {
+                online: translations["chatbot_online"],
+                offline: translations["chatbot_offline"]
+            };
+            window.chatbotText = {
+                online: translations["chatbot_online"],
+                offline: translations["chatbot_offline"],
+                open: translations["chatbot_open"],
+                close: translations["chatbot_close"],
+                user: translations["chatbot_user"],
+                assistant: translations["chatbot_assistant"],
+                error: translations["chatbot_error"]
+            };    
         }
     };
     xhr.send(null);
 }
-document.addEventListener("DOMContentLoaded", function () {
-    changeLanguage('cv_en');
-});
 
+document.addEventListener("DOMContentLoaded", function () {
+    const langMap = {
+        "en": "cv_en",
+        "fr": "cv_fr",
+        "es": "cv_sp"
+    };
+    let savedLang = localStorage.getItem("selectedLanguage");
+    let selectedLang;
+    if (savedLang) {
+        selectedLang = savedLang;
+    } else {
+        let browserLang = navigator.language || navigator.userLanguage;
+        browserLang = browserLang.substring(0, 2);
+        selectedLang = langMap[browserLang] || "cv_en";
+    }
+    changeLanguage(selectedLang);
+    document.getElementById("language-select").value = selectedLang;
+});
