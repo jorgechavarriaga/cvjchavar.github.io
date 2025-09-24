@@ -39,7 +39,7 @@
   "education_degree_place3": "Colombia",
   "diploma-link2": "Especialización en Logística Empresarial <i class=\"fa-solid fa-circle-info\"></i>",
   "diploma_title2": "<h5>Especialización en Logística Empresarial</h5><br><h6>Evaluación comparativa de estudios realizados fuera de Quebec</h6>",
-  "diploma_content2": "<p><strong>BENCHMARK:</strong><a>Diploma de Posgrado Especializado</a></p><p><strong>TÍTULO:</strong><a></a>Administración de Empresas</p>",
+  "diploma_content2": "<p><strong>BENCHMARK:</strong><a>Diploma de Posgrado Especializado</a></p><p><strong>TÍTULO:</strong><a>Administración de Empresas</a></p>",
   "education_degree_univ2": "Universidad de Medellín",
   "education_degree_time2": "2005 - 2006",
   "education_degree_place2": "Colombia",
@@ -136,5 +136,17 @@
   "skill_dt2-6": "Gestión de almacenes",
   "skill_dt2-7": "Gestión de proyectos",
   "skill_dt2-8": "Planificación estratégica",
-  "footer_txt": "Desarrollado Por: <cite style='font-weight: 700;'>ChavaZystem Tech ®</cite>"
+  "footer_txt": "Desarrollado Por: <cite style='font-weight: 700;'>ChavaZystem Tech ®</cite>",
+  "chatbot_title": "Chatea con la IA de Jorge sobre su carrera y habilidades",
+  "chatbot_initial": "Soy el asistente de IA de Jorge. Estoy aquí para ayudarte a responder cualquier pregunta sobre su currículum, experiencia laboral, fortalezas y más.",
+  "chatbot_placeholder": "Escribe un mensaje...",
+  "chatbot_send": "Enviar",
+  "chatbot_tooltip": "Abrir asistente",
+  "chatbot_online": "En línea",
+  "chatbot_offline": "Desconectado",
+  "chatbot_user": "Tú",
+  "chatbot_assistant": "Asistente",
+  "chatbot_error": "Lo siento, no pude obtener una respuesta en este momento.",
+  "chatbot_open": "Abrir asistente",
+  "chatbot_close": "Cerrar asistente"
 }
