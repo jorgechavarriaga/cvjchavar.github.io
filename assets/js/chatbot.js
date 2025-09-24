@@ -7,9 +7,6 @@ const BASE_URL = location.hostname === '127.0.0.1' || location.hostname === 'loc
 const ENDPOINT = `${BASE_URL}/api/v1/ask`;
 const HEALTH_ENDPOINT = `${BASE_URL}/api/v1/health/ai`;
 const langMap = { cv_en: "en", cv_fr: "fr", cv_sp: "es" };
-const selectedLang = localStorage.getItem("selectedLanguage") || "cv_en";
-
-
 
 async function checkBackendStatusOnLoad() {
   const statusElement = document.getElementById('chatbot-status');
@@ -56,9 +53,7 @@ async function checkBackendStatusOnLoad() {
     const event = new Event("mouseover");
     chatbotButton.dispatchEvent(event);
   }, 50);
-
 }
-
 
 async function checkBackendStatus() {
   const statusElement = document.getElementById('chatbot-status');
@@ -80,17 +75,14 @@ async function checkBackendStatus() {
   }
 }
 
-
 document.addEventListener('DOMContentLoaded', function () {
   checkBackendStatusOnLoad();
-
   const chatbotButton = document.getElementById('chatbot-button');
   const chatbotModal = document.getElementById('chatbot-modal');
   const chatbotTooltip = document.querySelector('.chatbot-tooltip');
   const questionInput = document.getElementById('chatbot-question');
   const sendButton = document.getElementById('chatbot-send');
   const chatbotResponse = document.getElementById('chatbot-response');
-
 
   // Session ID logic with 24h expiration
   function getOrCreateSessionId() {
@@ -117,7 +109,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const sessionId = getOrCreateSessionId();
 
-
   function updateTooltipText() {
     const isOpen = chatbotModal.classList.contains('active');
     const statusElement = document.getElementById('chatbot-status');
@@ -127,7 +118,6 @@ document.addEventListener('DOMContentLoaded', function () {
     chatbotTooltip.textContent = `${statusText} - ${actionText}`;
     chatbotButton.setAttribute('aria-label', `${statusText} - ${actionText}`);
   }
-
 
   function openModal() {
     chatbotModal.classList.add('active');
@@ -169,7 +159,6 @@ document.addEventListener('DOMContentLoaded', function () {
       msg.className = `chat-message ${role}`;
       msg.innerHTML = content;
       chatbotResponse.appendChild(msg);
-
       chatbotResponse.scrollTo({
         top: chatbotResponse.scrollHeight,
         behavior: "smooth"
@@ -188,7 +177,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <span class="typing-dot"></span>
     <span class="typing-dot"></span>
     <span class="typing-dot"></span>
-  `;
+    `;
     chatbotResponse.appendChild(loader);
     chatbotResponse.scrollTo({
       top: chatbotResponse.scrollHeight,
@@ -199,7 +188,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     loader.remove();
 
-
     addMessage("assistant", `<i class="fas fa-headset" style="color:black"></i><strong> ${window.chatbotText.assistant}:</strong> ${answer}`);
 
     questionInput.disabled = false;
@@ -207,18 +195,18 @@ document.addEventListener('DOMContentLoaded', function () {
     questionInput.focus();
   });
 
-
   if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
     const chatbotTooltip = document.querySelector('.chatbot-tooltip');
     if (chatbotTooltip) {
       chatbotTooltip.style.display = 'none';
     }
   }
-
 });
 
 async function sendQuestionToBackend(sessionId, questionText) {
   try {
+    const selectedLang = localStorage.getItem("selectedLanguage") || "cv_en";
+    const language = langMap[selectedLang] || "en";
     const response = await fetch(ENDPOINT, {
       method: 'POST',
       headers: {
@@ -227,7 +215,7 @@ async function sendQuestionToBackend(sessionId, questionText) {
       body: JSON.stringify({
         session_id: sessionId,
         question: questionText,
-        language: langMap[selectedLang]
+        language: language
       })
     });
     if (!response.ok) throw new Error('Network response was not ok');
