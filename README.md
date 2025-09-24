@@ -36,6 +36,9 @@ The assistant answers questions **exclusively** based on two knowledge sources:
 
 - Pure **HTML, CSS, JavaScript** (no framework).  
 - **Multilanguage support** via JSON files (`cv_en.json`, `cv_fr.json`, `cv_sp.json`).  
+- **Language persistence**: selected language is stored in `localStorage` (`cv_en`, `cv_fr`, `cv_sp`).  
+- **Chatbot payload**: always sends the mapped value (`en`, `fr`, `es`) to the backend as `language`.  
+- **Response enforcement**: answers are always returned in the selected language, regardless of the question’s language.  
 - **Bootstrap + jQuery + FontAwesome** for styling and UI.  
 - Integrated **chatbot widget** with:
   - Floating button + modal chat window.  
@@ -64,6 +67,7 @@ The assistant answers questions **exclusively** based on two knowledge sources:
 
 ```mermaid
 flowchart LR
+
     A[Frontend - GitHub Pages + Cloudflare] -->|Fetch API| B[Backend - FastAPI on Synology NAS]
     B --> C[PostgreSQL + pgvector - Embeddings Storage]
     C --> D[LLM - LangChain + ChatOpenAI - OpenAI wrapper]
@@ -77,6 +81,8 @@ flowchart LR
 ```
 
 - **Frontend** → Static site with CV + chatbot widget.  
+  Stores `selectedLanguage` (cv_en / cv_es / cv_fr) and session data in localStorage,  
+  which are included in the payload (`session_id`, `question`, `language`) sent to the backend.  
 - **Backend** → FastAPI API exposed via reverse proxy.  
 - **DB** → Stores embeddings and logs.  
 - **LLM** → Uses LangChain’s `ChatOpenAI` class to call OpenAI chat models.  
@@ -98,7 +104,7 @@ flowchart LR
 - ✅ Online/Offline status check for assistant.  
 - ✅ Dockerized backend for portability.  
 - ✅ Cloudflare SSL & domain management.  
-- ✅ Multilanguage CV rendering (EN, FR, ES).  
+- ✅ Multilingual chatbot support (EN, ES, FR): responses are always in the selected language (set via UI selector & stored in localStorage), regardless of the input language  
 
 ---
 
