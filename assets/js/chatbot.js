@@ -230,7 +230,6 @@ async function sendQuestionToBackend(sessionId, questionText) {
         language: langMap[selectedLang]
       })
     });
-    console.log(body);
     if (!response.ok) throw new Error('Network response was not ok');
 
     const result = await response.json();
