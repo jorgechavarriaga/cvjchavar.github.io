@@ -227,7 +227,7 @@ async function sendQuestionToBackend(sessionId, questionText) {
       body: JSON.stringify({
         session_id: sessionId,
         question: questionText,
-        language: langMap(selectedLang)
+        language: langMap[selectedLang]
       })
     });
     console.log(body);
