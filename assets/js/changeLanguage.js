@@ -7,6 +7,14 @@ function changeLanguage(language) {
         if (xhr.readyState === 4 && xhr.status === 200) {
             var translations = JSON.parse(xhr.responseText);
             document.getElementById("title").textContent = translations.title;
+            const titles = {
+                cv_en: "Jorge Chavarriaga – Full Stack Developer & Security Engineer",
+                cv_sp: "Jorge Chavarriaga – Desarrollador Full Stack & Ingeniero en Seguridad",
+                cv_fr: "Jorge Chavarriaga – Développeur Full Stack & Ingénieur en Sécurité"
+            };
+            if (titles[language]) {
+                document.title = titles[language]; 
+            }
             document.getElementById("contact").innerHTML = translations.contact;
             document.getElementById("profile-container-1").textContent = translations["profile-container-1"];
             document.getElementById("profile-container-2").textContent = translations["profile-container-2"];
