@@ -119,11 +119,6 @@ function changeLanguage(language) {
             document.getElementById("interest4").textContent = translations["interest4"];
             document.getElementById("summary_qualifications_txt").innerHTML = translations["summary_qualifications_txt"];
             document.getElementById("summary_q1").textContent = translations["summary_q1"];
-            document.getElementById("summary_q2").textContent = translations["summary_q2"];
-            document.getElementById("summary_q3").textContent = translations["summary_q3"];
-            document.getElementById("summary_q4").textContent = translations["summary_q4"];
-            document.getElementById("summary_q5").textContent = translations["summary_q5"];
-            document.getElementById("summary_q6").textContent = translations["summary_q6"];
             document.getElementById("experience_txt").innerHTML = translations["experience_txt"];
             document.getElementById("job_title4").textContent = translations["job_title4"];
             document.getElementById("job_time4").textContent = translations["job_time4"];
@@ -133,6 +128,7 @@ function changeLanguage(language) {
             document.getElementById("job4_li3").textContent = translations["job4_li3"];
             document.getElementById("job4_li4").textContent = translations["job4_li4"];
             document.getElementById("job4_li5").textContent = translations["job4_li5"];
+            document.getElementById("job4_li6").textContent = translations["job4_li6"];
             document.getElementById("job_title3").textContent = translations["job_title3"];
             document.getElementById("job_time3").textContent = translations["job_time3"];
             document.getElementById("company3").innerHTML = translations["company3"];
