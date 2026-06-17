@@ -2000,5 +2000,225 @@
       "Newfoundland, Nova Scotia, Manitoba, and Prince Edward Island"
     ],
     "answer": 3
+  },
+  {
+    "no": 183,
+    "question": "Who founded Québec City in 1608?",
+    "options": [
+      "Jacques Cartier",
+      "Samuel de Champlain",
+      "Jean Talon",
+      "Louis Hébert"
+    ],
+    "answer": 2
+  },
+  {
+    "no": 184,
+    "question": "What does the word 'Kanata' mean?",
+    "options": [
+      "River",
+      "Country",
+      "Village",
+      "Forest"
+    ],
+    "answer": 3
+  },
+  {
+    "no": 185,
+    "question": "Which battle marked the end of France's empire in North America?",
+    "options": [
+      "Battle of Vimy Ridge",
+      "Battle of Châteauguay",
+      "Battle of Queenston Heights",
+      "Battle of the Plains of Abraham"
+    ],
+    "answer": 4
+  },
+  {
+    "no": 186,
+    "question": "What important right did the Quebec Act of 1774 grant to Catholics?",
+    "options": [
+      "The right to vote",
+      "The right to hold public office",
+      "The right to own land",
+      "The right to serve in the military"
+    ],
+    "answer": 2
+  },
+  {
+    "no": 187,
+    "question": "Who became the first leader of a responsible government in Canada?",
+    "options": [
+      "Sir John A. Macdonald",
+      "George-Étienne Cartier",
+      "Louis-Hippolyte La Fontaine",
+      "Samuel de Champlain"
+    ],
+    "answer": 3
+  },
+  {
+    "no": 188,
+    "question": "Which four provinces formed Canada in 1867?",
+    "options": [
+      "Ontario, Quebec, Manitoba, Nova Scotia",
+      "Ontario, Quebec, Nova Scotia, New Brunswick",
+      "Ontario, Quebec, Alberta, New Brunswick",
+      "Ontario, Manitoba, Nova Scotia, New Brunswick"
+    ],
+    "answer": 2
+  },
+  {
+    "no": 189,
+    "question": "Who suggested the name 'Dominion of Canada'?",
+    "options": [
+      "Sir John A. Macdonald",
+      "George Brown",
+      "Sir Leonard Tilley",
+      "Louis Riel"
+    ],
+    "answer": 3
+  },
+  {
+    "no": 190,
+    "question": "Who was Tecumseh?",
+    "options": [
+      "A British general",
+      "A Shawnee chief who helped defend Canada",
+      "A Father of Confederation",
+      "A French explorer"
+    ],
+    "answer": 2
+  },
+  {
+    "no": 191,
+    "question": "Who is remembered for warning British forces of a planned American attack during the War of 1812?",
+    "options": [
+      "Agnes Macphail",
+      "Laura Secord",
+      "Emily Stowe",
+      "Thérèse Casgrain"
+    ],
+    "answer": 2
+  },
+  {
+    "no": 192,
+    "question": "What is celebrated on Vimy Day?",
+    "options": [
+      "The signing of Confederation",
+      "The Battle of the Plains of Abraham",
+      "The Battle of Vimy Ridge",
+      "The end of the Second World War"
+    ],
+    "answer": 3
+  },
+  {
+    "no": 193,
+    "question": "On what date is Vimy Day observed?",
+    "options": [
+      "July 1",
+      "November 11",
+      "April 9",
+      "June 6"
+    ],
+    "answer": 3
+  },
+  {
+    "no": 194,
+    "question": "What phrase is associated with Canada's system of government and constitutional tradition?",
+    "options": [
+      "Life, Liberty and the Pursuit of Happiness",
+      "Peace, Order and Good Government",
+      "Liberty, Equality and Fraternity",
+      "One Nation Under God"
+    ],
+    "answer": 2
+  },
+  {
+    "no": 195,
+    "question": "Which beach was captured by Canadian troops on D-Day?",
+    "options": [
+      "Omaha Beach",
+      "Gold Beach",
+      "Sword Beach",
+      "Juno Beach"
+    ],
+    "answer": 4
+  },
+  {
+    "no": 196,
+    "question": "In which battle did the Royal Canadian Navy play a vital role during the Second World War?",
+    "options": [
+      "Battle of Britain",
+      "Battle of the Atlantic",
+      "Battle of Hong Kong",
+      "Battle of Normandy"
+    ],
+    "answer": 2
+  },
+  {
+    "no": 197,
+    "question": "What is one of the legal responsibilities of Canadian citizens when called upon?",
+    "options": [
+      "Serving in the military",
+      "Serving on a jury",
+      "Working for the government",
+      "Joining a political party"
+    ],
+    "answer": 2
+  },
+  {
+    "no": 198,
+    "question": "Does Canada have compulsory military service?",
+    "options": [
+      "Yes, for all citizens",
+      "Yes, only during wartime",
+      "No",
+      "Only for permanent residents"
+    ],
+    "answer": 3
+  },
+  {
+    "no": 199,
+    "question": "What is the Magna Carta?",
+    "options": [
+      "The first Constitution of Canada",
+      "The Great Charter of Freedoms signed in 1215",
+      "The Charter of Rights and Freedoms",
+      "The British North America Act"
+    ],
+    "answer": 2
+  },
+  {
+    "no": 200,
+    "question": "What does habeas corpus mean?",
+    "options": [
+      "The right to vote",
+      "The right to a fair trial",
+      "The right not to be imprisoned unlawfully",
+      "The right to own property"
+    ],
+    "answer": 3
+  },
+  {
+    "no": 201,
+    "question": "What does the rule of law mean?",
+    "options": [
+      "Only elected officials must obey the law",
+      "The police decide what is legal",
+      "Everyone must obey the law, including governments",
+      "The courts create all laws"
+    ],
+    "answer": 3
+  },
+  {
+    "no": 202,
+    "question": "What is the Commonwealth?",
+    "options": [
+      "A military alliance led by Canada",
+      "A group of countries with historic ties to the Crown",
+      "A trade agreement between Canada and the United States",
+      "A provincial organization"
+    ],
+    "answer": 2
   }
 ]
