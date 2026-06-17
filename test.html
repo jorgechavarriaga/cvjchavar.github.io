@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Chat over cv_en.txt</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin:0; padding:0; display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:100vh; background:#f0f0f0; }
+    #chat-container { width: 90%; max-width: 720px; background:#fff; border:1px solid #ddd; border-radius:8px; padding:16px; box-shadow:0 2px 8px rgba(0,0,0,0.08); }
+    #messages { height: 380px; overflow-y:auto; border:1px solid #eee; border-radius:6px; padding:10px; margin-bottom:12px; background:#fafafa; }
+    .message { padding:8px 10px; margin:6px 0; border-radius:6px; background:#2c7aef; color:#fff; max-width: 85%; }
+    .user-message { margin-left:auto; background:#e0f7fa; color:#000; }
+    #chat-input { display:flex; gap:8px; }
+    #chat-input input { flex:1; padding:10px; border:1px solid #ddd; border-radius:6px; }
+    #chat-input button { padding:10px 16px; background:#007bff; color:#fff; border:none; border-radius:6px; cursor:pointer; }
+    #chat-input button[disabled] { opacity:.6; cursor:not-allowed; }
+    #status { font-size:12px; color:#555; margin-top:8px; }
+  </style>
+  <script src="https://js.puter.com/v2/"></script>
+</head>
+
+<body>
+  <div id="chat-container">
+    <div id="messages"></div>
+    <div id="chat-input">
+      <input type="text" id="input-message" placeholder="Ask something from cv_en.txt..."/>
+      <button id="send-btn" onclick="sendMessage()" disabled>Send</button>
+    </div>
+    <div id="status">Loading document...</div>
+  </div>
+
+<script>
+// ---- Config ----
+const MODEL = 'gpt-5'; // or 'gpt-5-nano'
+const DOC_URL = '/assets/data/cv_en.txt';
+const MAX_CHUNK_CHARS = 1200;  // chunk size for naive retrieval
+const TOP_K = 3;               // how many chunks to send as context
+
+// ---- UI refs ----
+const messagesDiv = document.getElementById('messages');
+const inputEl = document.getElementById('input-message');
+const sendBtn = document.getElementById('send-btn');
+const statusEl = document.getElementById('status');
+
+// ---- State ----
+let chunks = [];
+const chatHistory = [
+  {
+    role: 'system',
+    content:
+      'You are a concise assistant. Answer STRICTLY using the provided CONTEXT. ' +
+      'If the answer is not in the CONTEXT, reply exactly: "I do not know".'
+  }
+];
+
+// ---- Utils ----
+function addMessage(text, isUser = false) {
+  const div = document.createElement('div');
+  div.className = 'message' + (isUser ? ' user-message' : '');
+  div.textContent = text;
+  messagesDiv.appendChild(div);
+  messagesDiv.scrollTop = messagesDiv.scrollHeight;
+}
+
+function contentToText(content) {
+  if (typeof content === 'string') return content;
+  if (Array.isArray(content)) return content.map(p => (typeof p === 'string' ? p : p?.text || '')).join('\n');
+  if (content && typeof content === 'object' && 'text' in content) return content.text || '';
+  try { return JSON.stringify(content); } catch { return String(content); }
+}
+
+function normalize(str) {
+  return (str || '').toLowerCase().replace(/[^\p{L}\p{N}\s]/gu, ' ');
+}
+
+const STOP = new Set(['the','a','an','and','or','to','of','in','on','for','with','by','at','is','are','be','as','that','this','it','from','into','was','were','has','have','had','not','if','but','we','you','your','our']);
+
+function tokenize(str) {
+  return normalize(str).split(/\s+/).filter(w => w && !STOP.has(w));
+}
+
+// Simple paragraph-based chunking + pack to MAX_CHUNK_CHARS
+function buildChunks(text) {
+  const paras = text.split(/\n{2,}/);
+  const result = [];
+  let buf = '';
+  for (const p of paras) {
+    if ((buf + '\n\n' + p).length > MAX_CHUNK_CHARS && buf) {
+      result.push(buf.trim());
+      buf = p;
+    } else {
+      buf = buf ? buf + '\n\n' + p : p;
+    }
+  }
+  if (buf) result.push(buf.trim());
+  return result;
+}
+
+// Score chunk by keyword overlap
+function scoreChunk(chunk, qTokens) {
+  const cTokens = tokenize(chunk);
+  let score = 0;
+  const cSet = new Set(cTokens);
+  for (const t of qTokens) if (cSet.has(t)) score++;
+  // Also reward contiguous substring presence (very naive)
+  const chunkNorm = normalize(chunk);
+  const qNorm = qTokens.join(' ');
+  if (qNorm && chunkNorm.includes(qNorm)) score += 2;
+  return score;
+}
+
+function topKContext(question) {
+  const qTokens = tokenize(question);
+  if (!qTokens.length) return '';
+  const scored = chunks.map((c, i) => ({ i, c, s: scoreChunk(c, qTokens) }));
+  scored.sort((a, b) => b.s - a.s);
+  const top = scored.slice(0, TOP_K).map(x => x.c);
+  return top.join('\n\n---\n\n');
+}
+
+// ---- Init: load the doc and prepare chunks ----
+async function init() {
+  try {
+    const resp = await fetch(DOC_URL, { cache: 'no-store' });
+    if (!resp.ok) throw new Error(`Fetch failed ${resp.status}`);
+    const text = await resp.text();
+    if (!text.trim()) throw new Error('cv_en.txt is empty.');
+
+    chunks = buildChunks(text);
+    statusEl.textContent = 'Document loaded and ready.';
+    addMessage('Document loaded. Ask strictly based on cv_en.txt.', false);
+    sendBtn.disabled = false;
+  } catch (err) {
+    console.error('[init] error:', err);
+    statusEl.textContent = 'Error loading document.';
+    addMessage('Failed to load the document. Check console.', false);
+  }
+}
+
+// ---- Send ----
+async function sendMessage() {
+  const question = inputEl.value.trim();
+  if (!question) return;
+
+  addMessage(question, true);
+  inputEl.value = '';
+  sendBtn.disabled = true;
+
+  try {
+    // Build focused context
+    const context = topKContext(question) || '';
+    const userPrompt =
+      'Use ONLY the CONTEXT below. If answer not found, reply exactly: "I do not know".\n\n' +
+      'QUESTION:\n' + question + '\n\n' +
+      'CONTEXT (from cv_en.txt):\n' + context;
+
+    // Keep history small to avoid exceeding context window
+    const rolling = [chatHistory[0]]; // system
+    // Optionally keep last exchange:
+    // if (chatHistory.length > 2) rolling.push(chatHistory[chatHistory.length - 2], chatHistory[chatHistory.length - 1]);
+    rolling.push({ role: 'user', content: userPrompt });
+
+    const resp = await puter.ai.chat(rolling, { model: MODEL });
+    const assistantText = contentToText(resp?.message?.content ?? resp);
+    addMessage(assistantText || '(no content)', false);
+
+    chatHistory.push({ role: 'user', content: userPrompt });
+    chatHistory.push(resp?.message || { role: 'assistant', content: assistantText || '' });
+  } catch (err) {
+    console.error('[chat] error:', err);
+    addMessage(`Model error: ${err.message}`, false);
+  } finally {
+    sendBtn.disabled = false;
+    inputEl.focus();
+  }
+}
+
+init();
+</script>
+
+  
+</body>
+</html>

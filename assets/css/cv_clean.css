@@ -222,7 +222,14 @@ p { line-height: 1.5 }
     color: var(--text-dark)
 }
 
+.contact{
+    font-size: .9rem;
+    margin-left: .4rem
+}
+
 .allsides {
+    font-size: 16px;
+    font-weight: 900;
     background: linear-gradient(var(--color-accent) 0 0) bottom/var(--d, 0) 1px no-repeat;
     transition: .5s
 }
