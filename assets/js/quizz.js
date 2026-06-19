@@ -16,7 +16,7 @@ async function loadQuestions() {
         const res = await fetch(file);
         QUESTIONS = await res.json();
 
-        document.getElementById('questionBankCount').textContent = `${QUESTIONS.length} questions`;
+        document.getElementById('questionBankCount').textContent = `${QUESTIONS.length}`;
 
     } catch (err) {
         console.error('Could not load questions', err);
@@ -212,10 +212,6 @@ async function startQuiz() {
         const weakQuestions = QUESTIONS.filter(q =>
             weakQuestionIds.includes(q.no)
         );
-        if (weakQuestions.length === 0) {
-            alert('No weak areas available yet.');
-            return;
-        }
         quizQuestions = weakQuestions;
     }
     currentIndex = 0;
