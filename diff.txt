@@ -1,405 +1,460 @@
-diff --git a/assets/css/quizz.css b/assets/css/quizz.css
-index 99de7bd..8fbdb3d 100644
---- a/assets/css/quizz.css
-+++ b/assets/css/quizz.css
-@@ -89,6 +89,13 @@ body {
-   margin-bottom: 2.5rem;
- }
- 
-+.rules-header {
-+  display: flex;
-+  justify-content: space-between;
-+  align-items: center;
-+  margin-bottom: 20px;
-+}
-+
- .rules-card {
-   background: var(--bg2);
-   border: 1px solid var(--border);
-@@ -184,6 +191,37 @@ body {
-   color: var(--text);
- }
- 
-+.quiz-mode-switch {
-+  display: flex;
-+  gap: 8px;
-+}
-+
-+.mode-btn {
-+  background: #232846;
-+  color: #fff;
-+  border: 1px solid #3a4166;
-+  border-radius: 8px;
-+  padding: 8px 14px;
-+  cursor: pointer;
-+  font-size: 14px;
-+  font-weight: 600;
-+  transition: all .2s ease;
-+}
-+
-+.mode-btn:hover {
-+  border-color: #ff2a00;
-+}
-+
-+.mode-btn.active {
-+  background: #ff2a00;
-+  border-color: #ff2a00;
-+}
-+
-+.mode-btn:disabled {
-+  opacity: .5;
-+  cursor: not-allowed;
-+}
-+
- /* Language selector */
- #languageSelector {
-   display: none;
-@@ -330,11 +368,11 @@ body {
- }
- 
- .stats-correct-answer {
--    margin-top: 6px;
--    margin-bottom: 8px;
--    font-size: 13px;
--    font-weight: 500;
--    color: var(--green);
-+  margin-top: 6px;
-+  margin-bottom: 8px;
-+  font-size: 13px;
-+  font-weight: 500;
-+  color: var(--green);
- }
- 
- /* Question area */
-@@ -811,11 +849,11 @@ body {
-   flex: 1;
- }
- 
-- .stats-q-text {
--    font-size: 16px;
--    font-weight: 700;
--    color: #ffffff;
--    margin-bottom: 8px;
-+.stats-q-text {
-+  font-size: 16px;
-+  font-weight: 700;
-+  color: #ffffff;
-+  margin-bottom: 8px;
- }
- 
- .stats-q-bar-track {
-@@ -889,7 +927,41 @@ body {
- }
- 
- @media (max-width: 768px) {
-+
-+  .rules-header {
-+    flex-direction: column;
-+    align-items: flex-start;
-+    gap: 12px;
-+  }
-+
-+  .quiz-mode-switch {
-+    width: 100%;
-+    display: flex;
-+  }
-+
-+  .mode-btn {
-+    flex: 1;
-+  }
-+
-   .rules-grid {
-     grid-template-columns: 1fr 1fr;
-   }
-+
-+  #normalModeBtn {
-+    font-size: 0;
-+  }
-+
-+  #normalModeBtn::after {
-+    content: "📚 Normal";
-+    font-size: 16px;
-+  }
-+
-+  #weakModeBtn {
-+    font-size: 0;
-+  }
-+
-+  #weakModeBtn::after {
-+    content: "🎯 Weak";
-+    font-size: 16px;
-+  }
- }
-\ No newline at end of file
 diff --git a/assets/js/quizz.js b/assets/js/quizz.js
-index fa2ef42..13d7d94 100644
+index 13d7d94..6cf524a 100644
 --- a/assets/js/quizz.js
 +++ b/assets/js/quizz.js
-@@ -16,8 +16,7 @@ async function loadQuestions() {
+@@ -16,7 +16,7 @@ async function loadQuestions() {
          const res = await fetch(file);
          QUESTIONS = await res.json();
  
--        document.getElementById('questionBankCount').textContent =
--            `${QUESTIONS.length} questions`;
-+        document.getElementById('questionBankCount').textContent = `${QUESTIONS.length} questions`;
+-        document.getElementById('questionBankCount').textContent = `${QUESTIONS.length} questions`;
++        document.getElementById('questionBankCount').textContent = `${QUESTIONS.length}`;
  
      } catch (err) {
          console.error('Could not load questions', err);
-@@ -75,6 +74,7 @@ function applyTranslations() {
-     document.getElementById('timeLimitLabel').textContent = t.timeLimit;
-     document.getElementById('toPassLabel').textContent = t.toPass;
-     document.getElementById('questionBankLabel').textContent = t.questionBank;
-+    document.getElementById('weakAreasLabel').textContent = t.weakAreas;
-     document.getElementById('languageLabel').textContent = t.language;
-     document.getElementById('startTestButton').textContent = t.startTest;
-     document.getElementById('viewStatisticsButton').textContent = t.viewStatistics;
-@@ -93,6 +93,8 @@ function applyTranslations() {
-     document.getElementById('statisticsTitle').textContent = t.statistics;
-     document.getElementById('backButton').textContent = `← ${t.back}`;
-     document.getElementById('clearStatisticsButton').textContent = `🗑️ ${t.clearStatistics}`;
-+    document.getElementById('normalModeBtn').textContent = `📚 ${t.normalModeBtn}`;
-+    document.getElementById('weakModeBtn').textContent = `🎯 ${t.weakAreasBtn}`;
- 
-     updateFooter();
- 
-@@ -136,6 +138,7 @@ const PASS_SCORE = 15;
- const TIME_LIMIT = 30 * 60; // seconds
- 
- let quizQuestions = [];
-+let selectedMode = 'normal';
- let currentIndex = 0;
- let correct = 0;
- let wrong = 0;
-@@ -146,6 +149,17 @@ let timerInterval = null;
- let secondsLeft = TIME_LIMIT;
- let startTime = null;
- 
-+// Quiz Mode
-+function setQuizMode(mode) {
-+    selectedMode = mode;
-+    document
-+        .getElementById('normalModeBtn')
-+        .classList.toggle('active', mode === 'normal');
-+    document
-+        .getElementById('weakModeBtn')
-+        .classList.toggle('active', mode === 'weak');
-+}
-+
- // ── localStorage stats ──
- function loadStats() {
-     try { return JSON.parse(localStorage.getItem('czStats') || '{}'); } catch (e) { return {}; }
-@@ -172,6 +186,9 @@ function shuffle(arr) {
- function showScreen(id) {
-     document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-     document.getElementById(id).classList.add('active');
-+    if (id === 'home') {
-+        applyConfiguration();
-+    }
- }
- 
- function fmtTime(s) {
-@@ -187,7 +204,20 @@ async function startQuiz() {
-     if (QUESTIONS.length === 0) await loadQuestions();
-     if (QUESTIONS.length === 0) return; // failed to load, alert already shown
- 
--    quizQuestions = shuffle(QUESTIONS).slice(0, QUIZ_SIZE);
-+    if (selectedMode === 'normal') {
-+        quizQuestions =
-+            shuffle(QUESTIONS).slice(0, QUIZ_SIZE);
-+    } else {
-+        const weakQuestionIds = Object.keys(loadStats()).map(Number);
-+        const weakQuestions = QUESTIONS.filter(q =>
-+            weakQuestionIds.includes(q.no)
-+        );
-+        if (weakQuestions.length === 0) {
-+            alert('No weak areas available yet.');
-+            return;
-+        }
-+        quizQuestions = weakQuestions;
-+    }
-     currentIndex = 0;
-     correct = 0;
-     wrong = 0;
-@@ -250,14 +280,14 @@ function renderQuestion() {
-     const pct = currentIndex > 0 ? Math.round((correct / currentIndex) * 100) : null;
- 
-     // Stats
--    document.getElementById('statQ').textContent = `${currentIndex + 1}/20`;
-+    document.getElementById('statQ').textContent = `${currentIndex + 1}/${quizQuestions.length}`;
-     document.getElementById('statOk').textContent = correct;
-     document.getElementById('statBad').textContent = wrong;
-     document.getElementById('statPct').textContent = pct !== null ? pct + '%' : '—';
--    document.getElementById('progressFill').style.width = (((currentIndex + 1) / QUIZ_SIZE) * 100) + '%';
-+    document.getElementById('progressFill').style.width = (((currentIndex + 1) / quizQuestions.length) * 100) + '%';
- 
-     // Question
--    document.getElementById('qNum').textContent = `Question ${currentIndex + 1} ${t.of} ${QUIZ_SIZE}`;
-+    document.getElementById('qNum').textContent = `Question ${currentIndex + 1} ${t.of} ${quizQuestions.length}`;
-     document.getElementById('qText').textContent = q.question;
- 
-     // Options
-@@ -280,7 +310,7 @@ function renderQuestion() {
-     const btn = document.getElementById('btnNext');
-     btn.className = 'btn-next';
-     btn.textContent =
--        currentIndex === QUIZ_SIZE - 1
-+        currentIndex === quizQuestions.length - 1
-             ? t.finish
-             : t.next;
- 
-@@ -344,7 +374,7 @@ function nextQuestion() {
-     if (!answered) return;
- 
-     currentIndex++;
--    if (currentIndex >= QUIZ_SIZE) {
-+    if (currentIndex >= quizQuestions.length) {
-         clearInterval(timerInterval);
-         showResults();
-     } else {
-@@ -361,8 +391,9 @@ function showResults() {
- 
-     clearInterval(timerInterval);
-     const elapsed = Math.round((Date.now() - startTime) / 1000);
--    const pct = Math.round((correct / QUIZ_SIZE) * 100);
-+    const pct = Math.round((correct / quizQuestions.length) * 100);
-     const pass = correct >= PASS_SCORE;
-+    const isWeakMode = selectedMode === 'weak';
-     const letters = ['A', 'B', 'C', 'D'];
- 
-     document.getElementById('scorePct').textContent = pct + '%';
-@@ -371,12 +402,19 @@ function showResults() {
- 
-     const verdict = document.getElementById('verdict');
-     verdict.className = 'verdict ' + (pass ? 'pass' : 'fail');
--    verdict.textContent = pass ? t.pass : t.fail;
-+    if (isWeakMode) {
-+        verdict.textContent = '🎯 WEAK AREAS';
-+    } else {
-+        verdict.textContent = pass ? t.pass : t.fail;
-+    }
- 
--    document.getElementById('resultsSub').textContent =
--        pass
--            ? `${t.passedMessage} ${correct}/20 ${t.passedMessageEnd}`
--            : `${t.failedMessage} ${PASS_SCORE}/20 ${t.failedMessageMiddle} ${correct}/20. ${t.failedMessageEnd}`;
-+    if (isWeakMode) {
-+        document.getElementById('resultsSub').textContent = `${correct}/${quizQuestions.length}`;
-+    } else {
-+        document.getElementById('resultsSub').textContent = pass
-+            ? `${t.passedMessage} ${correct}/${quizQuestions.length} ${t.passedMessageEnd}`
-+            : `${t.failedMessage} ${PASS_SCORE}/20 ${t.failedMessageMiddle} ${correct}/${quizQuestions.length}. ${t.failedMessageEnd}`;
-+    }
- 
-     document.getElementById('rOk').textContent = correct;
-     document.getElementById('rBad').textContent = wrong;
-@@ -492,11 +530,12 @@ function clearStats() {
- }
- 
- function applyConfiguration() {
--    document.getElementById('passScoreValue').textContent =
--        `${PASS_SCORE} / ${QUIZ_SIZE}`;
-+    const weakCount = Object.keys(loadStats()).length;
-+    document.getElementById('passScoreValue').textContent = `${PASS_SCORE} / ${QUIZ_SIZE}`;
-+    document.getElementById('weakAreasCount').textContent = weakCount;
-+    document.getElementById('weakModeBtn').disabled = weakCount === 0;
- }
- 
--
- window.addEventListener('DOMContentLoaded', () => {
-     initializeLanguageSelector();
-     applyConfiguration();
-diff --git a/assets/js/ui-text.js b/assets/js/ui-text.js
-index ed5dfeb..df84399 100644
---- a/assets/js/ui-text.js
-+++ b/assets/js/ui-text.js
-@@ -6,7 +6,8 @@ const UI_TEXT = {
-         questions: 'Questions',
-         timeLimit: 'Time limit',
-         toPass: 'To pass',
--        questionBank: 'Question bank',
-+        questionBank: 'Question Bank',
-+        weakAreas: 'Questions to Review',   
-         language: 'Language',
-         startTest: '🍁 Start Practice Test',
-         viewStatistics: '📊 View Statistics',
-@@ -49,7 +50,8 @@ const UI_TEXT = {
-         noStatistics: 'No data yet — complete a test to see your weak spots.',
-         mostMissedQuestions: 'Most missed questions',
-         clearStatsConfirmation: 'Clear all statistics? This cannot be undone.',
-- 
-+        normalModeBtn: 'Normal Mode',
-+        weakAreasBtn: 'Weak Areas'
-     },
- 
-     fr: {
-@@ -60,6 +62,7 @@ const UI_TEXT = {
-         timeLimit: 'Limite de temps',
-         toPass: 'Pour réussir',
-         questionBank: 'Banque de questions',
-+        weakAreas: 'Questions à réviser',
-         language: 'Langue',
-         startTest: '🍁 Commencer le test',
-         viewStatistics: '📊 Voir les statistiques',
-@@ -102,7 +105,8 @@ const UI_TEXT = {
-         noStatistics: 'Aucune donnée pour le moment — complétez un test pour voir vos points faibles.',
-         mostMissedQuestions: 'Questions les plus manquées',
-         clearStatsConfirmation: 'Effacer toutes les statistiques ? Cette action est irréversible.',
--
-+        normalModeBtn: 'Mode normal',
-+        weakAreasBtn: 'Points faibles' 
+@@ -212,10 +212,6 @@ async function startQuiz() {
+         const weakQuestions = QUESTIONS.filter(q =>
+             weakQuestionIds.includes(q.no)
+         );
+-        if (weakQuestions.length === 0) {
+-            alert('No weak areas available yet.');
+-            return;
+-        }
+         quizQuestions = weakQuestions;
      }
- };
- 
+     currentIndex = 0;
+diff --git a/diff.txt b/diff.txt
+index ab9866c..e69de29 100644
+--- a/diff.txt
++++ b/diff.txt
+@@ -1,405 +0,0 @@
+-diff --git a/assets/css/quizz.css b/assets/css/quizz.css
+-index 99de7bd..8fbdb3d 100644
+---- a/assets/css/quizz.css
+-+++ b/assets/css/quizz.css
+-@@ -89,6 +89,13 @@ body {
+-   margin-bottom: 2.5rem;
+- }
+- 
+-+.rules-header {
+-+  display: flex;
+-+  justify-content: space-between;
+-+  align-items: center;
+-+  margin-bottom: 20px;
+-+}
+-+
+- .rules-card {
+-   background: var(--bg2);
+-   border: 1px solid var(--border);
+-@@ -184,6 +191,37 @@ body {
+-   color: var(--text);
+- }
+- 
+-+.quiz-mode-switch {
+-+  display: flex;
+-+  gap: 8px;
+-+}
+-+
+-+.mode-btn {
+-+  background: #232846;
+-+  color: #fff;
+-+  border: 1px solid #3a4166;
+-+  border-radius: 8px;
+-+  padding: 8px 14px;
+-+  cursor: pointer;
+-+  font-size: 14px;
+-+  font-weight: 600;
+-+  transition: all .2s ease;
+-+}
+-+
+-+.mode-btn:hover {
+-+  border-color: #ff2a00;
+-+}
+-+
+-+.mode-btn.active {
+-+  background: #ff2a00;
+-+  border-color: #ff2a00;
+-+}
+-+
+-+.mode-btn:disabled {
+-+  opacity: .5;
+-+  cursor: not-allowed;
+-+}
+-+
+- /* Language selector */
+- #languageSelector {
+-   display: none;
+-@@ -330,11 +368,11 @@ body {
+- }
+- 
+- .stats-correct-answer {
+--    margin-top: 6px;
+--    margin-bottom: 8px;
+--    font-size: 13px;
+--    font-weight: 500;
+--    color: var(--green);
+-+  margin-top: 6px;
+-+  margin-bottom: 8px;
+-+  font-size: 13px;
+-+  font-weight: 500;
+-+  color: var(--green);
+- }
+- 
+- /* Question area */
+-@@ -811,11 +849,11 @@ body {
+-   flex: 1;
+- }
+- 
+-- .stats-q-text {
+--    font-size: 16px;
+--    font-weight: 700;
+--    color: #ffffff;
+--    margin-bottom: 8px;
+-+.stats-q-text {
+-+  font-size: 16px;
+-+  font-weight: 700;
+-+  color: #ffffff;
+-+  margin-bottom: 8px;
+- }
+- 
+- .stats-q-bar-track {
+-@@ -889,7 +927,41 @@ body {
+- }
+- 
+- @media (max-width: 768px) {
+-+
+-+  .rules-header {
+-+    flex-direction: column;
+-+    align-items: flex-start;
+-+    gap: 12px;
+-+  }
+-+
+-+  .quiz-mode-switch {
+-+    width: 100%;
+-+    display: flex;
+-+  }
+-+
+-+  .mode-btn {
+-+    flex: 1;
+-+  }
+-+
+-   .rules-grid {
+-     grid-template-columns: 1fr 1fr;
+-   }
+-+
+-+  #normalModeBtn {
+-+    font-size: 0;
+-+  }
+-+
+-+  #normalModeBtn::after {
+-+    content: "📚 Normal";
+-+    font-size: 16px;
+-+  }
+-+
+-+  #weakModeBtn {
+-+    font-size: 0;
+-+  }
+-+
+-+  #weakModeBtn::after {
+-+    content: "🎯 Weak";
+-+    font-size: 16px;
+-+  }
+- }
+-\ No newline at end of file
+-diff --git a/assets/js/quizz.js b/assets/js/quizz.js
+-index fa2ef42..13d7d94 100644
+---- a/assets/js/quizz.js
+-+++ b/assets/js/quizz.js
+-@@ -16,8 +16,7 @@ async function loadQuestions() {
+-         const res = await fetch(file);
+-         QUESTIONS = await res.json();
+- 
+--        document.getElementById('questionBankCount').textContent =
+--            `${QUESTIONS.length} questions`;
+-+        document.getElementById('questionBankCount').textContent = `${QUESTIONS.length} questions`;
+- 
+-     } catch (err) {
+-         console.error('Could not load questions', err);
+-@@ -75,6 +74,7 @@ function applyTranslations() {
+-     document.getElementById('timeLimitLabel').textContent = t.timeLimit;
+-     document.getElementById('toPassLabel').textContent = t.toPass;
+-     document.getElementById('questionBankLabel').textContent = t.questionBank;
+-+    document.getElementById('weakAreasLabel').textContent = t.weakAreas;
+-     document.getElementById('languageLabel').textContent = t.language;
+-     document.getElementById('startTestButton').textContent = t.startTest;
+-     document.getElementById('viewStatisticsButton').textContent = t.viewStatistics;
+-@@ -93,6 +93,8 @@ function applyTranslations() {
+-     document.getElementById('statisticsTitle').textContent = t.statistics;
+-     document.getElementById('backButton').textContent = `← ${t.back}`;
+-     document.getElementById('clearStatisticsButton').textContent = `🗑️ ${t.clearStatistics}`;
+-+    document.getElementById('normalModeBtn').textContent = `📚 ${t.normalModeBtn}`;
+-+    document.getElementById('weakModeBtn').textContent = `🎯 ${t.weakAreasBtn}`;
+- 
+-     updateFooter();
+- 
+-@@ -136,6 +138,7 @@ const PASS_SCORE = 15;
+- const TIME_LIMIT = 30 * 60; // seconds
+- 
+- let quizQuestions = [];
+-+let selectedMode = 'normal';
+- let currentIndex = 0;
+- let correct = 0;
+- let wrong = 0;
+-@@ -146,6 +149,17 @@ let timerInterval = null;
+- let secondsLeft = TIME_LIMIT;
+- let startTime = null;
+- 
+-+// Quiz Mode
+-+function setQuizMode(mode) {
+-+    selectedMode = mode;
+-+    document
+-+        .getElementById('normalModeBtn')
+-+        .classList.toggle('active', mode === 'normal');
+-+    document
+-+        .getElementById('weakModeBtn')
+-+        .classList.toggle('active', mode === 'weak');
+-+}
+-+
+- // ── localStorage stats ──
+- function loadStats() {
+-     try { return JSON.parse(localStorage.getItem('czStats') || '{}'); } catch (e) { return {}; }
+-@@ -172,6 +186,9 @@ function shuffle(arr) {
+- function showScreen(id) {
+-     document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+-     document.getElementById(id).classList.add('active');
+-+    if (id === 'home') {
+-+        applyConfiguration();
+-+    }
+- }
+- 
+- function fmtTime(s) {
+-@@ -187,7 +204,20 @@ async function startQuiz() {
+-     if (QUESTIONS.length === 0) await loadQuestions();
+-     if (QUESTIONS.length === 0) return; // failed to load, alert already shown
+- 
+--    quizQuestions = shuffle(QUESTIONS).slice(0, QUIZ_SIZE);
+-+    if (selectedMode === 'normal') {
+-+        quizQuestions =
+-+            shuffle(QUESTIONS).slice(0, QUIZ_SIZE);
+-+    } else {
+-+        const weakQuestionIds = Object.keys(loadStats()).map(Number);
+-+        const weakQuestions = QUESTIONS.filter(q =>
+-+            weakQuestionIds.includes(q.no)
+-+        );
+-+        if (weakQuestions.length === 0) {
+-+            alert('No weak areas available yet.');
+-+            return;
+-+        }
+-+        quizQuestions = weakQuestions;
+-+    }
+-     currentIndex = 0;
+-     correct = 0;
+-     wrong = 0;
+-@@ -250,14 +280,14 @@ function renderQuestion() {
+-     const pct = currentIndex > 0 ? Math.round((correct / currentIndex) * 100) : null;
+- 
+-     // Stats
+--    document.getElementById('statQ').textContent = `${currentIndex + 1}/20`;
+-+    document.getElementById('statQ').textContent = `${currentIndex + 1}/${quizQuestions.length}`;
+-     document.getElementById('statOk').textContent = correct;
+-     document.getElementById('statBad').textContent = wrong;
+-     document.getElementById('statPct').textContent = pct !== null ? pct + '%' : '—';
+--    document.getElementById('progressFill').style.width = (((currentIndex + 1) / QUIZ_SIZE) * 100) + '%';
+-+    document.getElementById('progressFill').style.width = (((currentIndex + 1) / quizQuestions.length) * 100) + '%';
+- 
+-     // Question
+--    document.getElementById('qNum').textContent = `Question ${currentIndex + 1} ${t.of} ${QUIZ_SIZE}`;
+-+    document.getElementById('qNum').textContent = `Question ${currentIndex + 1} ${t.of} ${quizQuestions.length}`;
+-     document.getElementById('qText').textContent = q.question;
+- 
+-     // Options
+-@@ -280,7 +310,7 @@ function renderQuestion() {
+-     const btn = document.getElementById('btnNext');
+-     btn.className = 'btn-next';
+-     btn.textContent =
+--        currentIndex === QUIZ_SIZE - 1
+-+        currentIndex === quizQuestions.length - 1
+-             ? t.finish
+-             : t.next;
+- 
+-@@ -344,7 +374,7 @@ function nextQuestion() {
+-     if (!answered) return;
+- 
+-     currentIndex++;
+--    if (currentIndex >= QUIZ_SIZE) {
+-+    if (currentIndex >= quizQuestions.length) {
+-         clearInterval(timerInterval);
+-         showResults();
+-     } else {
+-@@ -361,8 +391,9 @@ function showResults() {
+- 
+-     clearInterval(timerInterval);
+-     const elapsed = Math.round((Date.now() - startTime) / 1000);
+--    const pct = Math.round((correct / QUIZ_SIZE) * 100);
+-+    const pct = Math.round((correct / quizQuestions.length) * 100);
+-     const pass = correct >= PASS_SCORE;
+-+    const isWeakMode = selectedMode === 'weak';
+-     const letters = ['A', 'B', 'C', 'D'];
+- 
+-     document.getElementById('scorePct').textContent = pct + '%';
+-@@ -371,12 +402,19 @@ function showResults() {
+- 
+-     const verdict = document.getElementById('verdict');
+-     verdict.className = 'verdict ' + (pass ? 'pass' : 'fail');
+--    verdict.textContent = pass ? t.pass : t.fail;
+-+    if (isWeakMode) {
+-+        verdict.textContent = '🎯 WEAK AREAS';
+-+    } else {
+-+        verdict.textContent = pass ? t.pass : t.fail;
+-+    }
+- 
+--    document.getElementById('resultsSub').textContent =
+--        pass
+--            ? `${t.passedMessage} ${correct}/20 ${t.passedMessageEnd}`
+--            : `${t.failedMessage} ${PASS_SCORE}/20 ${t.failedMessageMiddle} ${correct}/20. ${t.failedMessageEnd}`;
+-+    if (isWeakMode) {
+-+        document.getElementById('resultsSub').textContent = `${correct}/${quizQuestions.length}`;
+-+    } else {
+-+        document.getElementById('resultsSub').textContent = pass
+-+            ? `${t.passedMessage} ${correct}/${quizQuestions.length} ${t.passedMessageEnd}`
+-+            : `${t.failedMessage} ${PASS_SCORE}/20 ${t.failedMessageMiddle} ${correct}/${quizQuestions.length}. ${t.failedMessageEnd}`;
+-+    }
+- 
+-     document.getElementById('rOk').textContent = correct;
+-     document.getElementById('rBad').textContent = wrong;
+-@@ -492,11 +530,12 @@ function clearStats() {
+- }
+- 
+- function applyConfiguration() {
+--    document.getElementById('passScoreValue').textContent =
+--        `${PASS_SCORE} / ${QUIZ_SIZE}`;
+-+    const weakCount = Object.keys(loadStats()).length;
+-+    document.getElementById('passScoreValue').textContent = `${PASS_SCORE} / ${QUIZ_SIZE}`;
+-+    document.getElementById('weakAreasCount').textContent = weakCount;
+-+    document.getElementById('weakModeBtn').disabled = weakCount === 0;
+- }
+- 
+--
+- window.addEventListener('DOMContentLoaded', () => {
+-     initializeLanguageSelector();
+-     applyConfiguration();
+-diff --git a/assets/js/ui-text.js b/assets/js/ui-text.js
+-index ed5dfeb..df84399 100644
+---- a/assets/js/ui-text.js
+-+++ b/assets/js/ui-text.js
+-@@ -6,7 +6,8 @@ const UI_TEXT = {
+-         questions: 'Questions',
+-         timeLimit: 'Time limit',
+-         toPass: 'To pass',
+--        questionBank: 'Question bank',
+-+        questionBank: 'Question Bank',
+-+        weakAreas: 'Questions to Review',   
+-         language: 'Language',
+-         startTest: '🍁 Start Practice Test',
+-         viewStatistics: '📊 View Statistics',
+-@@ -49,7 +50,8 @@ const UI_TEXT = {
+-         noStatistics: 'No data yet — complete a test to see your weak spots.',
+-         mostMissedQuestions: 'Most missed questions',
+-         clearStatsConfirmation: 'Clear all statistics? This cannot be undone.',
+-- 
+-+        normalModeBtn: 'Normal Mode',
+-+        weakAreasBtn: 'Weak Areas'
+-     },
+- 
+-     fr: {
+-@@ -60,6 +62,7 @@ const UI_TEXT = {
+-         timeLimit: 'Limite de temps',
+-         toPass: 'Pour réussir',
+-         questionBank: 'Banque de questions',
+-+        weakAreas: 'Questions à réviser',
+-         language: 'Langue',
+-         startTest: '🍁 Commencer le test',
+-         viewStatistics: '📊 Voir les statistiques',
+-@@ -102,7 +105,8 @@ const UI_TEXT = {
+-         noStatistics: 'Aucune donnée pour le moment — complétez un test pour voir vos points faibles.',
+-         mostMissedQuestions: 'Questions les plus manquées',
+-         clearStatsConfirmation: 'Effacer toutes les statistiques ? Cette action est irréversible.',
+--
+-+        normalModeBtn: 'Mode normal',
+-+        weakAreasBtn: 'Points faibles' 
+-     }
+- };
+- 
+-diff --git a/quizz.html b/quizz.html
+-index a846b14..5709f0c 100644
+---- a/quizz.html
+-+++ b/quizz.html
+-@@ -19,7 +19,19 @@
+-       <div class="home-title" id="homeTitle">Canada Citizenship Quiz</div>
+-       <div class="home-subtitle" id="homeSubtitle">Practice Test · Official Exam Simulation</div>
+-       <div class="rules-card">
+--        <div class="rules-title" id="examRulesTitle">Exam Rules</div>
+-+        <div class="rules-header">
+-+          <div class="rules-title" id="examRulesTitle">
+-+            Exam Rules
+-+          </div>
+-+          <div class="quiz-mode-switch">
+-+            <button class="mode-btn active" id="normalModeBtn" onclick="setQuizMode('normal')">
+-+              📚 Normal
+-+            </button>
+-+            <button class="mode-btn" id="weakModeBtn" onclick="setQuizMode('weak')">
+-+              🎯 Weak
+-+            </button>
+-+          </div>
+-+        </div>
+-         <div class="rules-grid">
+-           <div class="rule-item"><span class="rule-icon">📋</span>
+-             <div>
+-@@ -41,10 +53,16 @@
+-           </div>
+-           <div class="rule-item rule-item-wide"><span class="rule-icon">📚</span>
+-             <div>
+--              <div class="rule-label" id="questionBankLabel">Question bank</div>
+-+              <div class="rule-label" id="questionBankLabel">Questions Bank</div>
+-               <div class="rule-val" id="questionBankCount"></div>
+-             </div>
+-           </div>
+-+          <div class="rule-item rule-item-wide"><span class="rule-icon">🎯</span>
+-+            <div>
+-+              <div class="rule-label" id="weakAreasLabel">Weak Areas</div>
+-+              <div class="rule-val" id="weakAreasCount"></div>
+-+            </div>
+-+          </div>
+-           <div class="rule-item language-card" onclick="toggleLanguage()">
+-             <span class="rule-icon">🌐</span>
+-             <div>
+-@@ -151,7 +169,8 @@
+-       <div class="stats-summary" id="statsSummary"></div>
+-       <div class="stats-section-title" id="statsListTitle"></div>
+-       <div id="statsList"></div>
+--      <button id="clearStatisticsButton" class="btn-clear-stats" onclick="clearStats()">🗑️ Clear all statistics</button>
+-+      <button id="clearStatisticsButton" class="btn-clear-stats" onclick="clearStats()">🗑️ Clear all
+-+        statistics</button>
+-       <div class="footer"><span id="currentYear"></span>
+-       </div>
+-     </div>
 diff --git a/quizz.html b/quizz.html
-index a846b14..5709f0c 100644
+index 5709f0c..927888f 100644
 --- a/quizz.html
 +++ b/quizz.html
-@@ -19,7 +19,19 @@
-       <div class="home-title" id="homeTitle">Canada Citizenship Quiz</div>
-       <div class="home-subtitle" id="homeSubtitle">Practice Test · Official Exam Simulation</div>
-       <div class="rules-card">
--        <div class="rules-title" id="examRulesTitle">Exam Rules</div>
-+        <div class="rules-header">
-+          <div class="rules-title" id="examRulesTitle">
-+            Exam Rules
-+          </div>
-+          <div class="quiz-mode-switch">
-+            <button class="mode-btn active" id="normalModeBtn" onclick="setQuizMode('normal')">
-+              📚 Normal
-+            </button>
-+            <button class="mode-btn" id="weakModeBtn" onclick="setQuizMode('weak')">
-+              🎯 Weak
-+            </button>
-+          </div>
-+        </div>
-         <div class="rules-grid">
-           <div class="rule-item"><span class="rule-icon">📋</span>
-             <div>
-@@ -41,10 +53,16 @@
+@@ -25,10 +25,10 @@
            </div>
-           <div class="rule-item rule-item-wide"><span class="rule-icon">📚</span>
+           <div class="quiz-mode-switch">
+             <button class="mode-btn active" id="normalModeBtn" onclick="setQuizMode('normal')">
+-              📚 Normal
++              📚 Normal Mode
+             </button>
+             <button class="mode-btn" id="weakModeBtn" onclick="setQuizMode('weak')">
+-              🎯 Weak
++              🎯 Weak Areas
+             </button>
+           </div>
+         </div>
+@@ -59,7 +59,7 @@
+           </div>
+           <div class="rule-item rule-item-wide"><span class="rule-icon">🎯</span>
              <div>
--              <div class="rule-label" id="questionBankLabel">Question bank</div>
-+              <div class="rule-label" id="questionBankLabel">Questions Bank</div>
-               <div class="rule-val" id="questionBankCount"></div>
+-              <div class="rule-label" id="weakAreasLabel">Weak Areas</div>
++              <div class="rule-label" id="weakAreasLabel">Questions to Review</div>
+               <div class="rule-val" id="weakAreasCount"></div>
              </div>
            </div>
-+          <div class="rule-item rule-item-wide"><span class="rule-icon">🎯</span>
-+            <div>
-+              <div class="rule-label" id="weakAreasLabel">Weak Areas</div>
-+              <div class="rule-val" id="weakAreasCount"></div>
-+            </div>
-+          </div>
-           <div class="rule-item language-card" onclick="toggleLanguage()">
-             <span class="rule-icon">🌐</span>
-             <div>
-@@ -151,7 +169,8 @@
-       <div class="stats-summary" id="statsSummary"></div>
-       <div class="stats-section-title" id="statsListTitle"></div>
-       <div id="statsList"></div>
--      <button id="clearStatisticsButton" class="btn-clear-stats" onclick="clearStats()">🗑️ Clear all statistics</button>
-+      <button id="clearStatisticsButton" class="btn-clear-stats" onclick="clearStats()">🗑️ Clear all
-+        statistics</button>
-       <div class="footer"><span id="currentYear"></span>
-       </div>
-     </div>
