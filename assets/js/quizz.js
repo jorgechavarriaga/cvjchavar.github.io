@@ -16,8 +16,7 @@ async function loadQuestions() {
         const res = await fetch(file);
         QUESTIONS = await res.json();
 
-        document.getElementById('questionBankCount').textContent =
-            `${QUESTIONS.length} questions`;
+        document.getElementById('questionBankCount').textContent = `${QUESTIONS.length} questions`;
 
     } catch (err) {
         console.error('Could not load questions', err);
@@ -75,6 +74,7 @@ function applyTranslations() {
     document.getElementById('timeLimitLabel').textContent = t.timeLimit;
     document.getElementById('toPassLabel').textContent = t.toPass;
     document.getElementById('questionBankLabel').textContent = t.questionBank;
+    document.getElementById('weakAreasLabel').textContent = t.weakAreas;
     document.getElementById('languageLabel').textContent = t.language;
     document.getElementById('startTestButton').textContent = t.startTest;
     document.getElementById('viewStatisticsButton').textContent = t.viewStatistics;
@@ -93,6 +93,8 @@ function applyTranslations() {
     document.getElementById('statisticsTitle').textContent = t.statistics;
     document.getElementById('backButton').textContent = `← ${t.back}`;
     document.getElementById('clearStatisticsButton').textContent = `🗑️ ${t.clearStatistics}`;
+    document.getElementById('normalModeBtn').textContent = `📚 ${t.normalModeBtn}`;
+    document.getElementById('weakModeBtn').textContent = `🎯 ${t.weakAreasBtn}`;
 
     updateFooter();
 
@@ -136,6 +138,7 @@ const PASS_SCORE = 15;
 const TIME_LIMIT = 30 * 60; // seconds
 
 let quizQuestions = [];
+let selectedMode = 'normal';
 let currentIndex = 0;
 let correct = 0;
 let wrong = 0;
@@ -145,6 +148,17 @@ let results = [];
 let timerInterval = null;
 let secondsLeft = TIME_LIMIT;
 let startTime = null;
+
+// Quiz Mode
+function setQuizMode(mode) {
+    selectedMode = mode;
+    document
+        .getElementById('normalModeBtn')
+        .classList.toggle('active', mode === 'normal');
+    document
+        .getElementById('weakModeBtn')
+        .classList.toggle('active', mode === 'weak');
+}
 
 // ── localStorage stats ──
 function loadStats() {
@@ -172,6 +186,9 @@ function shuffle(arr) {
 function showScreen(id) {
     document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
     document.getElementById(id).classList.add('active');
+    if (id === 'home') {
+        applyConfiguration();
+    }
 }
 
 function fmtTime(s) {
@@ -187,7 +204,20 @@ async function startQuiz() {
     if (QUESTIONS.length === 0) await loadQuestions();
     if (QUESTIONS.length === 0) return; // failed to load, alert already shown
 
-    quizQuestions = shuffle(QUESTIONS).slice(0, QUIZ_SIZE);
+    if (selectedMode === 'normal') {
+        quizQuestions =
+            shuffle(QUESTIONS).slice(0, QUIZ_SIZE);
+    } else {
+        const weakQuestionIds = Object.keys(loadStats()).map(Number);
+        const weakQuestions = QUESTIONS.filter(q =>
+            weakQuestionIds.includes(q.no)
+        );
+        if (weakQuestions.length === 0) {
+            alert('No weak areas available yet.');
+            return;
+        }
+        quizQuestions = weakQuestions;
+    }
     currentIndex = 0;
     correct = 0;
     wrong = 0;
@@ -250,14 +280,14 @@ function renderQuestion() {
     const pct = currentIndex > 0 ? Math.round((correct / currentIndex) * 100) : null;
 
     // Stats
-    document.getElementById('statQ').textContent = `${currentIndex + 1}/20`;
+    document.getElementById('statQ').textContent = `${currentIndex + 1}/${quizQuestions.length}`;
     document.getElementById('statOk').textContent = correct;
     document.getElementById('statBad').textContent = wrong;
     document.getElementById('statPct').textContent = pct !== null ? pct + '%' : '—';
-    document.getElementById('progressFill').style.width = (((currentIndex + 1) / QUIZ_SIZE) * 100) + '%';
+    document.getElementById('progressFill').style.width = (((currentIndex + 1) / quizQuestions.length) * 100) + '%';
 
     // Question
-    document.getElementById('qNum').textContent = `Question ${currentIndex + 1} ${t.of} ${QUIZ_SIZE}`;
+    document.getElementById('qNum').textContent = `Question ${currentIndex + 1} ${t.of} ${quizQuestions.length}`;
     document.getElementById('qText').textContent = q.question;
 
     // Options
@@ -280,7 +310,7 @@ function renderQuestion() {
     const btn = document.getElementById('btnNext');
     btn.className = 'btn-next';
     btn.textContent =
-        currentIndex === QUIZ_SIZE - 1
+        currentIndex === quizQuestions.length - 1
             ? t.finish
             : t.next;
 
@@ -344,7 +374,7 @@ function nextQuestion() {
     if (!answered) return;
 
     currentIndex++;
-    if (currentIndex >= QUIZ_SIZE) {
+    if (currentIndex >= quizQuestions.length) {
         clearInterval(timerInterval);
         showResults();
     } else {
@@ -361,8 +391,9 @@ function showResults() {
 
     clearInterval(timerInterval);
     const elapsed = Math.round((Date.now() - startTime) / 1000);
-    const pct = Math.round((correct / QUIZ_SIZE) * 100);
+    const pct = Math.round((correct / quizQuestions.length) * 100);
     const pass = correct >= PASS_SCORE;
+    const isWeakMode = selectedMode === 'weak';
     const letters = ['A', 'B', 'C', 'D'];
 
     document.getElementById('scorePct').textContent = pct + '%';
@@ -371,12 +402,19 @@ function showResults() {
 
     const verdict = document.getElementById('verdict');
     verdict.className = 'verdict ' + (pass ? 'pass' : 'fail');
-    verdict.textContent = pass ? t.pass : t.fail;
+    if (isWeakMode) {
+        verdict.textContent = '🎯 WEAK AREAS';
+    } else {
+        verdict.textContent = pass ? t.pass : t.fail;
+    }
 
-    document.getElementById('resultsSub').textContent =
-        pass
-            ? `${t.passedMessage} ${correct}/20 ${t.passedMessageEnd}`
-            : `${t.failedMessage} ${PASS_SCORE}/20 ${t.failedMessageMiddle} ${correct}/20. ${t.failedMessageEnd}`;
+    if (isWeakMode) {
+        document.getElementById('resultsSub').textContent = `${correct}/${quizQuestions.length}`;
+    } else {
+        document.getElementById('resultsSub').textContent = pass
+            ? `${t.passedMessage} ${correct}/${quizQuestions.length} ${t.passedMessageEnd}`
+            : `${t.failedMessage} ${PASS_SCORE}/20 ${t.failedMessageMiddle} ${correct}/${quizQuestions.length}. ${t.failedMessageEnd}`;
+    }
 
     document.getElementById('rOk').textContent = correct;
     document.getElementById('rBad').textContent = wrong;
@@ -492,10 +530,11 @@ function clearStats() {
 }
 
 function applyConfiguration() {
-    document.getElementById('passScoreValue').textContent =
-        `${PASS_SCORE} / ${QUIZ_SIZE}`;
+    const weakCount = Object.keys(loadStats()).length;
+    document.getElementById('passScoreValue').textContent = `${PASS_SCORE} / ${QUIZ_SIZE}`;
+    document.getElementById('weakAreasCount').textContent = weakCount;
+    document.getElementById('weakModeBtn').disabled = weakCount === 0;
 }
-
 
 window.addEventListener('DOMContentLoaded', () => {
     initializeLanguageSelector();

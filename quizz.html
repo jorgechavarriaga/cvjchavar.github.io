@@ -19,7 +19,19 @@
       <div class="home-title" id="homeTitle">Canada Citizenship Quiz</div>
       <div class="home-subtitle" id="homeSubtitle">Practice Test · Official Exam Simulation</div>
       <div class="rules-card">
-        <div class="rules-title" id="examRulesTitle">Exam Rules</div>
+        <div class="rules-header">
+          <div class="rules-title" id="examRulesTitle">
+            Exam Rules
+          </div>
+          <div class="quiz-mode-switch">
+            <button class="mode-btn active" id="normalModeBtn" onclick="setQuizMode('normal')">
+              📚 Normal
+            </button>
+            <button class="mode-btn" id="weakModeBtn" onclick="setQuizMode('weak')">
+              🎯 Weak
+            </button>
+          </div>
+        </div>
         <div class="rules-grid">
           <div class="rule-item"><span class="rule-icon">📋</span>
             <div>
@@ -41,8 +53,14 @@
           </div>
           <div class="rule-item rule-item-wide"><span class="rule-icon">📚</span>
             <div>
-              <div class="rule-label" id="questionBankLabel">Question bank</div>
+              <div class="rule-label" id="questionBankLabel">Questions Bank</div>
               <div class="rule-val" id="questionBankCount"></div>
+            </div>
+          </div>
+          <div class="rule-item rule-item-wide"><span class="rule-icon">🎯</span>
+            <div>
+              <div class="rule-label" id="weakAreasLabel">Weak Areas</div>
+              <div class="rule-val" id="weakAreasCount"></div>
             </div>
           </div>
           <div class="rule-item language-card" onclick="toggleLanguage()">
@@ -151,7 +169,8 @@
       <div class="stats-summary" id="statsSummary"></div>
       <div class="stats-section-title" id="statsListTitle"></div>
       <div id="statsList"></div>
-      <button id="clearStatisticsButton" class="btn-clear-stats" onclick="clearStats()">🗑️ Clear all statistics</button>
+      <button id="clearStatisticsButton" class="btn-clear-stats" onclick="clearStats()">🗑️ Clear all
+        statistics</button>
       <div class="footer"><span id="currentYear"></span>
       </div>
     </div>

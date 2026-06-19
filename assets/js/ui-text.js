@@ -6,7 +6,8 @@ const UI_TEXT = {
         questions: 'Questions',
         timeLimit: 'Time limit',
         toPass: 'To pass',
-        questionBank: 'Question bank',
+        questionBank: 'Question Bank',
+        weakAreas: 'Questions to Review',   
         language: 'Language',
         startTest: '🍁 Start Practice Test',
         viewStatistics: '📊 View Statistics',
@@ -49,7 +50,8 @@ const UI_TEXT = {
         noStatistics: 'No data yet — complete a test to see your weak spots.',
         mostMissedQuestions: 'Most missed questions',
         clearStatsConfirmation: 'Clear all statistics? This cannot be undone.',
- 
+        normalModeBtn: 'Normal Mode',
+        weakAreasBtn: 'Weak Areas'
     },
 
     fr: {
@@ -60,6 +62,7 @@ const UI_TEXT = {
         timeLimit: 'Limite de temps',
         toPass: 'Pour réussir',
         questionBank: 'Banque de questions',
+        weakAreas: 'Questions à réviser',
         language: 'Langue',
         startTest: '🍁 Commencer le test',
         viewStatistics: '📊 Voir les statistiques',
@@ -102,7 +105,8 @@ const UI_TEXT = {
         noStatistics: 'Aucune donnée pour le moment — complétez un test pour voir vos points faibles.',
         mostMissedQuestions: 'Questions les plus manquées',
         clearStatsConfirmation: 'Effacer toutes les statistiques ? Cette action est irréversible.',
-
+        normalModeBtn: 'Mode normal',
+        weakAreasBtn: 'Points faibles' 
     }
 };
 
