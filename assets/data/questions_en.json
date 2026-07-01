@@ -47,10 +47,10 @@
     "no": 5,
     "question": "When did the Canadian Charter of Rights and Freedoms become part of the Canadian Constitution?",
     "options": [
-      "1867",
-      "1905",
-      "1982",
-      "1878"
+      "1867.",
+      "1905.",
+      "1982.",
+      "1878."
     ],
     "answer": 3
   },
@@ -69,10 +69,10 @@
     "no": 7,
     "question": "Where does Canada rank in the world’s largest countries?",
     "options": [
-      "First",
-      "Second",
-      "Third",
-      "Fourth"
+      "First.",
+      "Second.",
+      "Third.",
+      "Fourth."
     ],
     "answer": 2
   },
@@ -399,10 +399,10 @@
     "no": 37,
     "question": "What is the name of the Premier of Québec ?",
     "options": [
-      "Premier Lucien Bouchard",
-      "Premier Pauline Marois",
-      "Premier Christine Fréchette",
-      "Premier Philippe Couillard"
+      "Premier Lucien Bouchard.",
+      "Premier Pauline Marois.",
+      "Premier Christine Fréchette.",
+      "Premier Philippe Couillard."
     ],
     "answer": 3
   },
@@ -410,10 +410,10 @@
     "no": 38,
     "question": "What three industries are important to Québec’s economy today?",
     "options": [
-      "Tourism, mining and forestry",
-      "Pulp and paper, forestry and hydro-electric power",
-      "Films, fishing and mining",
-      "Forestry, shipping and tourism"
+      "Tourism, mining and forestry.",
+      "Pulp and paper, forestry and hydro-electric power.",
+      "Films, fishing and mining.",
+      "Forestry, shipping and tourism."
     ],
     "answer": 2
   },
@@ -421,10 +421,10 @@
     "no": 39,
     "question": "What is the capital City of the Québec?",
     "options": [
-      "Beauport",
-      "Québec City",
-      "Montreal",
-      "Chicoutimi"
+      "Beauport.",
+      "Québec City.",
+      "Montreal.",
+      "Chicoutimi."
     ],
     "answer": 2
   },
@@ -432,10 +432,10 @@
     "no": 40,
     "question": "Which political party is in power in Québec?",
     "options": [
-      "Coalition Avenir Québec",
-      "Parti libéral",
-      "Parti Quebecois",
-      "Union Nationale"
+      "Coalition Avenir Québec.",
+      "Parti libéral.",
+      "Parti Quebecois.",
+      "Union Nationale."
     ],
     "answer": 1
   },
@@ -465,10 +465,10 @@
     "no": 43,
     "question": "What is a Francophone?",
     "options": [
-      "A person who speaks English as their first language",
-      "A smartphone designed by the Canadian company RIM",
-      "A person who speaks French as their first language",
-      "The first phone in Canada, invented by Alexander Graham Bell"
+      "A person who speaks English as their first language.",
+      "A smartphone designed by the Canadian company RIM.",
+      "A person who speaks French as their first language.",
+      "The first phone in Canada, invented by Alexander Graham Bell."
     ],
     "answer": 3
   },
@@ -2071,10 +2071,10 @@
     "no": 189,
     "question": "Who suggested the name 'Dominion of Canada'?",
     "options": [
-      "Sir John A. Macdonald",
-      "George Brown",
-      "Sir Leonard Tilley",
-      "Louis Riel"
+      "Sir John A. Macdonald.",
+      "George Brown.",
+      "Sir Leonard Tilley.",
+      "Louis Riel."
     ],
     "answer": 3
   },
@@ -3092,7 +3092,7 @@
   },
   {
     "no": 282,
-    "question": "Who has the right to be considered first for a job in he Federal government?",
+    "question": "Who has the right to be considered first for a job in the Federal government?",
     "options": [
       "Canadian citizens.",
       "Anyone with the relevant experience.",
