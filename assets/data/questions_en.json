@@ -839,7 +839,7 @@
     "no": 77,
     "question": "Name all the federal political parties in the House of Commons and their leaders",
     "options": [
-      "Conservative (Andrew Scheer - interim leader), NDP (Don Davies - interim leader), Liberal (Mark Carney), Bloc Quebecois (Blanchet), Green Party (May)",
+      "Liberal (Mark Carney), Conservative (Pierre Poilievre), Bloc Québécois (Yves-François Blanchet), Green Party (Elizabeth May), NDP (Avi Lewis).",
       "Conservative (Poilievre), Green (May), Liberal (Trudeau), Bloc Quebecois (Duceppe)",
       "NDP (Mulcair), Green (May), Liberal (Rae), Bloc Quebecois (Paillé)",
       "Liberal (Ignatieff), Conservative (Ambrose), NDP (Turmel), Green (May)"
@@ -949,7 +949,7 @@
     "no": 87,
     "question": "What are the three main types of industry in Canada?",
     "options": [
-      "Natural resources, tourism and service industries..",
+      "Natural resources, tourism and service industries.",
       "Tourism, services and manufacturing.",
       "Natural resources, tourism and manufacturing.",
       "Natural resources, manufacturing and services."
@@ -1632,7 +1632,7 @@
     "question": "What is the name of the leader of the Opposition in Québec?",
     "options": [
       "Dominique Anglade",
-      "Marc Tanguay",
+      "André Fortin",
       "Jean-Marc Fournie",
       "Philippe Couillard"
     ],
@@ -1854,7 +1854,7 @@
       "It was the birth of Canada.",
       "Peace, Order and Good Government became Canada's main principles.",
       "The Province of Québec was divided into Upper Canada and Lower Canada.",
-      "Canada's tolerance towards all religions was affected."
+      "It allowed freedom of religion for Catholics."
     ],
     "answer": 4
   },
@@ -2246,7 +2246,7 @@
   {
     "no": 205,
     "question": "What was the name of the new country formed at Confedeeration?",
-    "options":[
+    "options": [
       "Britain.",
       "Canada.",
       "Canadian Confederation.",
@@ -2256,7 +2256,7 @@
   },
   {
     "no": 206,
-    "question":"In World War II, how did Canada contribute more to the Allied air effort than any other Commonwealth Country?",
+    "question": "In World War II, how did Canada contribute more to the Allied air effort than any other Commonwealth Country?",
     "options": [
       "Trained 130,000 allied aircrew.",
       "Deployed paratroopers in France.",
@@ -2582,7 +2582,7 @@
       "Place where the number of votes is counted.",
       "Member of Parliament's constituency."
     ],
-    "answer": 2
+    "answer": 1
   },
   {
     "no": 236,
@@ -2709,10 +2709,10 @@
     "no": 247,
     "question": "What is a responsible government?",
     "options": [
-      "A. The government is responsible for the well-being of its people.",
-      "D. The government must resign if it loses a confidence vote in the assembly.",
-      "B. The government must take responsibility for any act of war it decides to commit.",
-      "C. A government that is against corruption."
+      "The government is responsible for the well-being of its people.",
+      "The government must resign if it loses a confidence vote in the assembly.",
+      "The government must take responsibility for any act of war it decides to commit.",
+      "A government that is against corruption."
     ],
     "answer": 2
   },
@@ -2811,7 +2811,7 @@
       "Chooses the opposition party.",
       "Performs the ceremonial duties of the Head of State.",
       "Signs bills to make them law after they have been passed by Parliament.",
-      "А and C"
+      "A and C"
     ],
     "answer": 1
   },
@@ -2821,7 +2821,7 @@
     "options": [
       "By using social media sites online.",
       "By writing a letter to the House of Commons.",
-      "By booking an appointment over the phone.", 
+      "By sending an anonymous telegram.",
       "By waiting outside of the Parliament building"
     ],
     "answer": 2
@@ -2846,7 +2846,7 @@
       "Donovan Bailey.",
       "Terry Fox."
     ],
-    "answer": 1 
+    "answer": 1
   },
   {
     "no": 260,
@@ -2901,7 +2901,7 @@
       "1885.",
       "1972."
     ],
-    "answer": 2 
+    "answer": 2
   },
   {
     "no": 265,
@@ -2945,7 +2945,7 @@
       "Canadian Constitution",
       "Magna Carta."
     ],
-    "answer": 1
+    "answer": 4
   },
   {
     "no": 269,
@@ -3048,7 +3048,7 @@
   },
   {
     "no": 278,
-    "question": "How many Great Lakes are located between Ontario and tge United States?",
+    "question": "How many Great Lakes are located between Ontario and the United States?",
     "options": [
       "Four.",
       "Five.",
@@ -3436,9 +3436,9 @@
     "question": "Which oceans line Canada's frontiers?",
     "options": [
       "The Pacific Ocean in the west.",
-      "The Atlantic Ocean in teh east.",
-      "he Arctic Ocean to the north.",
-      "All of he above."
+      "The Atlantic Ocean in the east.",
+      "The Arctic Ocean to the north.",
+      "All of the above."
     ],
     "answer": 4
   },
@@ -3495,7 +3495,7 @@
       "200,000.",
       "70,000."
     ],
-    "answer": 1 
+    "answer": 1
   },
   {
     "no": 319,
@@ -3671,7 +3671,7 @@
       "Aboriginal Peoples' rights, voting rights and official language rights.",
       "Employment rights, mobility rights, and freedom rights."
     ],
-    "answer": 2 
+    "answer": 2
   },
   {
     "no": 335,
@@ -3693,7 +3693,7 @@
       "Labrador Sea.",
       "Arctic."
     ],
-    "answer": 1 
+    "answer": 1
   },
   {
     "no": 337,
@@ -3765,16 +3765,16 @@
     "no": 343,
     "question": "What is a minority government?",
     "options": [
-      "A. The party in power holds less than half of the seats in the House of Commons.",
-      "B. The party in power holds less than half of the seats in the House of Commons and the Senate.",
-      "C. The party in power holds at least half of the seats in the House of Commons.",
-      "D. The party in power holds at least half of the seats in the Senate."
+      "The party in power holds less than half of the seats in the House of Commons.",
+      "The party in power holds less than half of the seats in the House of Commons and the Senate.",
+      "The party in power holds at least half of the seats in the House of Commons.",
+      "The party in power holds at least half of the seats in the Senate."
     ],
     "answer": 1
   },
   {
     "no": 344,
-    "question": "You can vote ini advance if:",
+    "question": "You can vote in advance if:",
     "options": [
       "You are elderly.",
       "You know you will not be able to vote on Election Day.",
@@ -3913,7 +3913,7 @@
       "Prince Edward Island and Ontario.",
       "Nova Scotia and New Brunswick."
     ],
-    "answer": 4 
+    "answer": 4
   },
   {
     "no": 357,
@@ -3990,7 +3990,7 @@
       "1590.",
       "1632."
     ],
-    "answer": 1 
+    "answer": 1
   },
   {
     "no": 364,
@@ -4001,7 +4001,7 @@
       "1920s.",
       "1860s."
     ],
-    "answer": 2 
+    "answer": 2
   },
   {
     "no": 365,
@@ -4326,7 +4326,7 @@
     "no": 394,
     "question": "What is the last line of our National Anthem?",
     "options": [
-      "Good keep our land glorious and free!.",
+      "God keep our land glorious and free!.",
       "The true North strong and free!.",
       "O Canada! Our home and native land!.",
       "O Canada, we stand on guard for thee!."
@@ -4406,7 +4406,7 @@
       "More than a million.",
       "Less than 500,000.",
       "About 900,000.",
-      "About 500,000.."
+      "About 500,000."
     ],
     "answer": 1
   },
@@ -4441,7 +4441,7 @@
       "1791.",
       "1867."
     ],
-    "answer": 3 
+    "answer": 3
   },
   {
     "no": 405,
@@ -4467,7 +4467,7 @@
   },
   {
     "no": 407,
-    "question": "How many judges server in the Supreme Court of Canada?",
+    "question": "How many judges serve in the Supreme Court of Canada?",
     "options": [
       "5.",
       "7.",
@@ -4636,7 +4636,7 @@
     "options": [
       "The 1st of July.",
       "The 1st Monday of September.",
-      "The 1st if May.",
+      "The 1st of May.",
       "The 3rd Monday of October."
     ],
     "answer": 2
@@ -4648,9 +4648,9 @@
       "Use the Great Lakes and seaway to prairies.",
       "Built a railway across the prairies.",
       "Built a highway across the prairies.",
-      "A dn C."
+      "A and C."
     ],
-    "answer": 2 
+    "answer": 2
   },
   {
     "no": 424,
@@ -4742,7 +4742,7 @@
   },
   {
     "no": 432,
-    "question": "Who sign the bills to make them law?",
+    "question": "Who signs the bills to make them law?",
     "options": [
       "The Police Chief.",
       "The Governor General.",
@@ -4932,7 +4932,7 @@
     "question": "What is the final step before a bill becomes law?",
     "options": [
       "Approved by the King.",
-      "Approved by the Primer Minister.",
+      "Approved by the Prime Minister.",
       "Approved by the Governor General.",
       "Approved by a judge."
     ],
@@ -4978,7 +4978,7 @@
       "`The land of the strong and free`",
       "`Dominion from sea to sea and from the river to the ends of the earth`",
       "`Dominion from ocean to ocean`",
-      "`O Canada, my home and native lan`"
+      "`O Canada, my home and native land`"
     ],
     "answer": 2
   },
@@ -5076,7 +5076,7 @@
     "options": [
       "The USA.",
       "Japan.",
-      "The Nazi.",
+      "The Nazis.",
       "Korea."
     ],
     "answer": 3
@@ -5105,7 +5105,7 @@
   },
   {
     "no": 465,
-    "question": "What was made in 1927 after World War I",
+    "question": "What was made in 1927 after World War I ?",
     "options": [
       "The National War Memorial in Ottawa.",
       "The Peace Arch between the United States and Canada.",
@@ -5124,5 +5124,137 @@
       "No, but you can hire someone to serve on the jury for you."
     ],
     "answer": 2
-  }
+  },
+  {
+  "no": 467,
+  "question": "Who is Canada's Head of State?",
+  "options": [
+    "King Charles III.",
+    "Mark Carney.",
+    "Louise Arbour.",
+    "Pierre Poilievre."
+  ],
+  "answer": 1
+},
+{
+  "no": 468,
+  "question": "Who is the Governor General of Canada?",
+  "options": [
+    "Mary Simon.",
+    "Louise Arbour.",
+    "Mark Carney.",
+    "King Charles III."
+  ],
+  "answer": 2
+},
+{
+  "no": 469,
+  "question": "Who is Canada's Prime Minister?",
+  "options": [
+    "Pierre Poilievre.",
+    "Mark Carney.",
+    "Andrew Scheer.",
+    "Yves-François Blanchet."
+  ],
+  "answer": 2
+},
+{
+  "no": 470,
+  "question": "Which political party currently forms the Government of Canada?",
+  "options": [
+    "Conservative Party of Canada.",
+    "Bloc Québécois.",
+    "Liberal Party of Canada.",
+    "New Democratic Party."
+  ],
+  "answer": 3
+},
+{
+  "no": 471,
+  "question": "Who is the Leader of the Official Opposition?",
+  "options": [
+    "Andrew Scheer.",
+    "Pierre Poilievre.",
+    "Mark Carney.",
+    "Yves-François Blanchet."
+  ],
+  "answer": 2
+},
+{
+  "no": 472,
+  "question": "Which political party is His Majesty's Loyal Opposition?",
+  "options": [
+    "Liberal Party of Canada.",
+    "Bloc Québécois.",
+    "Conservative Party of Canada.",
+    "New Democratic Party."
+  ],
+  "answer": 3
+},
+{
+  "no": 473,
+  "question": "Who is the Lieutenant Governor of Québec?",
+  "options": [
+    "Manon Jeannotte.",
+    "Louise Arbour.",
+    "Christine Fréchette.",
+    "André Fortin."
+  ],
+  "answer": 1
+},
+{
+  "no": 474,
+  "question": "Who is the Premier of Québec?",
+  "options": [
+    "François Legault.",
+    "André Fortin.",
+    "Christine Fréchette.",
+    "Pablo Rodriguez."
+  ],
+  "answer": 3
+},
+{
+  "no": 475,
+  "question": "Which political party currently forms the Government of Québec?",
+  "options": [
+    "Québec Liberal Party.",
+    "Parti Québécois.",
+    "Coalition Avenir Québec.",
+    "Québec Solidaire."
+  ],
+  "answer": 3
+},
+{
+  "no": 476,
+  "question": "Who is the Member of Parliament (MP) for Terrebonne?",
+  "options": [
+    "Tatiana Auguste.",
+    "Nathalie Sinclair-Desgagné.",
+    "Pierre Poilievre.",
+    "Mark Carney."
+  ],
+  "answer": 1
+},
+{
+  "no": 477,
+  "question": "What is the name of your federal electoral district?",
+  "options": [
+    "Montcalm.",
+    "Terrebonne.",
+    "Repentigny.",
+    "Les Moulins."
+  ],
+  "answer": 2
+},
+{
+  "no": 478,
+  "question": "Who is your provincial representative (MNA) for Terrebonne?",
+  "options": [
+    "Christine Fréchette.",
+    "Catherine Gentilcore.",
+    "André Fortin.",
+    "Pablo Rodriguez."
+  ],
+  "answer": 2
+}
 ]
