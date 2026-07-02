@@ -4,10 +4,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Canada Citizenship Quiz</title>
-  <link href="/assets/css/quizz.css" id="theme-style" rel="stylesheet">
-  <script src="/assets/js/ui-text.js"></script>
-  <script src="/assets/js/quizz.js" defer></script>
+  <title>Canadian Citizenship Quiz</title>
+  <link href="./assets/css/quizz.css" id="theme-style" rel="stylesheet">
+
+  <!-- PWA -->
+  <link rel="manifest" href="./manifest.webmanifest">
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon-16.png">
+  <link rel="shortcut icon" href="./assets/images/favicon.ico">
+
+  <!-- Apple -->
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/apple-touch-icon.png">
+
+  <!-- Theme -->
+  <meta name="theme-color" content="#d52b1e">
+
+  <!-- iOS -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Citizenship Quiz">
+  <script src="./assets/js/ui-text.js"></script>
+  <script src="./assets/js/quizz.js" defer></script>
 </head>
 
 <body>
@@ -175,6 +195,19 @@
     </div>
 
   </div>
+
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", async () => {
+        try {
+          await navigator.serviceWorker.register("./sw.js");
+          console.log("Service Worker registered.");
+        } catch (error) {
+          console.error("Service Worker registration failed:", error);
+        }
+      });
+    }
+  </script>
 
 </body>
 
