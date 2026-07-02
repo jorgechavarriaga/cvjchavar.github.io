@@ -663,10 +663,10 @@
     "no": 61,
     "question": "Who are the founding peoples of Canada?",
     "options": [
-      "Métis, French and British",
-      "Aboriginal, Métis and British",
-      "Inuit ,Aboriginal and British",
-      "Aboriginal, French and British"
+      "Métis, French and British.",
+      "Aboriginal, Métis and British.",
+      "Inuit ,Aboriginal and British.",
+      "Aboriginal, French and British."
     ],
     "answer": 4
   },
@@ -674,10 +674,10 @@
     "no": 62,
     "question": "Who were the Voyagers?",
     "options": [
-      "Montreal-based traders who travelled by canoe",
-      "Inmigrants to cCanda in the 18th century",
-      "Explorers searching for the North-West Passage",
-      "Geographers who first charted the coastline of British Columbia"
+      "Montreal-based traders who travelled by canoe.",
+      "Inmigrants to cCanda in the 18th century.",
+      "Explorers searching for the North-West Passage.",
+      "Geographers who first charted the coastline of British Columbia."
     ],
     "answer": 1
   },
@@ -685,10 +685,10 @@
     "no": 63,
     "question": "Who was Sir Sam Steele?",
     "options": [
-      "A great frontier hero, Mounted Policeman and soldier",
-      "A military leader of the Métis in the 19th century",
-      "The first Primer Minister of Canada",
-      "The Father of Manitoba"
+      "A great frontier hero, Mounted Policeman and soldier.",
+      "A military leader of the Métis in the 19th century.",
+      "The first Primer Minister of Canada.",
+      "The Father of Manitoba."
     ],
     "answer": 1
   },
@@ -2027,10 +2027,10 @@
     "no": 185,
     "question": "Which battle marked the end of France's empire in North America?",
     "options": [
-      "Battle of Vimy Ridge",
-      "Battle of Châteauguay",
-      "Battle of Queenston Heights",
-      "Battle of the Plains of Abraham"
+      "Battle of Vimy Ridge.",
+      "Battle of Châteauguay.",
+      "Battle of Queenston Heights.",
+      "Battle of the Plains of Abraham."
     ],
     "answer": 4
   },
@@ -2038,10 +2038,10 @@
     "no": 186,
     "question": "What important right did the Québec Act of 1774 grant to Catholics?",
     "options": [
-      "The right to vote",
-      "The right to hold public office",
-      "The right to own land",
-      "The right to serve in the military"
+      "The right to vote.",
+      "The right to hold public office.",
+      "The right to own land.",
+      "The right to serve in the military."
     ],
     "answer": 2
   },
@@ -2049,10 +2049,10 @@
     "no": 187,
     "question": "Who became the first leader of a responsible government in Canada?",
     "options": [
-      "Sir John A. Macdonald",
-      "George-Étienne Cartier",
-      "Louis-Hippolyte La Fontaine",
-      "Samuel de Champlain"
+      "Sir John A. Macdonald.",
+      "George-Étienne Cartier.",
+      "Louis-Hippolyte La Fontaine.",
+      "Samuel de Champlain."
     ],
     "answer": 3
   },
@@ -2060,10 +2060,10 @@
     "no": 188,
     "question": "Which four provinces formed Canada in 1867?",
     "options": [
-      "Ontario, Québec, Manitoba, Nova Scotia",
-      "Ontario, Québec, Nova Scotia, New Brunswick",
-      "Ontario, Québec, Alberta, New Brunswick",
-      "Ontario, Manitoba, Nova Scotia, New Brunswick"
+      "Ontario, Québec, Manitoba, Nova Scotia.",
+      "Ontario, Québec, Nova Scotia, New Brunswick.",
+      "Ontario, Québec, Alberta, New Brunswick.",
+      "Ontario, Manitoba, Nova Scotia, New Brunswick."
     ],
     "answer": 2
   },
@@ -2082,10 +2082,10 @@
     "no": 190,
     "question": "Who was Tecumseh?",
     "options": [
-      "A British general",
-      "A Shawnee chief who helped defend Canada",
-      "A Father of Confederation",
-      "A French explorer"
+      "A British general.",
+      "A Shawnee chief who helped defend Canada.",
+      "A Father of Confederation.",
+      "A French explorer."
     ],
     "answer": 2
   },
@@ -2093,10 +2093,10 @@
     "no": 191,
     "question": "Who is remembered for warning British forces of a planned American attack during the War of 1812?",
     "options": [
-      "Agnes Macphail",
-      "Laura Secord",
-      "Emily Stowe",
-      "Thérèse Casgrain"
+      "Agnes Macphail.",
+      "Laura Secord.",
+      "Emily Stowe.",
+      "Thérèse Casgrain."
     ],
     "answer": 2
   },
@@ -2104,10 +2104,10 @@
     "no": 192,
     "question": "What is celebrated on Vimy Day?",
     "options": [
-      "The signing of Confederation",
-      "The Battle of the Plains of Abraham",
-      "The Battle of Vimy Ridge",
-      "The end of the Second World War"
+      "The signing of Confederation.",
+      "The Battle of the Plains of Abraham.",
+      "The Battle of Vimy Ridge.",
+      "The end of the Second World War."
     ],
     "answer": 3
   },
@@ -2115,10 +2115,10 @@
     "no": 193,
     "question": "On what date is Vimy Day observed?",
     "options": [
-      "July 1",
-      "November 11",
-      "April 9",
-      "June 6"
+      "July 1.",
+      "November 11.",
+      "April 9.",
+      "June 6."
     ],
     "answer": 3
   },
@@ -2126,10 +2126,10 @@
     "no": 194,
     "question": "What phrase is associated with Canada's system of government and constitutional tradition?",
     "options": [
-      "Life, Liberty and the Pursuit of Happiness",
-      "Peace, Order and Good Government",
-      "Liberty, Equality and Fraternity",
-      "One Nation Under God"
+      "Life, Liberty and the Pursuit of Happiness.",
+      "Peace, Order and Good Government.",
+      "Liberty, Equality and Fraternity.",
+      "One Nation Under God."
     ],
     "answer": 2
   },
@@ -2137,10 +2137,10 @@
     "no": 195,
     "question": "Which beach was captured by Canadian troops on D-Day?(June 6, 1944)",
     "options": [
-      "Omaha Beach",
-      "Gold Beach",
-      "Sword Beach",
-      "Juno Beach"
+      "Omaha Beach.",
+      "Gold Beach.",
+      "Sword Beach.",
+      "Juno Beach."
     ],
     "answer": 4
   },
@@ -2148,10 +2148,10 @@
     "no": 196,
     "question": "In which battle did the Royal Canadian Navy play a vital role during the Second World War?",
     "options": [
-      "Battle of Britain",
-      "Battle of the Atlantic",
-      "Battle of Hong Kong",
-      "Battle of Normandy"
+      "Battle of Britain.",
+      "Battle of the Atlantic.",
+      "Battle of Hong Kong.",
+      "Battle of Normandy."
     ],
     "answer": 2
   },
@@ -2159,10 +2159,10 @@
     "no": 197,
     "question": "What is one of the legal responsibilities of Canadian citizens when called upon?",
     "options": [
-      "Serving in the military",
-      "Serving on a jury",
-      "Working for the government",
-      "Joining a political party"
+      "Serving in the military.",
+      "Serving on a jury.",
+      "Working for the government.",
+      "Joining a political party."
     ],
     "answer": 2
   },
@@ -2170,10 +2170,10 @@
     "no": 198,
     "question": "Does Canada have compulsory military service?",
     "options": [
-      "Yes, for all citizens",
-      "Yes, only during wartime",
-      "No",
-      "Only for permanent residents"
+      "Yes, for all citizens.",
+      "Yes, only during wartime.",
+      "No.",
+      "Only for permanent residents."
     ],
     "answer": 3
   },
@@ -2181,10 +2181,10 @@
     "no": 199,
     "question": "What is the Magna Carta?",
     "options": [
-      "The first Constitution of Canada",
-      "The Great Charter of Freedoms signed in 1215",
-      "The Charter of Rights and Freedoms",
-      "The British North America Act"
+      "The first Constitution of Canada.",
+      "The Great Charter of Freedoms signed in 1215.",
+      "The Charter of Rights and Freedoms.",
+      "The British North America Act."
     ],
     "answer": 2
   },
@@ -2192,10 +2192,10 @@
     "no": 200,
     "question": "What does habeas corpus mean?",
     "options": [
-      "The right to vote",
-      "The right to a fair trial",
-      "The right not to be imprisoned unlawfully",
-      "The right to own property"
+      "The right to vote.",
+      "The right to a fair trial.",
+      "The right not to be imprisoned unlawfully.",
+      "The right to own property."
     ],
     "answer": 3
   },
@@ -2203,10 +2203,10 @@
     "no": 201,
     "question": "What does the rule of law mean?",
     "options": [
-      "Only elected officials must obey the law",
-      "The police decide what is legal",
-      "Everyone must obey the law, including governments",
-      "The courts create all laws"
+      "Only elected officials must obey the law.",
+      "The police decide what is legal.",
+      "Everyone must obey the law, including governments.",
+      "The courts create all laws."
     ],
     "answer": 3
   },
@@ -2214,10 +2214,10 @@
     "no": 202,
     "question": "What is the Commonwealth?",
     "options": [
-      "A military alliance led by Canada",
-      "A group of countries with historic ties to the Crown",
-      "A trade agreement between Canada and the United States",
-      "A provincial organization"
+      "A military alliance led by Canada.",
+      "A group of countries with historic ties to the Crown.",
+      "A trade agreement between Canada and the United States.",
+      "A provincial organization."
     ],
     "answer": 2
   },
@@ -2228,7 +2228,7 @@
       "Hockey.",
       "Lacrosse.",
       "Basketball.",
-      "Soccer"
+      "Soccer."
     ],
     "answer": 2
   },
@@ -2456,10 +2456,10 @@
     "no": 224,
     "question": "Which of the following best describes the role of the King in Canada?",
     "options": [
-      "To make important decisions about how the country is governed",
-      "To peacefully oppose or try to improve government proposals",
-      "To run the federal government departments",
-      "To focus on citizenship and allegiance, be a symbol of Canadian sovereignty, and a guardian of constitutional freedoms"
+      "To make important decisions about how the country is governed.",
+      "To peacefully oppose or try to improve government proposals.",
+      "To run the federal government departments.",
+      "To focus on citizenship and allegiance, be a symbol of Canadian sovereignty, and a guardian of constitutional freedoms."
     ],
     "answer": 4
   },
@@ -2500,9 +2500,9 @@
     "no": 228,
     "question": "What do the initials MP stand for in Canadian politics?",
     "options": [
-      "Minister of Parliament",
-      "Member of Parliament",
-      "Member of the Patriots",
+      "Minister of Parliament.",
+      "Member of Parliament.",
+      "Member of the Patriots.",
       "Master of the Province."
     ],
     "answer": 2
@@ -2777,7 +2777,7 @@
     "options": [
       "The Senate.",
       "Queen Elizabeth II.",
-      "The people of Canada",
+      "The people of Canada.",
       "The Prime Minister."
     ],
     "answer": 2
@@ -2811,7 +2811,7 @@
       "Chooses the opposition party.",
       "Performs the ceremonial duties of the Head of State.",
       "Signs bills to make them law after they have been passed by Parliament.",
-      "A and C"
+      "A and C."
     ],
     "answer": 1
   },
@@ -2831,7 +2831,7 @@
     "question": "Who was Sir George-Étienne Cartier?",
     "options": [
       "The first French-Canadian Prime Minister.",
-      "The first head of a responsible government",
+      "The first head of a responsible government.",
       "A railway lawyer and Montrealer.",
       "Canada's first Prime Minister."
     ],
@@ -2995,9 +2995,9 @@
     "no": 273,
     "question": "Which provinces are connected to Ontario by land?",
     "options": [
-      "New Brunswick and Québec",
-      "Alberta and Québec",
-      "Manitoba and Alberta",
+      "New Brunswick and Québec.",
+      "Alberta and Québec.",
+      "Manitoba and Alberta.",
       "Manitoba and Québec."
     ],
     "answer": 4
@@ -3029,7 +3029,7 @@
     "question": "Who built the French Empire in North America?",
     "options": [
       "King Charles II.",
-      "Jean Talon, Bishop Laval, and Count Frontenac",
+      "Jean Talon, Bishop Laval, and Count Frontenac.",
       "Pierre Le Moyne, Sieur d'Iberville.",
       "Great Britain."
     ],
