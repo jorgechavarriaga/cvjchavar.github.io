@@ -28,6 +28,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="Citizenship Quiz">
   <script src="./assets/js/ui-text.js"></script>
+  <script src="./assets/js/pwa-install.js" defer></script>
   <script src="./assets/js/quizz.js" defer></script>
 </head>
 
@@ -98,6 +99,7 @@
         </div>
       </div>
       <button id="startTestButton" class="btn-start" onclick="startQuiz()">🍁 Start Practice Test</button>
+      <button id="installAppButton" class="btn-stats-home" onclick="PWAInstall.install()" style="display:none;">📲 Install App</button>
       <button id="viewStatisticsButton" class="btn-stats-home" onclick="showStats()">📊 View Statistics</button>
       <div class="footer">
         <span id="currentYear"></span>
