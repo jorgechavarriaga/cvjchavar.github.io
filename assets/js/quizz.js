@@ -133,7 +133,7 @@ function toggleLanguage() {
 // ═══════════════════════════════════════════════════
 //  STATE
 // ═══════════════════════════════════════════════════
-const QUIZ_SIZE = 20;
+const QUIZ_SIZE = 2;
 const PASS_SCORE = 15;
 const TIME_LIMIT = 30 * 60; // seconds
 
@@ -164,11 +164,20 @@ function setQuizMode(mode) {
 function loadStats() {
     try { return JSON.parse(localStorage.getItem('czStats') || '{}'); } catch (e) { return {}; }
 }
+
 function saveStats(s) { localStorage.setItem('czStats', JSON.stringify(s)); }
+
 function recordWrong(no) {
     const s = loadStats();
     s[no] = (s[no] || 0) + 1;
     saveStats(s);
+}
+
+function removeWrong(questionNo) {
+    const s = loadStats();
+    delete s[questionNo];
+    saveStats(s);
+    applyConfiguration();
 }
 
 // ═══════════════════════════════════════════════════
@@ -329,6 +338,7 @@ function selectOption(optionNum, el) {
     const fb = document.getElementById('feedback');
     if (isCorrect) {
         correct++;
+        removeWrong(q.no);
         fb.className = 'feedback correct show';
         const language =
             localStorage.getItem(LANGUAGE_STORAGE_KEY) || 'en';
@@ -530,6 +540,9 @@ function applyConfiguration() {
     document.getElementById('passScoreValue').textContent = `${PASS_SCORE} / ${QUIZ_SIZE}`;
     document.getElementById('weakAreasCount').textContent = weakCount;
     document.getElementById('weakModeBtn').disabled = weakCount === 0;
+    if (weakCount === 0 && selectedMode === 'weak') {
+    setQuizMode('normal');
+}
 }
 
 window.addEventListener('DOMContentLoaded', () => {
