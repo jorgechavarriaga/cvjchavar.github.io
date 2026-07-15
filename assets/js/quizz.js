@@ -541,8 +541,8 @@ function applyConfiguration() {
     document.getElementById('weakAreasCount').textContent = weakCount;
     document.getElementById('weakModeBtn').disabled = weakCount === 0;
     if (weakCount === 0 && selectedMode === 'weak') {
-    setQuizMode('normal');
-}
+        setQuizMode('normal');
+    }
 }
 
 window.addEventListener('DOMContentLoaded', () => {
