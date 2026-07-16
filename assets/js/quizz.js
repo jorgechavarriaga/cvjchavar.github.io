@@ -133,8 +133,8 @@ function toggleLanguage() {
 // ═══════════════════════════════════════════════════
 //  STATE
 // ═══════════════════════════════════════════════════
-const QUIZ_SIZE = 2;
-const PASS_SCORE = 15;
+const QUIZ_SIZE = 4;
+const PASS_SCORE = 3;
 const TIME_LIMIT = 30 * 60; // seconds
 
 let quizQuestions = [];
@@ -145,6 +145,7 @@ let wrong = 0;
 let answered = false;
 let selectedOpt = null;
 let results = [];
+let currentQuestion = null;
 let timerInterval = null;
 let secondsLeft = TIME_LIMIT;
 let startTime = null;
@@ -192,6 +193,19 @@ function shuffle(arr) {
     return a;
 }
 
+function shuffleQuestion(question) {
+    const options = question.options.map((text, index) => ({
+        text,
+        originalAnswer: index + 1
+    }));
+    const shuffled = shuffle(options);
+    return {
+        ...question,
+        options: shuffled.map(o => o.text),
+        answer: shuffled.findIndex(o => o.originalAnswer === question.answer) + 1
+    };
+}
+
 function showScreen(id) {
     document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
     document.getElementById(id).classList.add('active');
@@ -214,15 +228,18 @@ async function startQuiz() {
     if (QUESTIONS.length === 0) return; // failed to load, alert already shown
 
     if (selectedMode === 'normal') {
-        quizQuestions =
-            shuffle(QUESTIONS).slice(0, QUIZ_SIZE);
+        quizQuestions = shuffle(QUESTIONS)
+            .slice(0, QUIZ_SIZE)
+            .map(shuffleQuestion);
     } else {
         const weakQuestionIds = Object.keys(loadStats()).map(Number);
         const weakQuestions = QUESTIONS.filter(q =>
             weakQuestionIds.includes(q.no)
         );
 
-        quizQuestions = shuffle(weakQuestions).slice(0, QUIZ_SIZE);
+        quizQuestions = shuffle(weakQuestions)
+            .slice(0, QUIZ_SIZE)
+            .map(shuffleQuestion);
     }
     currentIndex = 0;
     correct = 0;
@@ -260,15 +277,36 @@ function forceFinish() {
     const remaining = QUIZ_SIZE - currentIndex - (answered ? 0 : 0);
     // If current question not answered yet, skip it as wrong
     if (!answered) {
-        const q = quizQuestions[currentIndex];
-        results.push({ question: q.question, options: q.options, answer: q.answer, selected: null, wasCorrect: false });
+        currentQuestion = structuredClone(quizQuestions[currentIndex]);
+        const q = currentQuestion;
+        q.options = q.options
+            .map((text, index) => ({
+                text,
+                answer: index + 1
+            }));
+        q.options = shuffle(q.options);
+        q.answer =
+            q.options.findIndex(o => o.answer === quizQuestions[currentIndex].answer) + 1;
+        results.push({
+            question: q.question,
+            options: q.options.map(o => typeof o === 'string' ? o : o.text),
+            answer: q.answer,
+            selected: null,
+            wasCorrect: false
+        });
         recordWrong(q.no);
         wrong++;
     }
     // Remaining questions after current
     for (let i = currentIndex + 1; i < quizQuestions.length; i++) {
         const q = quizQuestions[i];
-        results.push({ question: q.question, options: q.options, answer: q.answer, selected: null, wasCorrect: false });
+        results.push({
+            question: q.question,
+            options: q.options.map(o => typeof o === 'string' ? o : o.text),
+            answer: q.answer,
+            selected: null,
+            wasCorrect: false
+        });
         recordWrong(q.no);
         wrong++;
     }
@@ -420,7 +458,7 @@ function showResults() {
     } else {
         document.getElementById('resultsSub').textContent = pass
             ? `${t.passedMessage} ${correct}/${quizQuestions.length} ${t.passedMessageEnd}`
-            : `${t.failedMessage} ${PASS_SCORE}/20 ${t.failedMessageMiddle} ${correct}/${quizQuestions.length}. ${t.failedMessageEnd}`;
+            : `${t.failedMessage} ${PASS_SCORE}/${QUIZ_SIZE} ${t.failedMessageMiddle} ${correct}/${quizQuestions.length}. ${t.failedMessageEnd}`;
     }
 
     document.getElementById('rOk').textContent = correct;
