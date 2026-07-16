@@ -108,7 +108,7 @@ function updateFooter() {
 
     document.querySelectorAll('.footer').forEach(el => {
         el.innerHTML =
-            `${t.developedBy}: ChavaZystem Tech ® ${new Date().getFullYear()}`;
+            `${t.developedBy}: ChavaZystem Tech ® ${new Date().getFullYear()} · v${APP_VERSION}`;
     });
 }
 

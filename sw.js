@@ -1,5 +1,7 @@
+importScripts("./assets/js/version.js");
+
 // Cache version
-const CACHE_VERSION = "1.0.2";
+const CACHE_VERSION = APP_VERSION;
 
 const CACHE_NAME = `citizenship-quiz-${CACHE_VERSION}`;
 
