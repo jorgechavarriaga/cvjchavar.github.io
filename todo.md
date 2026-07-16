@@ -1,7 +1,8 @@
 
 # TODO
 
-- Remove questions from Weak Areas after a correct answer.
+- Remove questions from Weak Areas after a correct answer. ✅
+- Add version to footer (same version for front and service worker) ✅
 - Limit Weak Areas mode to 20 random questions.
 - Randomize answer options.
 - Avoid repeating recently asked questions in Normal Mode.
