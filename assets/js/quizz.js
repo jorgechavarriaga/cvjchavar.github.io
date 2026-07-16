@@ -221,7 +221,8 @@ async function startQuiz() {
         const weakQuestions = QUESTIONS.filter(q =>
             weakQuestionIds.includes(q.no)
         );
-        quizQuestions = weakQuestions;
+
+        quizQuestions = shuffle(weakQuestions).slice(0, QUIZ_SIZE);
     }
     currentIndex = 0;
     correct = 0;
