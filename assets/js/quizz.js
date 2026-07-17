@@ -4,6 +4,27 @@
 let QUESTIONS = [];
 const LANGUAGE_STORAGE_KEY = 'quizLanguage';
 
+// ═══════════════════════════════════════════════════
+//  STATE
+// ═══════════════════════════════════════════════════
+const QUIZ_SIZE = 20;
+const PASS_SCORE = 15;
+const TIME_LIMIT = 30 * 60; // seconds
+
+let quizQuestions = [];
+let selectedMode = 'normal';
+let currentIndex = 0;
+let correct = 0;
+let wrong = 0;
+let answered = false;
+let selectedOpt = null;
+let results = [];
+let currentQuestion = null;
+let timerInterval = null;
+let secondsLeft = TIME_LIMIT;
+let startTime = null;
+
+
 async function loadQuestions() {
     const language =
         localStorage.getItem(LANGUAGE_STORAGE_KEY) || 'en';
@@ -130,25 +151,6 @@ function toggleLanguage() {
     loadQuestions();
 }
 
-// ═══════════════════════════════════════════════════
-//  STATE
-// ═══════════════════════════════════════════════════
-const QUIZ_SIZE = 4;
-const PASS_SCORE = 3;
-const TIME_LIMIT = 30 * 60; // seconds
-
-let quizQuestions = [];
-let selectedMode = 'normal';
-let currentIndex = 0;
-let correct = 0;
-let wrong = 0;
-let answered = false;
-let selectedOpt = null;
-let results = [];
-let currentQuestion = null;
-let timerInterval = null;
-let secondsLeft = TIME_LIMIT;
-let startTime = null;
 
 // Quiz Mode
 function setQuizMode(mode) {
