@@ -1,13 +1,32 @@
 # TODO
 
-- v.1.0.2: Remove questions from Weak Areas after a correct answer. ✅
-- v.1.0.3: Add version to footer (same version for front and service worker) ✅
-- v.1.0.4: Limit Weak Areas mode to 20 random questions. ✅
-- v.1.0.5: Randomize answer options. ✅
-- v.1.0.6: You need 3/4 to pass. You got 1/1. Keep practicing! ✅
-- v.1.0.7: Avoid repeating recently asked questions in Normal Mode. ✅
-- v.1.0.8: Add Back / Next / Skip (Answer Later) navigation.
-- v.1.0.9: Add Settings dialog.
-- v.1.0.10: Move quiz configuration to Settings.
-- v.1.0.11: Add keyboard shortcuts.
-- v.1.0.12: Add Help / How It Works dialog.
+
+feature/v1.0.13-keyboard-shortcuts
+
+- Keyboard shortcuts
+- Enter = Next / Finish
+- 1-4 = Select answer
+- Esc = Close dialogs
+- Left / Right = Back / Next
+
+feature/v1.0.14-ui-polish
+
+- Replace remaining emojis with Font Awesome icons
+- UI spacing and alignment review
+- Responsive polish
+- CSS / JS cleanup
+
+feature/v1.0.15-ui-text-settings
+
+- Move remaining Settings hardcoded texts to ui-text.js
+- Complete EN / FR translations
+- Remove remaining hardcoded UI strings
+
+feature/v1.0.16-license
+
+- License activation
+- Purchase license
+- Device ID
+- License validation
+- Demo / Premium mode
+- Premium question bank
