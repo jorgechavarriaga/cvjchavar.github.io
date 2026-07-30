@@ -1,7 +1,6 @@
 # TODO
 
-
-feature/v1.0.13-keyboard-shortcuts
+feature/v1.0.13-keyboard-shortcuts ✅
 
 - Keyboard shortcuts
 - Enter = Next / Finish
