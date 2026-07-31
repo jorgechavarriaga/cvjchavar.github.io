@@ -41,13 +41,25 @@ feature/v1.0.17-premium ✅
 - Home question bank status
 - Premium UI
 
-feature/v1.0.18-license-backend
+feature/v1.0.18-license-api
 
-- FastAPI
-- SQLite
-- Device ID
-- License activation
-- License validation
-- Download question bank
-- Offline cache
+- FastAPI project
+- SQLite database
+- License data model
+- Device registration
+- License activation endpoint
+- License validation endpoint
+- Question bank download endpoint
 - Admin panel
+- API authentication
+
+feature/v1.0.19-license-client
+
+- Device ID generation
+- License activation flow
+- License validation
+- Download licensed question bank
+- Offline cache
+- License persistence
+- Premium status synchronization
+- Demo → Licensed transition
