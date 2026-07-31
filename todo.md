@@ -31,11 +31,23 @@ feature/v1.0.16-misc-iImprovements ✅
 • Official Discover Canada link
 • Replace browser confirm/alert dialogs with app modals
 
-feature/v1.0.17-license
+feature/v1.0.17-premium ✅
 
-- License activation
-- Purchase license
+- Demo question bank (20 EN / 20 FR)
+- Premium screen
+- Get Premium
+- WhatsApp contact
+- Premium status (Demo / EN / FR / Bundle)
+- Home question bank status
+- Premium UI
+
+feature/v1.0.18-license-backend
+
+- FastAPI
+- SQLite
 - Device ID
+- License activation
 - License validation
-- Demo / Premium mode
-- Premium question bank
+- Download question bank
+- Offline cache
+- Admin panel
