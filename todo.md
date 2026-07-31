@@ -21,7 +21,17 @@ feature/v1.0.15-ui-text-settings ✅
 - Complete EN / FR translations
 - Remove remaining hardcoded UI strings
 
-feature/v1.0.16-license
+feature/v1.0.16-misc-iImprovements ✅
+
+• GitHub Profile link
+• Exit Quiz
+• Confirm Exit Quiz
+• Confirm browser refresh/close during active quiz
+• Weak Areas Practice Mode improvements
+• Official Discover Canada link
+• Replace browser confirm/alert dialogs with app modals
+
+feature/v1.0.17-license
 
 - License activation
 - Purchase license
