@@ -54,32 +54,39 @@ feature/v1.0.18-license-api ✅ (canadian-citizenship-license-api)
 - API authentication
 
 
-eature/v1.0.19-license-client
+feature/v1.0.19-license-client
 
-1. Device ID generation
-2. License request flow
-
+- Device ID generation
+- License request flow
    - Contact Me
    - Buy English
    - Buy French
    - Buy Bundle
    - POST /license/request
    - WhatsApp with request_id
-3. License activation
-
+- License activation
    - POST /license/sync
-4. Download manifest
-
+- Download manifest
    - GET /license/download
-5. Download licensed question bank
-
+- Download licensed question bank
    - GET /license/download/{filename}
-6. Offline cache
-
+- Offline cache
    - Store downloaded question banks
-7. License persistence
-
+- License persistence
    - Store license metadata locally
-8. Premium status synchronization
-9. Demo → Licensed transition
-10. Load local question bank instead of assets
+- Premium status synchronization
+- Demo → Licensed transition
+- Load local question bank instead of assets
+
+feature/v1.0.20-secure-question-bank
+
+1. Encrypt licensed question banks (AES-GCM)
+2. Replace .json downloads with .dat files
+3. Decrypt question bank in memory only
+4. Store encrypted question banks locally
+5. Device-based encryption key
+6. Preserve current licensing flow
+7. Preserve current Demo mode
+8. Graceful decryption error handling
+9. Protect against casual inspection and copy
+10. Backward compatibility for existing licensed users
